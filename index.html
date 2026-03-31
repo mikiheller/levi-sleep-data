@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Levi's Sleep Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <style>
+        :root {
+            --bg: #0f1117;
+            --surface: #1a1d27;
+            --surface-hover: #242836;
+            --border: #2a2e3a;
+            --text: #e4e6ef;
+            --text-muted: #8b8fa3;
+            --accent: #6c8cff;
+            --accent-glow: rgba(108, 140, 255, 0.15);
+            --good: #4ade80;
+            --warn: #fbbf24;
+            --bad: #f87171;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            padding: 0;
+        }
+
+        .header {
+            padding: 2rem 2rem 1rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .header p {
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+        }
+
+        .stat-card .label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-card .sub {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .controls {
+            display: flex;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .controls label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .controls select, .controls input {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        .controls select:hover, .controls input:hover {
+            border-color: var(--accent);
+        }
+
+        .chart-section {
+            padding: 1rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .chart-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .chart-card h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .chart-card .chart-sub {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 280px;
+        }
+
+        .detail-panel {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-panel h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .detail-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .detail-table th {
+            text-align: left;
+            padding: 0.5rem 0.75rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            position: sticky;
+            top: 0;
+            background: var(--surface);
+        }
+
+        .detail-table td {
+            padding: 0.5rem 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .detail-table tr:hover td {
+            background: var(--surface-hover);
+        }
+
+        .detail-table .no-data {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.15rem 0.5rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-good { background: rgba(74, 222, 128, 0.15); color: var(--good); }
+        .badge-warn { background: rgba(251, 191, 36, 0.15); color: var(--warn); }
+        .badge-bad { background: rgba(248, 113, 113, 0.15); color: var(--bad); }
+
+        .table-wrapper {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .table-wrapper::-webkit-scrollbar {
+            width: 6px;
+        }
+        .table-wrapper::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .table-wrapper::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 3px;
+        }
+
+        .legend-hint {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Levi's Sleep Dashboard</h1>
+        <p id="dateRange"></p>
+    </div>
+
+    <div class="stats-row" id="statsRow"></div>
+
+    <div class="controls">
+        <label>Time range:</label>
+        <select id="rangeSelect">
+            <option value="all">All time</option>
+            <option value="30">Last 30 days</option>
+            <option value="90">Last 90 days</option>
+            <option value="180">Last 6 months</option>
+        </select>
+        <label>Rolling average:</label>
+        <select id="avgSelect">
+            <option value="7" selected>7-day</option>
+            <option value="14">14-day</option>
+            <option value="30">30-day</option>
+            <option value="0">None</option>
+        </select>
+        <label style="margin-left: auto;">Month:</label>
+        <select id="monthSelect">
+            <option value="all">All months</option>
+        </select>
+    </div>
+
+    <div class="chart-section">
+        <div class="chart-card">
+            <h2>Total Sleep Hours</h2>
+            <div class="chart-sub">Hours of sleep each night (bedtime to final wake, minus awake periods)</div>
+            <div class="legend-hint">
+                <div class="legend-item"><div class="legend-dot" style="background: rgba(108, 140, 255, 0.3)"></div> Daily</div>
+                <div class="legend-item"><div class="legend-dot" style="background: #6c8cff"></div> Rolling average</div>
+            </div>
+            <div class="chart-container"><canvas id="sleepHoursChart"></canvas></div>
+        </div>
+
+        <div class="chart-card">
+            <h2>Bedtime</h2>
+            <div class="chart-sub">What time Levi fell asleep each night</div>
+            <div class="legend-hint">
+                <div class="legend-item"><div class="legend-dot" style="background: rgba(168, 130, 255, 0.3)"></div> Daily</div>
+                <div class="legend-item"><div class="legend-dot" style="background: #a882ff"></div> Rolling average</div>
+            </div>
+            <div class="chart-container"><canvas id="bedtimeChart"></canvas></div>
+        </div>
+
+        <div class="chart-card">
+            <h2>Night Wakings</h2>
+            <div class="chart-sub">Number of times Levi woke up during the night</div>
+            <div class="legend-hint">
+                <div class="legend-item"><div class="legend-dot" style="background: rgba(251, 191, 36, 0.3)"></div> Daily</div>
+                <div class="legend-item"><div class="legend-dot" style="background: #fbbf24"></div> Rolling average</div>
+            </div>
+            <div class="chart-container"><canvas id="wakingsChart"></canvas></div>
+        </div>
+    </div>
+
+    <div class="chart-section">
+        <div class="detail-panel">
+            <h2>Nightly Details</h2>
+            <div class="table-wrapper">
+                <table class="detail-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Bedtime</th>
+                            <th>Wake time</th>
+                            <th>Sleep hours</th>
+                            <th>Wakings</th>
+                            <th>Slept through?</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="detailBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="sleep_data.js"></script>
+    <script>
+    (function() {
+        const data = SLEEP_DATA;
+        let charts = {};
+
+        function rollingAvg(arr, window) {
+            if (window <= 0) return arr.map(() => null);
+            const result = [];
+            for (let i = 0; i < arr.length; i++) {
+                const slice = arr.slice(Math.max(0, i - window + 1), i + 1).filter(v => v !== null);
+                result.push(slice.length >= Math.min(3, window) ? slice.reduce((a, b) => a + b, 0) / slice.length : null);
+            }
+            return result;
+        }
+
+        function filterData() {
+            const range = document.getElementById('rangeSelect').value;
+            const month = document.getElementById('monthSelect').value;
+            let filtered = data.filter(d => d.date);
+
+            if (month !== 'all') {
+                filtered = filtered.filter(d => d.date.substring(0, 7) === month);
+            }
+
+            if (range !== 'all' && month === 'all') {
+                const days = parseInt(range);
+                const cutoff = new Date(filtered[filtered.length - 1].date + 'T00:00:00');
+                cutoff.setDate(cutoff.getDate() - days);
+                filtered = filtered.filter(d => new Date(d.date + 'T00:00:00') >= cutoff);
+            }
+
+            return filtered;
+        }
+
+        function updateStats(filtered) {
+            const valid = filtered.filter(d => d.total_sleep_hours != null);
+            const avg = valid.length ? (valid.reduce((s, d) => s + d.total_sleep_hours, 0) / valid.length) : 0;
+            const sleptThrough = valid.filter(d => d.slept_through).length;
+            const pctThrough = valid.length ? ((sleptThrough / valid.length) * 100) : 0;
+
+            const bedtimes = valid.filter(d => d.bedtime_decimal != null);
+            const avgBedtime = bedtimes.length ? bedtimes.reduce((s, d) => s + d.bedtime_decimal, 0) / bedtimes.length : 0;
+
+            const wakings = valid.filter(d => d.night_wakings > 0);
+            const avgWakings = wakings.length
+                ? (valid.reduce((s, d) => s + d.night_wakings, 0) / valid.length)
+                : 0;
+
+            function decimalToTime(dec) {
+                let h = Math.floor(dec) % 24;
+                let m = Math.round((dec % 1) * 60);
+                if (m === 60) { h++; m = 0; }
+                const ampm = h >= 12 ? 'pm' : 'am';
+                const dh = h % 12 || 12;
+                return `${dh}:${String(m).padStart(2, '0')}${ampm}`;
+            }
+
+            document.getElementById('statsRow').innerHTML = `
+                <div class="stat-card">
+                    <div class="label">Avg Sleep</div>
+                    <div class="value">${avg.toFixed(1)}h</div>
+                    <div class="sub">${valid.length} nights tracked</div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">Avg Bedtime</div>
+                    <div class="value">${decimalToTime(avgBedtime)}</div>
+                    <div class="sub">${bedtimes.length} nights with data</div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">Slept Through</div>
+                    <div class="value">${pctThrough.toFixed(0)}%</div>
+                    <div class="sub">${sleptThrough} of ${valid.length} nights</div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">Avg Wakings / Night</div>
+                    <div class="value">${avgWakings.toFixed(2)}</div>
+                    <div class="sub">${wakings.length} nights with wakings</div>
+                </div>
+            `;
+        }
+
+        function buildCharts(filtered) {
+            const avgWindow = parseInt(document.getElementById('avgSelect').value);
+            const dates = filtered.map(d => d.date);
+            const sleepHours = filtered.map(d => d.total_sleep_hours);
+            const bedtimes = filtered.map(d => d.bedtime_decimal);
+            const wakings = filtered.map(d => d.total_sleep_hours != null ? d.night_wakings : null);
+
+            const sleepAvg = rollingAvg(sleepHours, avgWindow);
+            const bedAvg = rollingAvg(bedtimes, avgWindow);
+            const wakAvg = rollingAvg(wakings, avgWindow);
+
+            const commonScaleOpts = {
+                x: {
+                    type: 'time',
+                    time: { unit: dates.length > 120 ? 'month' : 'week', tooltipFormat: 'MMM d, yyyy' },
+                    grid: { color: 'rgba(255,255,255,0.04)' },
+                    ticks: { color: '#8b8fa3', maxTicksLimit: 12 },
+                },
+            };
+
+            const commonOpts = {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { mode: 'index', intersect: false },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#1a1d27',
+                        borderColor: '#2a2e3a',
+                        borderWidth: 1,
+                        titleColor: '#e4e6ef',
+                        bodyColor: '#8b8fa3',
+                        padding: 12,
+                        cornerRadius: 8,
+                    },
+                },
+            };
+
+            if (charts.sleep) charts.sleep.destroy();
+            if (charts.bed) charts.bed.destroy();
+            if (charts.wak) charts.wak.destroy();
+
+            charts.sleep = new Chart(document.getElementById('sleepHoursChart'), {
+                type: 'bar',
+                data: {
+                    labels: dates,
+                    datasets: [
+                        {
+                            label: 'Sleep hours',
+                            data: sleepHours,
+                            backgroundColor: 'rgba(108, 140, 255, 0.25)',
+                            borderColor: 'rgba(108, 140, 255, 0.4)',
+                            borderWidth: 1,
+                            borderRadius: 2,
+                            barPercentage: 0.9,
+                            categoryPercentage: 1.0,
+                        },
+                        {
+                            label: `${avgWindow}-day avg`,
+                            data: sleepAvg,
+                            type: 'line',
+                            borderColor: '#6c8cff',
+                            borderWidth: 2.5,
+                            pointRadius: 0,
+                            pointHoverRadius: 4,
+                            tension: 0.3,
+                            spanGaps: true,
+                        },
+                    ],
+                },
+                options: {
+                    ...commonOpts,
+                    scales: {
+                        ...commonScaleOpts,
+                        y: {
+                            min: 0,
+                            max: 14,
+                            grid: { color: 'rgba(255,255,255,0.04)' },
+                            ticks: { color: '#8b8fa3', callback: v => v + 'h' },
+                        },
+                    },
+                    plugins: {
+                        ...commonOpts.plugins,
+                        tooltip: {
+                            ...commonOpts.plugins.tooltip,
+                            callbacks: {
+                                label: ctx => {
+                                    if (ctx.raw == null) return null;
+                                    return `${ctx.dataset.label}: ${ctx.raw.toFixed(1)}h`;
+                                },
+                            },
+                        },
+                    },
+                },
+            });
+
+            charts.bed = new Chart(document.getElementById('bedtimeChart'), {
+                type: 'bar',
+                data: {
+                    labels: dates,
+                    datasets: [
+                        {
+                            label: 'Bedtime',
+                            data: bedtimes,
+                            backgroundColor: 'rgba(168, 130, 255, 0.25)',
+                            borderColor: 'rgba(168, 130, 255, 0.4)',
+                            borderWidth: 1,
+                            borderRadius: 2,
+                            barPercentage: 0.9,
+                            categoryPercentage: 1.0,
+                        },
+                        {
+                            label: `${avgWindow}-day avg`,
+                            data: bedAvg,
+                            type: 'line',
+                            borderColor: '#a882ff',
+                            borderWidth: 2.5,
+                            pointRadius: 0,
+                            pointHoverRadius: 4,
+                            tension: 0.3,
+                            spanGaps: true,
+                        },
+                    ],
+                },
+                options: {
+                    ...commonOpts,
+                    scales: {
+                        ...commonScaleOpts,
+                        y: {
+                            min: 19,
+                            max: 28,
+                            reverse: true,
+                            grid: { color: 'rgba(255,255,255,0.04)' },
+                            ticks: {
+                                color: '#8b8fa3',
+                                callback: v => {
+                                    let h = Math.floor(v) % 24;
+                                    const ampm = h >= 12 ? 'pm' : 'am';
+                                    const dh = h % 12 || 12;
+                                    return `${dh}${ampm}`;
+                                },
+                                stepSize: 1,
+                            },
+                        },
+                    },
+                    plugins: {
+                        ...commonOpts.plugins,
+                        tooltip: {
+                            ...commonOpts.plugins.tooltip,
+                            callbacks: {
+                                label: ctx => {
+                                    if (ctx.raw == null) return null;
+                                    let h = Math.floor(ctx.raw) % 24;
+                                    let m = Math.round((ctx.raw % 1) * 60);
+                                    if (m === 60) { h++; m = 0; }
+                                    const ampm = h >= 12 ? 'pm' : 'am';
+                                    const dh = h % 12 || 12;
+                                    return `${ctx.dataset.label}: ${dh}:${String(m).padStart(2,'0')}${ampm}`;
+                                },
+                            },
+                        },
+                    },
+                },
+            });
+
+            charts.wak = new Chart(document.getElementById('wakingsChart'), {
+                type: 'bar',
+                data: {
+                    labels: dates,
+                    datasets: [
+                        {
+                            label: 'Wakings',
+                            data: wakings,
+                            backgroundColor: ctx => {
+                                const v = ctx.raw;
+                                if (v === 0) return 'rgba(74, 222, 128, 0.25)';
+                                if (v === 1) return 'rgba(251, 191, 36, 0.25)';
+                                return 'rgba(248, 113, 113, 0.25)';
+                            },
+                            borderColor: ctx => {
+                                const v = ctx.raw;
+                                if (v === 0) return 'rgba(74, 222, 128, 0.5)';
+                                if (v === 1) return 'rgba(251, 191, 36, 0.5)';
+                                return 'rgba(248, 113, 113, 0.5)';
+                            },
+                            borderWidth: 1,
+                            borderRadius: 2,
+                            barPercentage: 0.9,
+                            categoryPercentage: 1.0,
+                        },
+                        {
+                            label: `${avgWindow}-day avg`,
+                            data: wakAvg,
+                            type: 'line',
+                            borderColor: '#fbbf24',
+                            borderWidth: 2.5,
+                            pointRadius: 0,
+                            pointHoverRadius: 4,
+                            tension: 0.3,
+                            spanGaps: true,
+                        },
+                    ],
+                },
+                options: {
+                    ...commonOpts,
+                    scales: {
+                        ...commonScaleOpts,
+                        y: {
+                            min: 0,
+                            grid: { color: 'rgba(255,255,255,0.04)' },
+                            ticks: { color: '#8b8fa3', stepSize: 1 },
+                        },
+                    },
+                },
+            });
+        }
+
+        function buildTable(filtered) {
+            const body = document.getElementById('detailBody');
+            const rows = [...filtered].reverse();
+            body.innerHTML = rows.map(d => {
+                const sleepBadge = d.total_sleep_hours == null ? '<span class="no-data">-</span>'
+                    : d.total_sleep_hours >= 9 ? `<span class="badge badge-good">${d.total_sleep_hours.toFixed(1)}h</span>`
+                    : d.total_sleep_hours >= 7 ? `<span class="badge badge-warn">${d.total_sleep_hours.toFixed(1)}h</span>`
+                    : `<span class="badge badge-bad">${d.total_sleep_hours.toFixed(1)}h</span>`;
+
+                const throughBadge = d.slept_through == null ? '-'
+                    : d.slept_through ? '<span class="badge badge-good">Yes</span>'
+                    : '<span class="badge badge-bad">No</span>';
+
+                const wakingsBadge = d.total_sleep_hours == null ? '-'
+                    : d.night_wakings === 0 ? '<span class="badge badge-good">0</span>'
+                    : d.night_wakings === 1 ? `<span class="badge badge-warn">${d.night_wakings}</span>`
+                    : `<span class="badge badge-bad">${d.night_wakings}</span>`;
+
+                const dateObj = new Date(d.date + 'T00:00:00');
+                const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+                const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+                const dateStr = `${dayNames[dateObj.getDay()]}, ${monthNames[dateObj.getMonth()]} ${dateObj.getDate()}`;
+
+                const wakingNotes = d.waking_details.length > 0
+                    ? d.waking_details.map(w => {
+                        const dur = w.duration_hours != null ? ` (${(w.duration_hours * 60).toFixed(0)}min)` : '';
+                        return `Woke at ${w.wake_time}${dur}`;
+                    }).join('; ')
+                    : '';
+
+                return `<tr>
+                    <td>${dateStr}</td>
+                    <td>${d.bedtime || '<span class="no-data">-</span>'}</td>
+                    <td>${d.wake_time || '<span class="no-data">-</span>'}</td>
+                    <td>${sleepBadge}</td>
+                    <td>${wakingsBadge}</td>
+                    <td>${throughBadge}</td>
+                    <td style="max-width:300px; font-size:0.8rem; color: var(--text-muted)">${wakingNotes}</td>
+                </tr>`;
+            }).join('');
+        }
+
+        function populateMonthSelect() {
+            const sel = document.getElementById('monthSelect');
+            const yearMonths = [...new Set(data.map(d => d.date.substring(0, 7)))].sort();
+            const names = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            yearMonths.forEach(ym => {
+                const [year, month] = ym.split('-');
+                const opt = document.createElement('option');
+                opt.value = ym;
+                opt.textContent = `${names[parseInt(month)]} ${year}`;
+                sel.appendChild(opt);
+            });
+        }
+
+        function update() {
+            const filtered = filterData();
+            updateStats(filtered);
+            buildCharts(filtered);
+            buildTable(filtered);
+
+            const first = filtered[0]?.date;
+            const last = filtered[filtered.length - 1]?.date;
+            if (first && last) {
+                const f = new Date(first + 'T00:00:00');
+                const l = new Date(last + 'T00:00:00');
+                const opts = { year: 'numeric', month: 'long', day: 'numeric' };
+                document.getElementById('dateRange').textContent =
+                    `${f.toLocaleDateString('en-US', opts)} — ${l.toLocaleDateString('en-US', opts)}`;
+            }
+        }
+
+        populateMonthSelect();
+        document.getElementById('rangeSelect').addEventListener('change', update);
+        document.getElementById('avgSelect').addEventListener('change', update);
+        document.getElementById('monthSelect').addEventListener('change', update);
+        update();
+    })();
+    </script>
+</body>
+</html>

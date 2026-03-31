@@ -1,0 +1,5925 @@
+const SLEEP_DATA = [
+  {
+    "date": "2025-02-01",
+    "bedtime": "8:17pm",
+    "bedtime_decimal": 20.28,
+    "wake_time": "3:48am",
+    "wake_time_decimal": 27.8,
+    "total_sleep_hours": 7.52,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 8:17pm | Woke up at 3:48am"
+  },
+  {
+    "date": "2025-02-02",
+    "bedtime": "7:41pm",
+    "bedtime_decimal": 19.68,
+    "wake_time": "8:00am",
+    "wake_time_decimal": 32.0,
+    "total_sleep_hours": 9.12,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "1:48",
+        "duration_hours": 3.18
+      },
+      {
+        "wake_time": "1:48",
+        "duration_hours": 3.18
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 7:41pm | Awake at 1:48am - 4:59am | Fell asleep at 5am and woke up at 8am"
+  },
+  {
+    "date": "2025-02-03",
+    "bedtime": "8:30pm",
+    "bedtime_decimal": 20.5,
+    "wake_time": "8:16am",
+    "wake_time_decimal": 32.27,
+    "total_sleep_hours": 5.78,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "0:03",
+        "duration_hours": 5.97
+      },
+      {
+        "wake_time": "0:03",
+        "duration_hours": 5.97
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 8:30pm | Awake at 12:03am - 6:01am | Fell asleep at 6:02am and woke up at 8:16am"
+  },
+  {
+    "date": "2025-02-04",
+    "bedtime": "7:48pm",
+    "bedtime_decimal": 19.8,
+    "wake_time": "4:45am",
+    "wake_time_decimal": 28.75,
+    "total_sleep_hours": 8.95,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 7:48pm | Woke up at 4:45am"
+  },
+  {
+    "date": "2025-02-05",
+    "bedtime": "8:53pm",
+    "bedtime_decimal": 20.88,
+    "wake_time": "8:00am",
+    "wake_time_decimal": 32.0,
+    "total_sleep_hours": 6.73,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "1:27",
+        "duration_hours": 0.27
+      },
+      {
+        "wake_time": "1:27",
+        "duration_hours": 0.27
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 8:53pm | Awake at 12:57 - 12:58am | Fell asleep at 12:59am | Awake at 1:27am - 1:43am | Fell asleep at 1:44am and woke up at 8am"
+  },
+  {
+    "date": "2025-02-06",
+    "bedtime": "9:17pm",
+    "bedtime_decimal": 21.28,
+    "wake_time": "3:55am",
+    "wake_time_decimal": 27.92,
+    "total_sleep_hours": 6.45,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "3:29",
+        "duration_hours": 0.17
+      },
+      {
+        "wake_time": "3:29",
+        "duration_hours": 0.17
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:17pm | Awake at 3:29am - 3:39am | Fell asleep at 3:40am and woke up at 3:55am"
+  },
+  {
+    "date": "2025-02-07",
+    "bedtime": "7:43pm",
+    "bedtime_decimal": 19.72,
+    "wake_time": "8:18am",
+    "wake_time_decimal": 32.3,
+    "total_sleep_hours": 6.72,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "23:20",
+        "duration_hours": 5.85
+      },
+      {
+        "wake_time": "23:20",
+        "duration_hours": 5.85
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 7:43pm | Awake at 11:20pm - 5:11am | Fell asleep at 5:12am and woke up at 8:18am"
+  },
+  {
+    "date": "2025-02-08",
+    "bedtime": "4:42pm",
+    "bedtime_decimal": 16.7,
+    "wake_time": "8:00am",
+    "wake_time_decimal": 32.0,
+    "total_sleep_hours": 9.55,
+    "night_wakings": 4,
+    "waking_details": [
+      {
+        "wake_time": "19:46",
+        "duration_hours": 4.38
+      },
+      {
+        "wake_time": "19:46",
+        "duration_hours": 4.38
+      },
+      {
+        "wake_time": "3:04",
+        "duration_hours": 1.33
+      },
+      {
+        "wake_time": "3:04",
+        "duration_hours": 1.33
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 4:42pm | Awake at 7:46pm - 12:09am | Fell asleep at 12:10am | Awake at 3:04am - 4:24am | Fell asleep at 4:25am and woke. up at 8am"
+  },
+  {
+    "date": "2025-02-09",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": ""
+  },
+  {
+    "date": "2025-02-10",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": ""
+  },
+  {
+    "date": "2025-02-11",
+    "bedtime": "8:32pm",
+    "bedtime_decimal": 20.53,
+    "wake_time": "2:01am",
+    "wake_time_decimal": 26.02,
+    "total_sleep_hours": 5.48,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "2:01",
+        "duration_hours": 0.27
+      },
+      {
+        "wake_time": "2:01",
+        "duration_hours": 0.27
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 8:32pm | Awake at 2:01am - 2:17am"
+  },
+  {
+    "date": "2025-02-12",
+    "bedtime": "9:43pm",
+    "bedtime_decimal": 21.72,
+    "wake_time": "4:50am",
+    "wake_time_decimal": 28.83,
+    "total_sleep_hours": 7.08,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "2:56",
+        "duration_hours": 0.02
+      },
+      {
+        "wake_time": "2:56",
+        "duration_hours": 0.02
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:43pm | Awake at 2:56am - 2:57am | Fell asleep at 2:58am and woke up at 4:50am"
+  },
+  {
+    "date": "2025-02-13",
+    "bedtime": "9:35pm",
+    "bedtime_decimal": 21.58,
+    "wake_time": "8:05am",
+    "wake_time_decimal": 32.08,
+    "total_sleep_hours": 10.5,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:35pm and woke up at 8:05am"
+  },
+  {
+    "date": "2025-02-14",
+    "bedtime": "9:33pm",
+    "bedtime_decimal": 21.55,
+    "wake_time": "5:02am",
+    "wake_time_decimal": 29.03,
+    "total_sleep_hours": 6.3,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "3:31",
+        "duration_hours": 1.17
+      },
+      {
+        "wake_time": "3:31",
+        "duration_hours": 1.17
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:33pm | Awake at 3:31am - 4:41am | Fell asleep at 4:42am and woke up at 5:02am"
+  },
+  {
+    "date": "2025-02-15",
+    "bedtime": "8:31pm",
+    "bedtime_decimal": 20.52,
+    "wake_time": "8:00am",
+    "wake_time_decimal": 32.0,
+    "total_sleep_hours": 10.67,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "4:20",
+        "duration_hours": 0.8
+      },
+      {
+        "wake_time": "4:20",
+        "duration_hours": 0.8
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 8:31pm | Awake at 4:20am - 5:08am | Asleep at 5:09am and woke up at 8am"
+  },
+  {
+    "date": "2025-02-16",
+    "bedtime": "9:34pm",
+    "bedtime_decimal": 21.57,
+    "wake_time": "6:49am",
+    "wake_time_decimal": 30.82,
+    "total_sleep_hours": 8.88,
+    "night_wakings": 3,
+    "waking_details": [
+      {
+        "wake_time": "1:11",
+        "duration_hours": 0.23
+      },
+      {
+        "wake_time": "1:11",
+        "duration_hours": 0.23
+      },
+      {
+        "wake_time": "4:55",
+        "duration_hours": 0.12
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Feel asleep at 9:34pm | Awake at 1:11am - 1:25am | Fell asleep at 1:26am and woke up at 4:55am | Fell asleep at 5:02am and woke up at 6:49am"
+  },
+  {
+    "date": "2025-02-17",
+    "bedtime": "9:15pm",
+    "bedtime_decimal": 21.25,
+    "wake_time": "6:10am",
+    "wake_time_decimal": 30.17,
+    "total_sleep_hours": 4.63,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "1:37",
+        "duration_hours": 4.27
+      },
+      {
+        "wake_time": "1:37",
+        "duration_hours": 4.27
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:15pm | Awake at 1:37am - 5:53am | Fell asleep at 5:54am and woke up at 6:10am"
+  },
+  {
+    "date": "2025-02-18",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": ""
+  },
+  {
+    "date": "2025-02-19",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": ""
+  },
+  {
+    "date": "2025-02-20",
+    "bedtime": "9:32pm",
+    "bedtime_decimal": 21.53,
+    "wake_time": "4:53am",
+    "wake_time_decimal": 28.88,
+    "total_sleep_hours": 7.35,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:32pm | Awake at 4:53am"
+  },
+  {
+    "date": "2025-02-21",
+    "bedtime": "8:21pm",
+    "bedtime_decimal": 20.35,
+    "wake_time": "8:00am",
+    "wake_time_decimal": 32.0,
+    "total_sleep_hours": 11.65,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 8:21pm | Woke up at 8am"
+  },
+  {
+    "date": "2025-02-22",
+    "bedtime": "8:35pm",
+    "bedtime_decimal": 20.58,
+    "wake_time": "9:09am",
+    "wake_time_decimal": 33.15,
+    "total_sleep_hours": 8.63,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "1:05",
+        "duration_hours": 3.92
+      },
+      {
+        "wake_time": "1:05",
+        "duration_hours": 3.92
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 8:35pm | Awake at 1:05am - 5am | Fell asleep at 5:01am and woke up at 9:09am"
+  },
+  {
+    "date": "2025-02-23",
+    "bedtime": "8:38pm",
+    "bedtime_decimal": 20.63,
+    "wake_time": "9:58am",
+    "wake_time_decimal": 33.97,
+    "total_sleep_hours": 6.12,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "23:32",
+        "duration_hours": 7.2
+      },
+      {
+        "wake_time": "23:32",
+        "duration_hours": 7.2
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 8:38pm | Awake at 11:32pm - 6:44am | Fell asleep at 6:45am and woke up at 9:58am"
+  },
+  {
+    "date": "2025-02-24",
+    "bedtime": "8:35pm",
+    "bedtime_decimal": 20.58,
+    "wake_time": "3:57am",
+    "wake_time_decimal": 27.95,
+    "total_sleep_hours": 6.72,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "0:10",
+        "duration_hours": 0.63
+      },
+      {
+        "wake_time": "0:10",
+        "duration_hours": 0.63
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 8:35pm | Awake at 12:10am - 12:48am | Asleep at 12:49am - 3:56am | Awake at 3:57am"
+  },
+  {
+    "date": "2025-02-25",
+    "bedtime": "8:29pm",
+    "bedtime_decimal": 20.48,
+    "wake_time": "5:45am",
+    "wake_time_decimal": 29.75,
+    "total_sleep_hours": 9.02,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "20:36",
+        "duration_hours": 0.23
+      },
+      {
+        "wake_time": "20:36",
+        "duration_hours": 0.23
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 8:29pm | Awake at 8:36pm - 8:50pm | Fell asleep at 8:51pm and woke up at 5:45am"
+  },
+  {
+    "date": "2025-02-26",
+    "bedtime": "9:05pm",
+    "bedtime_decimal": 21.08,
+    "wake_time": "8:00am",
+    "wake_time_decimal": 32.0,
+    "total_sleep_hours": 6.38,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "0:58",
+        "duration_hours": 4.52
+      },
+      {
+        "wake_time": "0:58",
+        "duration_hours": 4.52
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:05pm | Awake at 12:58am - 5:29am | Fell asleep at 5:30am and woke up at 8am"
+  },
+  {
+    "date": "2025-02-27",
+    "bedtime": "8:10pm",
+    "bedtime_decimal": 20.17,
+    "wake_time": "6:56am",
+    "wake_time_decimal": 30.93,
+    "total_sleep_hours": 10.15,
+    "night_wakings": 4,
+    "waking_details": [
+      {
+        "wake_time": "23:34",
+        "duration_hours": 0.27
+      },
+      {
+        "wake_time": "23:34",
+        "duration_hours": 0.27
+      },
+      {
+        "wake_time": "0:04",
+        "duration_hours": 0.32
+      },
+      {
+        "wake_time": "0:04",
+        "duration_hours": 0.32
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 8:10pm | Awake at 11:34pm - 11:50pm | Asleep at 11:51pm - 12:03am | Awake at 12:04am - 12:23am | Fell asleep at 12:24am and woke up at 6:56am"
+  },
+  {
+    "date": "2025-02-28",
+    "bedtime": "9:54pm",
+    "bedtime_decimal": 21.9,
+    "wake_time": "1:03am",
+    "wake_time_decimal": 25.05,
+    "total_sleep_hours": 3.15,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "1:03",
+        "duration_hours": 2.22
+      },
+      {
+        "wake_time": "1:03",
+        "duration_hours": 2.22
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:54pm | Awake at 1:03am - 3:16am | Asleep at 3:17am - 8am"
+  },
+  {
+    "date": "2025-03-01",
+    "bedtime": "12:02am",
+    "bedtime_decimal": 24.03,
+    "wake_time": "8:54am",
+    "wake_time_decimal": 32.9,
+    "total_sleep_hours": 8.87,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Took a nap at 3:46pm - 6:19pm | Fell asleep at 12:02am and woke up at 8:54am"
+  },
+  {
+    "date": "2025-03-02",
+    "bedtime": "8:54pm",
+    "bedtime_decimal": 20.9,
+    "wake_time": "12:44am",
+    "wake_time_decimal": 24.73,
+    "total_sleep_hours": 3.83,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "0:44",
+        "duration_hours": 4.03
+      },
+      {
+        "wake_time": "0:44",
+        "duration_hours": 4.03
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 8:54pm | Awake at 12:44am - 4:46am | Asleep at 4:47am - 8:33am"
+  },
+  {
+    "date": "2025-03-03",
+    "bedtime": "9:46pm",
+    "bedtime_decimal": 21.77,
+    "wake_time": "8:25am",
+    "wake_time_decimal": 32.42,
+    "total_sleep_hours": 10.1,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "4:00",
+        "duration_hours": 0.53
+      },
+      {
+        "wake_time": "4:00",
+        "duration_hours": 0.53
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:46pm | Awake at 4am - 4:32am | Asleep at 4:33am and woke up at 8:25am"
+  },
+  {
+    "date": "2025-03-04",
+    "bedtime": "9:44pm",
+    "bedtime_decimal": 21.73,
+    "wake_time": "8:02am",
+    "wake_time_decimal": 32.03,
+    "total_sleep_hours": 7.38,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "2:29",
+        "duration_hours": 2.9
+      },
+      {
+        "wake_time": "2:29",
+        "duration_hours": 2.9
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:44pm | Awake at 2:29am - 5:23am | Asleep at 5:24am and woke up at 8:02am"
+  },
+  {
+    "date": "2025-03-05",
+    "bedtime": "8:26pm",
+    "bedtime_decimal": 20.43,
+    "wake_time": "8:32am",
+    "wake_time_decimal": 32.53,
+    "total_sleep_hours": 9.67,
+    "night_wakings": 4,
+    "waking_details": [
+      {
+        "wake_time": "1:26",
+        "duration_hours": 0.13
+      },
+      {
+        "wake_time": "1:26",
+        "duration_hours": 0.13
+      },
+      {
+        "wake_time": "2:36",
+        "duration_hours": 2.27
+      },
+      {
+        "wake_time": "2:36",
+        "duration_hours": 2.27
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 8:26pm | Awake at 1:26am - 1:34am | Asleep at 1:35am - 2:35am | Awake at 2:36am - 4:52am | Fell asleep at 4:53am and woke up at 8:32am"
+  },
+  {
+    "date": "2025-03-06",
+    "bedtime": "9:50pm",
+    "bedtime_decimal": 21.83,
+    "wake_time": "3:57am",
+    "wake_time_decimal": 27.95,
+    "total_sleep_hours": 6.12,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:50pm | Awake at 3:57am"
+  },
+  {
+    "date": "2025-03-07",
+    "bedtime": "8:57pm",
+    "bedtime_decimal": 20.95,
+    "wake_time": "4:01am",
+    "wake_time_decimal": 28.02,
+    "total_sleep_hours": 6.63,
+    "night_wakings": 6,
+    "waking_details": [
+      {
+        "wake_time": "21:07",
+        "duration_hours": 0.35
+      },
+      {
+        "wake_time": "21:07",
+        "duration_hours": 0.35
+      },
+      {
+        "wake_time": "23:48",
+        "duration_hours": 0.05
+      },
+      {
+        "wake_time": "23:48",
+        "duration_hours": 0.05
+      },
+      {
+        "wake_time": "4:01",
+        "duration_hours": 0.02
+      },
+      {
+        "wake_time": "4:01",
+        "duration_hours": 0.02
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 8:57pm | Awake at 9:07pm - 9:28pm | Asleep at 9:29pm - 11:47pm | Awake at 11:48pm - 11:51pm | Asleep at 11:52pm - 4:00am | Awake at 4:01am - 4:02am | Asleep at 4:03am - 8:00am"
+  },
+  {
+    "date": "2025-03-08",
+    "bedtime": "8:37pm",
+    "bedtime_decimal": 20.62,
+    "wake_time": "12:30am",
+    "wake_time_decimal": 24.5,
+    "total_sleep_hours": 3.88,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "0:30",
+        "duration_hours": 5.32
+      },
+      {
+        "wake_time": "0:30",
+        "duration_hours": 5.32
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 8:37pm | Awake at 12:30am - 5:49am | Asleep at 5:50am - 9:54am"
+  },
+  {
+    "date": "2025-03-09",
+    "bedtime": "9:09pm",
+    "bedtime_decimal": 21.15,
+    "wake_time": "9:25am",
+    "wake_time_decimal": 33.42,
+    "total_sleep_hours": 12.27,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:09pm | Awake at 9:25am"
+  },
+  {
+    "date": "2025-03-10",
+    "bedtime": "8:42pm",
+    "bedtime_decimal": 20.7,
+    "wake_time": "5:04am",
+    "wake_time_decimal": 29.07,
+    "total_sleep_hours": 8.37,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 8:42pm | Awake at 5:04am"
+  },
+  {
+    "date": "2025-03-11",
+    "bedtime": "8:16pm",
+    "bedtime_decimal": 20.27,
+    "wake_time": "2:48am",
+    "wake_time_decimal": 26.8,
+    "total_sleep_hours": 6.53,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 8:16pm | Awake at 2:48am"
+  },
+  {
+    "date": "2025-03-12",
+    "bedtime": "7:42pm",
+    "bedtime_decimal": 19.7,
+    "wake_time": "2:26am",
+    "wake_time_decimal": 26.43,
+    "total_sleep_hours": 6.73,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 7:42pm | Awake at 2:26am"
+  },
+  {
+    "date": "2025-03-13",
+    "bedtime": "7:42pm",
+    "bedtime_decimal": 19.7,
+    "wake_time": "1:44am",
+    "wake_time_decimal": 25.73,
+    "total_sleep_hours": 6.03,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 7:42pm | Awake at 1:44am"
+  },
+  {
+    "date": "2025-03-14",
+    "bedtime": "11:09pm",
+    "bedtime_decimal": 23.15,
+    "wake_time": "9:04am",
+    "wake_time_decimal": 33.07,
+    "total_sleep_hours": 9.92,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 11:09pm | Awake at 9:04am"
+  },
+  {
+    "date": "2025-03-15",
+    "bedtime": "9:02pm",
+    "bedtime_decimal": 21.03,
+    "wake_time": "5:16am",
+    "wake_time_decimal": 29.27,
+    "total_sleep_hours": 8.23,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:02pm | Awake at 5:16am"
+  },
+  {
+    "date": "2025-03-16",
+    "bedtime": "8:37pm",
+    "bedtime_decimal": 20.62,
+    "wake_time": "2:41am",
+    "wake_time_decimal": 26.68,
+    "total_sleep_hours": 6.07,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 8:37pm | Awake at 2:41am"
+  },
+  {
+    "date": "2025-03-17",
+    "bedtime": "8:11pm",
+    "bedtime_decimal": 20.18,
+    "wake_time": "7:07am",
+    "wake_time_decimal": 31.12,
+    "total_sleep_hours": 10.93,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 8:11pm | Awake at 7:07am"
+  },
+  {
+    "date": "2025-03-18",
+    "bedtime": "8:34pm",
+    "bedtime_decimal": 20.57,
+    "wake_time": "2:39am",
+    "wake_time_decimal": 26.65,
+    "total_sleep_hours": 6.08,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 8:34pm | Awake at 2:39am"
+  },
+  {
+    "date": "2025-03-19",
+    "bedtime": "8:10pm",
+    "bedtime_decimal": 20.17,
+    "wake_time": "7:12am",
+    "wake_time_decimal": 31.2,
+    "total_sleep_hours": 11.03,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 8:10pm | Awake at 7:12am"
+  },
+  {
+    "date": "2025-03-20",
+    "bedtime": "8:24pm",
+    "bedtime_decimal": 20.4,
+    "wake_time": "7:07am",
+    "wake_time_decimal": 31.12,
+    "total_sleep_hours": 6.47,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "23:55",
+        "duration_hours": 4.25
+      },
+      {
+        "wake_time": "23:55",
+        "duration_hours": 4.25
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 8:24pm | Awake at 11:55pm - 4:10am | Awake at 7:07am"
+  },
+  {
+    "date": "2025-03-21",
+    "bedtime": "8:49pm",
+    "bedtime_decimal": 20.82,
+    "wake_time": "6:18am",
+    "wake_time_decimal": 30.3,
+    "total_sleep_hours": 9.48,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 8:49pm | Awake at 6:18am"
+  },
+  {
+    "date": "2025-03-22",
+    "bedtime": "9:46pm",
+    "bedtime_decimal": 21.77,
+    "wake_time": "6:55am",
+    "wake_time_decimal": 30.92,
+    "total_sleep_hours": 9.15,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:46pm | Awake at 6:55am"
+  },
+  {
+    "date": "2025-03-23",
+    "bedtime": "9:28pm",
+    "bedtime_decimal": 21.47,
+    "wake_time": "6:51am",
+    "wake_time_decimal": 30.85,
+    "total_sleep_hours": 9.38,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:28pm | Awake at 6:51am"
+  },
+  {
+    "date": "2025-03-24",
+    "bedtime": "9:58pm",
+    "bedtime_decimal": 21.97,
+    "wake_time": "6:47am",
+    "wake_time_decimal": 30.78,
+    "total_sleep_hours": 8.82,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:58pm | Awake at 6:47am"
+  },
+  {
+    "date": "2025-03-25",
+    "bedtime": "9:14pm",
+    "bedtime_decimal": 21.23,
+    "wake_time": "3:40am",
+    "wake_time_decimal": 27.67,
+    "total_sleep_hours": 6.43,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:14pm | Awake at 3:40am"
+  },
+  {
+    "date": "2025-03-26",
+    "bedtime": "9:22pm",
+    "bedtime_decimal": 21.37,
+    "wake_time": "8:17am",
+    "wake_time_decimal": 32.28,
+    "total_sleep_hours": 10.92,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:22pm | Awake at 8:17am"
+  },
+  {
+    "date": "2025-03-27",
+    "bedtime": "10:04pm",
+    "bedtime_decimal": 22.07,
+    "wake_time": "4:26am",
+    "wake_time_decimal": 28.43,
+    "total_sleep_hours": 6.37,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:04pm | Awake at 4:26am"
+  },
+  {
+    "date": "2025-03-28",
+    "bedtime": "9:09pm",
+    "bedtime_decimal": 21.15,
+    "wake_time": "8:46am",
+    "wake_time_decimal": 32.77,
+    "total_sleep_hours": 7.55,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "2:52",
+        "duration_hours": 4.05
+      },
+      {
+        "wake_time": "2:52",
+        "duration_hours": 4.05
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:09pm | Awake at 2:52am - 6:55am | Asleep at 6:56am - 8:38am | Awake at 8:46am"
+  },
+  {
+    "date": "2025-03-29",
+    "bedtime": "9:07pm",
+    "bedtime_decimal": 21.12,
+    "wake_time": "4:13am",
+    "wake_time_decimal": 28.22,
+    "total_sleep_hours": 7.1,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:07pm | Awake at 4:13am"
+  },
+  {
+    "date": "2025-03-30",
+    "bedtime": "9:27pm",
+    "bedtime_decimal": 21.45,
+    "wake_time": "7:08am",
+    "wake_time_decimal": 31.13,
+    "total_sleep_hours": 9.3,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "4:14",
+        "duration_hours": 0.37
+      },
+      {
+        "wake_time": "4:14",
+        "duration_hours": 0.37
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:27pm | Awake at 4:14am - 4:36am | Asleep at 4:37am - 7:07am | Awake at 7:08am"
+  },
+  {
+    "date": "2025-03-31",
+    "bedtime": "9:22pm",
+    "bedtime_decimal": 21.37,
+    "wake_time": "3:40am",
+    "wake_time_decimal": 27.67,
+    "total_sleep_hours": 6.3,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Asleep at 9:22pm | Awake at 3:40am"
+  },
+  {
+    "date": "2025-04-01",
+    "bedtime": "9:11pm",
+    "bedtime_decimal": 21.18,
+    "wake_time": "6:30am",
+    "wake_time_decimal": 30.5,
+    "total_sleep_hours": 9.32,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Asleep at 9:11pm | Awake at 6:30am"
+  },
+  {
+    "date": "2025-04-02",
+    "bedtime": "9:22pm",
+    "bedtime_decimal": 21.37,
+    "wake_time": "8:14am",
+    "wake_time_decimal": 32.23,
+    "total_sleep_hours": 7.57,
+    "night_wakings": 4,
+    "waking_details": [
+      {
+        "wake_time": "1:19",
+        "duration_hours": 0.3
+      },
+      {
+        "wake_time": "1:19",
+        "duration_hours": 0.3
+      },
+      {
+        "wake_time": "2:01",
+        "duration_hours": 2.97
+      },
+      {
+        "wake_time": "2:01",
+        "duration_hours": 2.97
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Asleep at 9:22pm | Awake at 1:19am - 1:37am | Asleep at 1:38am - 2:00am | Awake at 2:01am - 4:59am | Asleep at 5am | Awake at 8:14am"
+  },
+  {
+    "date": "2025-04-03",
+    "bedtime": "9:21pm",
+    "bedtime_decimal": 21.35,
+    "wake_time": "8:24am",
+    "wake_time_decimal": 32.4,
+    "total_sleep_hours": 10.88,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "3:03",
+        "duration_hours": 0.15
+      },
+      {
+        "wake_time": "3:03",
+        "duration_hours": 0.15
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Asleep at 9:21pm | Awake at 3:03am - 3:12am | Asleep at 3:13am - 8:23am | Awake at 8:24am"
+  },
+  {
+    "date": "2025-04-04",
+    "bedtime": "9:40pm",
+    "bedtime_decimal": 21.67,
+    "wake_time": "7:40am",
+    "wake_time_decimal": 31.67,
+    "total_sleep_hours": 10.0,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Asleep at 9:40pm | Awake at 7:40am"
+  },
+  {
+    "date": "2025-04-05",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": ""
+  },
+  {
+    "date": "2025-04-06",
+    "bedtime": "9:33pm",
+    "bedtime_decimal": 21.55,
+    "wake_time": "6:15am",
+    "wake_time_decimal": 30.25,
+    "total_sleep_hours": 8.7,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:33pm | Awake at 6:15am"
+  },
+  {
+    "date": "2025-04-07",
+    "bedtime": "11:25pm",
+    "bedtime_decimal": 23.42,
+    "wake_time": "10:22am",
+    "wake_time_decimal": 34.37,
+    "total_sleep_hours": 10.95,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 11:25pm | Awake at 10:22am"
+  },
+  {
+    "date": "2025-04-08",
+    "bedtime": "10:35pm",
+    "bedtime_decimal": 22.58,
+    "wake_time": "7:16am",
+    "wake_time_decimal": 31.27,
+    "total_sleep_hours": 8.68,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:35pm | Awake at 7:16am"
+  },
+  {
+    "date": "2025-04-09",
+    "bedtime": "11:14pm",
+    "bedtime_decimal": 23.23,
+    "wake_time": "8:37am",
+    "wake_time_decimal": 32.62,
+    "total_sleep_hours": 9.38,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 11:14pm | Awake at 8:37am"
+  },
+  {
+    "date": "2025-04-10",
+    "bedtime": "10:42pm",
+    "bedtime_decimal": 22.7,
+    "wake_time": "5:49am",
+    "wake_time_decimal": 29.82,
+    "total_sleep_hours": 7.12,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:42pm | Awake at 5:49am"
+  },
+  {
+    "date": "2025-04-11",
+    "bedtime": "11:11pm",
+    "bedtime_decimal": 23.18,
+    "wake_time": "8:14am",
+    "wake_time_decimal": 32.23,
+    "total_sleep_hours": 9.05,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 11:11pm | Awake at 8:14am"
+  },
+  {
+    "date": "2025-04-12",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": ""
+  },
+  {
+    "date": "2025-04-13",
+    "bedtime": "8:26pm",
+    "bedtime_decimal": 20.43,
+    "wake_time": "5:56am",
+    "wake_time_decimal": 29.93,
+    "total_sleep_hours": 9.5,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 8:26pm | Awake at 5:56am"
+  },
+  {
+    "date": "2025-04-14",
+    "bedtime": "9:05pm",
+    "bedtime_decimal": 21.08,
+    "wake_time": "6:09am",
+    "wake_time_decimal": 30.15,
+    "total_sleep_hours": 9.07,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:05pm | Awake at 6:09am"
+  },
+  {
+    "date": "2025-04-15",
+    "bedtime": "9:14pm",
+    "bedtime_decimal": 21.23,
+    "wake_time": "10:15am",
+    "wake_time_decimal": 34.25,
+    "total_sleep_hours": 6.95,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "0:35",
+        "duration_hours": 6.05
+      },
+      {
+        "wake_time": "0:35",
+        "duration_hours": 6.05
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:14pm | Awake at 12:35am - 6:38am | Asleep at 6:39am | Awake at 10:15am"
+  },
+  {
+    "date": "2025-04-16",
+    "bedtime": "9:09pm",
+    "bedtime_decimal": 21.15,
+    "wake_time": "5:36am",
+    "wake_time_decimal": 29.6,
+    "total_sleep_hours": 8.45,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:09pm | Awake at 5:36am"
+  },
+  {
+    "date": "2025-04-17",
+    "bedtime": "9:36pm",
+    "bedtime_decimal": 21.6,
+    "wake_time": "6:38am",
+    "wake_time_decimal": 30.63,
+    "total_sleep_hours": 9.03,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Asleep at 9:36pm | Awake at 6:38am"
+  },
+  {
+    "date": "2025-04-18",
+    "bedtime": "9:44pm",
+    "bedtime_decimal": 21.73,
+    "wake_time": "5:19am",
+    "wake_time_decimal": 29.32,
+    "total_sleep_hours": 7.58,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:44pm | Awake at 5:19am"
+  },
+  {
+    "date": "2025-04-19",
+    "bedtime": "9:23pm",
+    "bedtime_decimal": 21.38,
+    "wake_time": "3:38am",
+    "wake_time_decimal": 27.63,
+    "total_sleep_hours": 6.25,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:23pm | Awake at 3:38am; fell asleep again at 5:59am | Awake at 9: 08am"
+  },
+  {
+    "date": "2025-04-20",
+    "bedtime": "9:48pm",
+    "bedtime_decimal": 21.8,
+    "wake_time": "8:02am",
+    "wake_time_decimal": 32.03,
+    "total_sleep_hours": 10.23,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:48pm | Awake at 8:02am"
+  },
+  {
+    "date": "2025-04-21",
+    "bedtime": "9:45pm",
+    "bedtime_decimal": 21.75,
+    "wake_time": "3:45am",
+    "wake_time_decimal": 27.75,
+    "total_sleep_hours": 6.0,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:45pm | Awake at 3:45am"
+  },
+  {
+    "date": "2025-04-22",
+    "bedtime": "9:19pm",
+    "bedtime_decimal": 21.32,
+    "wake_time": "7:58am",
+    "wake_time_decimal": 31.97,
+    "total_sleep_hours": 10.65,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:19pm | Awake at 7:58am"
+  },
+  {
+    "date": "2025-04-23",
+    "bedtime": "10:29pm",
+    "bedtime_decimal": 22.48,
+    "wake_time": "6:35am",
+    "wake_time_decimal": 30.58,
+    "total_sleep_hours": 8.1,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:29pm | Awake at 6:35am"
+  },
+  {
+    "date": "2025-04-24",
+    "bedtime": "8:58pm",
+    "bedtime_decimal": 20.97,
+    "wake_time": "8:20am",
+    "wake_time_decimal": 32.33,
+    "total_sleep_hours": 6.83,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "3:48",
+        "duration_hours": null
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 8:58pm | Woke up at 3:48am; fell asleep again at 6:50am | Woke up at 8:20am"
+  },
+  {
+    "date": "2025-04-25",
+    "bedtime": "9:18pm",
+    "bedtime_decimal": 21.3,
+    "wake_time": "8:30am",
+    "wake_time_decimal": 32.5,
+    "total_sleep_hours": 6.07,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "3:22",
+        "duration_hours": null
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:18pm | Woke up at 3:22am; fell asleep again at 6:06am | Woke up at 8:30am"
+  },
+  {
+    "date": "2025-04-26",
+    "bedtime": "10:05pm",
+    "bedtime_decimal": 22.08,
+    "wake_time": "4:27am",
+    "wake_time_decimal": 28.45,
+    "total_sleep_hours": 6.37,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:05pm | Woke up at 4:27am"
+  },
+  {
+    "date": "2025-04-27",
+    "bedtime": "9:51pm",
+    "bedtime_decimal": 21.85,
+    "wake_time": "2:44am",
+    "wake_time_decimal": 26.73,
+    "total_sleep_hours": 4.88,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:51pm | Woke up at 2:44am"
+  },
+  {
+    "date": "2025-04-28",
+    "bedtime": "8:56pm",
+    "bedtime_decimal": 20.93,
+    "wake_time": "6:09am",
+    "wake_time_decimal": 30.15,
+    "total_sleep_hours": 9.22,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 8:56pm | Woke up at 6:09am"
+  },
+  {
+    "date": "2025-04-29",
+    "bedtime": "9:14pm",
+    "bedtime_decimal": 21.23,
+    "wake_time": "6:12am",
+    "wake_time_decimal": 30.2,
+    "total_sleep_hours": 8.97,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:14pm | Woke up at 6:12am"
+  },
+  {
+    "date": "2025-04-30",
+    "bedtime": "9:59pm",
+    "bedtime_decimal": 21.98,
+    "wake_time": "7:03am",
+    "wake_time_decimal": 31.05,
+    "total_sleep_hours": 4.63,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:37",
+        "duration_hours": null
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:59pm | Woke up at 2:37am; fell asleep again at 3:05am | Woke up at 7:03am"
+  },
+  {
+    "date": "2025-05-01",
+    "bedtime": "9:32pm",
+    "bedtime_decimal": 21.53,
+    "wake_time": "2:43am",
+    "wake_time_decimal": 26.72,
+    "total_sleep_hours": 5.18,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:32pm | Woke up at 2:43am"
+  },
+  {
+    "date": "2025-05-02",
+    "bedtime": "9:06pm",
+    "bedtime_decimal": 21.1,
+    "wake_time": "6:57am",
+    "wake_time_decimal": 30.95,
+    "total_sleep_hours": 9.85,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:06pm | Woke up at 6:57am"
+  },
+  {
+    "date": "2025-05-03",
+    "bedtime": "9:52pm",
+    "bedtime_decimal": 21.87,
+    "wake_time": "6:03am",
+    "wake_time_decimal": 30.05,
+    "total_sleep_hours": 8.18,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:52pm | Woke up at 6:03am"
+  },
+  {
+    "date": "2025-05-04",
+    "bedtime": "10:41pm",
+    "bedtime_decimal": 22.68,
+    "wake_time": "7:38am",
+    "wake_time_decimal": 31.63,
+    "total_sleep_hours": 8.95,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:41pm | Woke up at 7:38am"
+  },
+  {
+    "date": "2025-05-05",
+    "bedtime": "9:43pm",
+    "bedtime_decimal": 21.72,
+    "wake_time": "7:38am",
+    "wake_time_decimal": 31.63,
+    "total_sleep_hours": 9.92,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:43pm | Woke up at 7:38am"
+  },
+  {
+    "date": "2025-05-06",
+    "bedtime": "9:41pm",
+    "bedtime_decimal": 21.68,
+    "wake_time": "6:36am",
+    "wake_time_decimal": 30.6,
+    "total_sleep_hours": 8.92,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:41pm | Woke up at 6:36am"
+  },
+  {
+    "date": "2025-05-07",
+    "bedtime": "9:39pm",
+    "bedtime_decimal": 21.65,
+    "wake_time": "3:21am",
+    "wake_time_decimal": 27.35,
+    "total_sleep_hours": 5.7,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:39pm | Woke up at 3:21am"
+  },
+  {
+    "date": "2025-05-08",
+    "bedtime": "9:08pm",
+    "bedtime_decimal": 21.13,
+    "wake_time": "7:37am",
+    "wake_time_decimal": 31.62,
+    "total_sleep_hours": 10.48,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:08pm | Woke up at 7:37am"
+  },
+  {
+    "date": "2025-05-09",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": ""
+  },
+  {
+    "date": "2025-05-10",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": ""
+  },
+  {
+    "date": "2025-05-11",
+    "bedtime": "9:33pm",
+    "bedtime_decimal": 21.55,
+    "wake_time": "2:34am",
+    "wake_time_decimal": 26.57,
+    "total_sleep_hours": 5.02,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:33pm | Woke up at 2:34am"
+  },
+  {
+    "date": "2025-05-12",
+    "bedtime": "9:26pm",
+    "bedtime_decimal": 21.43,
+    "wake_time": "7:27am",
+    "wake_time_decimal": 31.45,
+    "total_sleep_hours": 10.02,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:26pm | Woke up at 7:27am"
+  },
+  {
+    "date": "2025-05-13",
+    "bedtime": "9:28pm",
+    "bedtime_decimal": 21.47,
+    "wake_time": "6:44am",
+    "wake_time_decimal": 30.73,
+    "total_sleep_hours": 6.73,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "2:19",
+        "duration_hours": 0.32
+      },
+      {
+        "wake_time": "3:20",
+        "duration_hours": 2.22
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:28pm | Woke up at 2:19am and slept again at 2:38am | Woke up again at 3:20am; fell asleep at 5:33am | Woke up at 6:44am"
+  },
+  {
+    "date": "2025-05-14",
+    "bedtime": "9:30pm",
+    "bedtime_decimal": 21.5,
+    "wake_time": "7:42am",
+    "wake_time_decimal": 31.7,
+    "total_sleep_hours": 10.07,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "0:25",
+        "duration_hours": 0.13
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:30pm | Woke up at 12:25am and slept again at 12:33am | Woke up at 7:42am"
+  },
+  {
+    "date": "2025-05-15",
+    "bedtime": "9:55pm",
+    "bedtime_decimal": 21.92,
+    "wake_time": "6:44am",
+    "wake_time_decimal": 30.73,
+    "total_sleep_hours": 8.62,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "4:48",
+        "duration_hours": 0.2
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:55pm | Woke up at 4:48am and slept again at 5am | Woke up at 6:44am"
+  },
+  {
+    "date": "2025-05-16",
+    "bedtime": "9:42pm",
+    "bedtime_decimal": 21.7,
+    "wake_time": "1:48am",
+    "wake_time_decimal": 25.8,
+    "total_sleep_hours": 4.1,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:42pm | Woke up at 1:48am"
+  },
+  {
+    "date": "2025-05-17",
+    "bedtime": "9:46pm",
+    "bedtime_decimal": 21.77,
+    "wake_time": "9:05am",
+    "wake_time_decimal": 33.08,
+    "total_sleep_hours": 11.32,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:46pm | Woke up at 9:05am"
+  },
+  {
+    "date": "2025-05-18",
+    "bedtime": "9:47pm",
+    "bedtime_decimal": 21.78,
+    "wake_time": "1:38am",
+    "wake_time_decimal": 25.63,
+    "total_sleep_hours": 3.85,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:47pm | Woke up at 1:38am"
+  },
+  {
+    "date": "2025-05-19",
+    "bedtime": "9:32pm",
+    "bedtime_decimal": 21.53,
+    "wake_time": "8:07am",
+    "wake_time_decimal": 32.12,
+    "total_sleep_hours": 10.43,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "3:45",
+        "duration_hours": 0.15
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:32pm | Woke up at 3:45am and slept again at 3:54am | Woke up at 8:07am"
+  },
+  {
+    "date": "2025-05-20",
+    "bedtime": "9:35pm",
+    "bedtime_decimal": 21.58,
+    "wake_time": "3:30am",
+    "wake_time_decimal": 27.5,
+    "total_sleep_hours": 5.92,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:35pm | Woke up at 3:30am"
+  },
+  {
+    "date": "2025-05-21",
+    "bedtime": "9:09pm",
+    "bedtime_decimal": 21.15,
+    "wake_time": "4:27am",
+    "wake_time_decimal": 28.45,
+    "total_sleep_hours": 7.3,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:09pm | Woke up at 4:27am"
+  },
+  {
+    "date": "2025-05-22",
+    "bedtime": "9:20pm",
+    "bedtime_decimal": 21.33,
+    "wake_time": "8:24am",
+    "wake_time_decimal": 32.4,
+    "total_sleep_hours": 11.07,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:20pm | Woke up at 8:24am"
+  },
+  {
+    "date": "2025-05-23",
+    "bedtime": "9:40pm",
+    "bedtime_decimal": 21.67,
+    "wake_time": "7:03am",
+    "wake_time_decimal": 31.05,
+    "total_sleep_hours": 9.38,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:40pm | Woke up at 7:03am"
+  },
+  {
+    "date": "2025-05-24",
+    "bedtime": "9:13pm",
+    "bedtime_decimal": 21.22,
+    "wake_time": "3:11am",
+    "wake_time_decimal": 27.18,
+    "total_sleep_hours": 5.97,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:13pm | Woke up at 3:11am"
+  },
+  {
+    "date": "2025-05-25",
+    "bedtime": "9:18pm",
+    "bedtime_decimal": 21.3,
+    "wake_time": "6:45am",
+    "wake_time_decimal": 30.75,
+    "total_sleep_hours": 9.45,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:18pm | Woke up at 6:45am"
+  },
+  {
+    "date": "2025-05-26",
+    "bedtime": "9:43pm",
+    "bedtime_decimal": 21.72,
+    "wake_time": "4:00am",
+    "wake_time_decimal": 28.0,
+    "total_sleep_hours": 6.28,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:43pm | Woke up at 4am"
+  },
+  {
+    "date": "2025-05-27",
+    "bedtime": "9:53pm",
+    "bedtime_decimal": 21.88,
+    "wake_time": "7:26am",
+    "wake_time_decimal": 31.43,
+    "total_sleep_hours": 9.55,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:53pm | Woke up at 7:26am"
+  },
+  {
+    "date": "2025-05-28",
+    "bedtime": "9:46pm",
+    "bedtime_decimal": 21.77,
+    "wake_time": "2:06am",
+    "wake_time_decimal": 26.1,
+    "total_sleep_hours": 4.33,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:46pm | Woke up at 2:06am"
+  },
+  {
+    "date": "2025-05-29",
+    "bedtime": "10:31pm",
+    "bedtime_decimal": 22.52,
+    "wake_time": "4:02am",
+    "wake_time_decimal": 28.03,
+    "total_sleep_hours": 5.52,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:31pm | Woke up at 4:02am"
+  },
+  {
+    "date": "2025-05-30",
+    "bedtime": "10:28pm",
+    "bedtime_decimal": 22.47,
+    "wake_time": "8:15am",
+    "wake_time_decimal": 32.25,
+    "total_sleep_hours": 9.78,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:28pm | Woke up at 8:15am"
+  },
+  {
+    "date": "2025-05-31",
+    "bedtime": "11:48pm",
+    "bedtime_decimal": 23.8,
+    "wake_time": "3:30am",
+    "wake_time_decimal": 27.5,
+    "total_sleep_hours": 3.7,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 11:48pm | Woke up at 3:30am"
+  },
+  {
+    "date": "2025-06-01",
+    "bedtime": "11:24pm",
+    "bedtime_decimal": 23.4,
+    "wake_time": "10:05am",
+    "wake_time_decimal": 34.08,
+    "total_sleep_hours": 8.92,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "3:42",
+        "duration_hours": 0.57
+      },
+      {
+        "wake_time": "4:37",
+        "duration_hours": 1.2
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 11:24pm | Woke up at 3:42am and went back to sleep at 4:16am | Woke up again at 4:37am and went back to sleep at 5:49am | Woke up at 10:05am"
+  },
+  {
+    "date": "2025-06-02",
+    "bedtime": "10:28pm",
+    "bedtime_decimal": 22.47,
+    "wake_time": "1:47am",
+    "wake_time_decimal": 25.78,
+    "total_sleep_hours": 9.18,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "1:20",
+        "duration_hours": 0.88
+      },
+      {
+        "wake_time": "1:47",
+        "duration_hours": 0.43
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 10:28pm | Woke up at 1:20am and went back to sleep at 2:13am | Woke up between 5:36am and 5:39am | Woke up at 8:32am | Woke up at 1:47am"
+  },
+  {
+    "date": "2025-06-03",
+    "bedtime": "10:00pm",
+    "bedtime_decimal": 22.0,
+    "wake_time": "5:22am",
+    "wake_time_decimal": 29.37,
+    "total_sleep_hours": 9.6,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "3:20",
+        "duration_hours": 2.33
+      },
+      {
+        "wake_time": "5:22",
+        "duration_hours": 0.3
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 10pm | Woke up at 3:20am and went back to sleep at 5:40am | Woke up at 9:56am | Woke up at 5:22am"
+  },
+  {
+    "date": "2025-06-04",
+    "bedtime": "11:56pm",
+    "bedtime_decimal": 23.93,
+    "wake_time": "7:18am",
+    "wake_time_decimal": 31.3,
+    "total_sleep_hours": 7.37,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 11:56pm | Woke up at 7:18am"
+  },
+  {
+    "date": "2025-06-05",
+    "bedtime": "9:36pm",
+    "bedtime_decimal": 21.6,
+    "wake_time": "8:01am",
+    "wake_time_decimal": 32.02,
+    "total_sleep_hours": 10.42,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:36pm | Woke up at 8:01am"
+  },
+  {
+    "date": "2025-06-06",
+    "bedtime": "9:00pm",
+    "bedtime_decimal": 21.0,
+    "wake_time": "6:58am",
+    "wake_time_decimal": 30.97,
+    "total_sleep_hours": 9.57,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:22",
+        "duration_hours": 0.4
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9pm | Woke up at 2:22am and went back to sleep at 2:46am | Woke up at 6:58am"
+  },
+  {
+    "date": "2025-06-07",
+    "bedtime": "10:05pm",
+    "bedtime_decimal": 22.08,
+    "wake_time": "7:57am",
+    "wake_time_decimal": 31.95,
+    "total_sleep_hours": 9.87,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:05pm | Woke up at 7:57am"
+  },
+  {
+    "date": "2025-06-08",
+    "bedtime": "9:42pm",
+    "bedtime_decimal": 21.7,
+    "wake_time": "7:46am",
+    "wake_time_decimal": 31.77,
+    "total_sleep_hours": 10.07,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:42pm | Woke up at 7:46am"
+  },
+  {
+    "date": "2025-06-09",
+    "bedtime": "1:32am",
+    "bedtime_decimal": 25.53,
+    "wake_time": "8:19am",
+    "wake_time_decimal": 32.32,
+    "total_sleep_hours": 3.45,
+    "night_wakings": 3,
+    "waking_details": [
+      {
+        "wake_time": "3:23",
+        "duration_hours": 0.08
+      },
+      {
+        "wake_time": "4:11",
+        "duration_hours": 0.3
+      },
+      {
+        "wake_time": "4:52",
+        "duration_hours": 2.95
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 1:32am | Woke up at 3:23am and went back to sleep at 3:28am | Woke up again at 4:11am and went back to sleep at 4:29am | Woke up again at 4:52am and went back to sleep at 7:49am | Woke up at 8:19am"
+  },
+  {
+    "date": "2025-06-10",
+    "bedtime": "9:48pm",
+    "bedtime_decimal": 21.8,
+    "wake_time": "3:25am",
+    "wake_time_decimal": 27.42,
+    "total_sleep_hours": 5.62,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:48pm | Woke up at 3:25am"
+  },
+  {
+    "date": "2025-06-11",
+    "bedtime": "10:03pm",
+    "bedtime_decimal": 22.05,
+    "wake_time": "11:11am",
+    "wake_time_decimal": 35.18,
+    "total_sleep_hours": 8.37,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "1:27",
+        "duration_hours": 4.77
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 10:03pm | Woke up at 1:27am and went back to sleep at 6:13am | Woke up at 11:11am"
+  },
+  {
+    "date": "2025-06-12",
+    "bedtime": "10:24pm",
+    "bedtime_decimal": 22.4,
+    "wake_time": "7:06am",
+    "wake_time_decimal": 31.1,
+    "total_sleep_hours": 6.98,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "4:12",
+        "duration_hours": 1.72
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 10:24pm | Woke up at 4:12am and went back to sleep at 5:55am | Woke up at 7:06am"
+  },
+  {
+    "date": "2025-06-13",
+    "bedtime": "10:04pm",
+    "bedtime_decimal": 22.07,
+    "wake_time": "8:24am",
+    "wake_time_decimal": 32.4,
+    "total_sleep_hours": 8.22,
+    "night_wakings": 3,
+    "waking_details": [
+      {
+        "wake_time": "1:25",
+        "duration_hours": 0.1
+      },
+      {
+        "wake_time": "3:14",
+        "duration_hours": 0.35
+      },
+      {
+        "wake_time": "4:03",
+        "duration_hours": 1.67
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 10:04pm | Woke up at 1:25am and went back to sleep at 1:31am | Woke up at 3:14am and went back to sleep at 3:35am | Woke up at 4:03am and went back to sleep at 5:43am | Woke up at 8:24am"
+  },
+  {
+    "date": "2025-06-14",
+    "bedtime": "10:15pm",
+    "bedtime_decimal": 22.25,
+    "wake_time": "7:19am",
+    "wake_time_decimal": 31.32,
+    "total_sleep_hours": 8.97,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "4:25",
+        "duration_hours": 0.1
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 10:15pm | Woke up at 4:25am and went back to sleep at 4:31am | Woke up at 7:19am"
+  },
+  {
+    "date": "2025-06-15",
+    "bedtime": "9:50pm",
+    "bedtime_decimal": 21.83,
+    "wake_time": "8:27am",
+    "wake_time_decimal": 32.45,
+    "total_sleep_hours": 4.4,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "0:39",
+        "duration_hours": 6.22
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:50pm | Woke up at 12:39am and went back to sleep at 6:52am | Woke up at 8:27am"
+  },
+  {
+    "date": "2025-06-16",
+    "bedtime": "10:24pm",
+    "bedtime_decimal": 22.4,
+    "wake_time": "8:17am",
+    "wake_time_decimal": 32.28,
+    "total_sleep_hours": 9.88,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:24pm | Woke up at 8:17am"
+  },
+  {
+    "date": "2025-06-17",
+    "bedtime": "10:05pm",
+    "bedtime_decimal": 22.08,
+    "wake_time": "2:24am",
+    "wake_time_decimal": 26.4,
+    "total_sleep_hours": 4.32,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:24",
+        "duration_hours": 4.67
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 10:05pm | Woke up at 2:24am and went back to sleep at 7:04am"
+  },
+  {
+    "date": "2025-06-18",
+    "bedtime": "9:38pm",
+    "bedtime_decimal": 21.63,
+    "wake_time": "5:40am",
+    "wake_time_decimal": 29.67,
+    "total_sleep_hours": 8.03,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:38pm | Woke up at 5:40am"
+  },
+  {
+    "date": "2025-06-19",
+    "bedtime": "9:07pm",
+    "bedtime_decimal": 21.12,
+    "wake_time": "7:13am",
+    "wake_time_decimal": 31.22,
+    "total_sleep_hours": 10.1,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:07pm | Woke up at 7:13am"
+  },
+  {
+    "date": "2025-06-20",
+    "bedtime": "10:13pm",
+    "bedtime_decimal": 22.22,
+    "wake_time": "2:58am",
+    "wake_time_decimal": 26.97,
+    "total_sleep_hours": 4.75,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:13pm | Woke up at 2:58am"
+  },
+  {
+    "date": "2025-06-21",
+    "bedtime": "9:44pm",
+    "bedtime_decimal": 21.73,
+    "wake_time": "8:00am",
+    "wake_time_decimal": 32.0,
+    "total_sleep_hours": 10.27,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:44pm | Woke up at 8am"
+  },
+  {
+    "date": "2025-06-22",
+    "bedtime": "10:00pm",
+    "bedtime_decimal": 22.0,
+    "wake_time": "7:14am",
+    "wake_time_decimal": 31.23,
+    "total_sleep_hours": 8.37,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "1:58",
+        "duration_hours": 0.87
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 10pm | Woke up at 1:58am and went back to sleep at 2:50am | Woke up at 7:14am"
+  },
+  {
+    "date": "2025-06-23",
+    "bedtime": "9:34pm",
+    "bedtime_decimal": 21.57,
+    "wake_time": "9:12am",
+    "wake_time_decimal": 33.2,
+    "total_sleep_hours": 11.63,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:34pm | Woke up at 9:12am"
+  },
+  {
+    "date": "2025-06-24",
+    "bedtime": "10:29pm",
+    "bedtime_decimal": 22.48,
+    "wake_time": "2:41am",
+    "wake_time_decimal": 26.68,
+    "total_sleep_hours": 4.2,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:41",
+        "duration_hours": 3.45
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 10:29pm | Woke up at 2:41am and went back to sleep at 6:08am"
+  },
+  {
+    "date": "2025-06-25",
+    "bedtime": "11:37pm",
+    "bedtime_decimal": 23.62,
+    "wake_time": "7:59am",
+    "wake_time_decimal": 31.98,
+    "total_sleep_hours": 8.37,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 11:37pm | Woke up at 7:59am"
+  },
+  {
+    "date": "2025-06-26",
+    "bedtime": "9:04pm",
+    "bedtime_decimal": 21.07,
+    "wake_time": "5:17am",
+    "wake_time_decimal": 29.28,
+    "total_sleep_hours": 8.22,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:04pm | Woke up at 5:17am"
+  },
+  {
+    "date": "2025-06-27",
+    "bedtime": "11:10pm",
+    "bedtime_decimal": 23.17,
+    "wake_time": "3:16am",
+    "wake_time_decimal": 27.27,
+    "total_sleep_hours": 4.1,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 11:10pm | Woke up at 3:16am"
+  },
+  {
+    "date": "2025-06-28",
+    "bedtime": "10:47pm",
+    "bedtime_decimal": 22.78,
+    "wake_time": "8:06am",
+    "wake_time_decimal": 32.1,
+    "total_sleep_hours": 9.32,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:47pm | Levi was awake from 3:01-3:05am | Woke up at 8:06am"
+  },
+  {
+    "date": "2025-06-29",
+    "bedtime": "9:08pm",
+    "bedtime_decimal": 21.13,
+    "wake_time": "3:17am",
+    "wake_time_decimal": 27.28,
+    "total_sleep_hours": 6.15,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:08pm | Woke up at 3:17am"
+  },
+  {
+    "date": "2025-06-30",
+    "bedtime": "9:54pm",
+    "bedtime_decimal": 21.9,
+    "wake_time": "8:20am",
+    "wake_time_decimal": 32.33,
+    "total_sleep_hours": 7.88,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "23:01",
+        "duration_hours": 0.12
+      },
+      {
+        "wake_time": "23:12",
+        "duration_hours": 2.43
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:54pm | Woke up at 11:01pm and went back to sleep at 11:08pm | Woke up at 11:12pm and went back to sleep at 1:38am | Woke up at 8:20am"
+  },
+  {
+    "date": "2025-07-01",
+    "bedtime": "10:04pm",
+    "bedtime_decimal": 22.07,
+    "wake_time": "8:20am",
+    "wake_time_decimal": 32.33,
+    "total_sleep_hours": 10.27,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:04pm | Woke up at 8:20am"
+  },
+  {
+    "date": "2025-07-02",
+    "bedtime": "10:20pm",
+    "bedtime_decimal": 22.33,
+    "wake_time": "1:41am",
+    "wake_time_decimal": 25.68,
+    "total_sleep_hours": 3.35,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:20pm | Woke up at 1:41am"
+  },
+  {
+    "date": "2025-07-03",
+    "bedtime": "9:15pm",
+    "bedtime_decimal": 21.25,
+    "wake_time": "6:58am",
+    "wake_time_decimal": 30.97,
+    "total_sleep_hours": 9.72,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:15pm | Levi was awake between 3:46am and 3:49am | Woke up at 6:58am"
+  },
+  {
+    "date": "2025-07-04",
+    "bedtime": "9:30pm",
+    "bedtime_decimal": 21.5,
+    "wake_time": "11:15am",
+    "wake_time_decimal": 35.25,
+    "total_sleep_hours": 7.67,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "1:03",
+        "duration_hours": 6.08
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:30pm | Woke up at 1:03am and fell back asleep at 7:08am | Woke up at 11:15am"
+  },
+  {
+    "date": "2025-07-05",
+    "bedtime": "9:32pm",
+    "bedtime_decimal": 21.53,
+    "wake_time": "6:45am",
+    "wake_time_decimal": 30.75,
+    "total_sleep_hours": 9.22,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:32pm | Woke up at 6:45am"
+  },
+  {
+    "date": "2025-07-06",
+    "bedtime": "9:28pm",
+    "bedtime_decimal": 21.47,
+    "wake_time": "3:38am",
+    "wake_time_decimal": 27.63,
+    "total_sleep_hours": 6.17,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:28pm | Woke up at 3:38am"
+  },
+  {
+    "date": "2025-07-07",
+    "bedtime": "9:20pm",
+    "bedtime_decimal": 21.33,
+    "wake_time": "7:04am",
+    "wake_time_decimal": 31.07,
+    "total_sleep_hours": 9.73,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:20pm | Woke up at 7:04am"
+  },
+  {
+    "date": "2025-07-08",
+    "bedtime": "9:28pm",
+    "bedtime_decimal": 21.47,
+    "wake_time": "6:53am",
+    "wake_time_decimal": 30.88,
+    "total_sleep_hours": 9.42,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:28pm | Woke up at 6:53am"
+  },
+  {
+    "date": "2025-07-09",
+    "bedtime": "9:50pm",
+    "bedtime_decimal": 21.83,
+    "wake_time": "7:41am",
+    "wake_time_decimal": 31.68,
+    "total_sleep_hours": 9.85,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:50pm | Woke up at 7:41am"
+  },
+  {
+    "date": "2025-07-10",
+    "bedtime": "10:09pm",
+    "bedtime_decimal": 22.15,
+    "wake_time": "5:54am",
+    "wake_time_decimal": 29.9,
+    "total_sleep_hours": 7.75,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:09pm | Woke up at 5:54am"
+  },
+  {
+    "date": "2025-07-11",
+    "bedtime": "10:15pm",
+    "bedtime_decimal": 22.25,
+    "wake_time": "6:00am",
+    "wake_time_decimal": 30.0,
+    "total_sleep_hours": 7.75,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:15pm | Woke up at 6am"
+  },
+  {
+    "date": "2025-07-12",
+    "bedtime": "11:25pm",
+    "bedtime_decimal": 23.42,
+    "wake_time": "3:56am",
+    "wake_time_decimal": 27.93,
+    "total_sleep_hours": 4.52,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 11:25pm | Woke up at 3:56am"
+  },
+  {
+    "date": "2025-07-13",
+    "bedtime": "9:19pm",
+    "bedtime_decimal": 21.32,
+    "wake_time": "7:23am",
+    "wake_time_decimal": 31.38,
+    "total_sleep_hours": 10.07,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:19pm | Woke up at 7:23am"
+  },
+  {
+    "date": "2025-07-14",
+    "bedtime": "9:34pm",
+    "bedtime_decimal": 21.57,
+    "wake_time": "9:03am",
+    "wake_time_decimal": 33.05,
+    "total_sleep_hours": 6.18,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "1:42",
+        "duration_hours": 5.3
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:34pm | Woke up at 1:42am and went back to sleep at 7am | Woke up at 9:03am"
+  },
+  {
+    "date": "2025-07-15",
+    "bedtime": "11:25pm",
+    "bedtime_decimal": 23.42,
+    "wake_time": "8:21am",
+    "wake_time_decimal": 32.35,
+    "total_sleep_hours": 8.93,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 11:25pm | Woke up at 8:21am"
+  },
+  {
+    "date": "2025-07-16",
+    "bedtime": "10:00pm",
+    "bedtime_decimal": 22.0,
+    "wake_time": "3:56am",
+    "wake_time_decimal": 27.93,
+    "total_sleep_hours": 5.93,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10pm | Woke up at 3:56am"
+  },
+  {
+    "date": "2025-07-17",
+    "bedtime": "9:56pm",
+    "bedtime_decimal": 21.93,
+    "wake_time": "7:56am",
+    "wake_time_decimal": 31.93,
+    "total_sleep_hours": 10.0,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:56pm | Woke up at 7:56am"
+  },
+  {
+    "date": "2025-07-18",
+    "bedtime": "10:03pm",
+    "bedtime_decimal": 22.05,
+    "wake_time": "5:10am",
+    "wake_time_decimal": 29.17,
+    "total_sleep_hours": 7.12,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:03pm | Woke up at 5:10am"
+  },
+  {
+    "date": "2025-07-19",
+    "bedtime": "9:40pm",
+    "bedtime_decimal": 21.67,
+    "wake_time": "8:00am",
+    "wake_time_decimal": 32.0,
+    "total_sleep_hours": 10.33,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:40pm | Woke up at 8am"
+  },
+  {
+    "date": "2025-07-20",
+    "bedtime": "9:45pm",
+    "bedtime_decimal": 21.75,
+    "wake_time": "7:58am",
+    "wake_time_decimal": 31.97,
+    "total_sleep_hours": 10.22,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:45pm | Woke up at 7:58am"
+  },
+  {
+    "date": "2025-07-21",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": "\u201cNo events found\u201d (Levi Airbnb cam)"
+  },
+  {
+    "date": "2025-07-22",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": "\u201cNo events found\u201d (Levi Airbnb cam)"
+  },
+  {
+    "date": "2025-07-23",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": "\u201cNo events found\u201d (Levi Airbnb cam; new cam name \u201cLevi\u201d)"
+  },
+  {
+    "date": "2025-07-24",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": "\u201cNo events found\u201d (Levi Airbnb cam; new cam name \u201cLevi\u201d)"
+  },
+  {
+    "date": "2025-07-25",
+    "bedtime": "10:02pm",
+    "bedtime_decimal": 22.03,
+    "wake_time": "4:26am",
+    "wake_time_decimal": 28.43,
+    "total_sleep_hours": 6.23,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "3:54",
+        "duration_hours": 0.17
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 10:02pm | Woke up at 3:54am and went back to sleep at 4:04am | Woke up at 4:26am"
+  },
+  {
+    "date": "2025-07-26",
+    "bedtime": "9:36pm",
+    "bedtime_decimal": 21.6,
+    "wake_time": "8:16am",
+    "wake_time_decimal": 32.27,
+    "total_sleep_hours": 10.57,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:14",
+        "duration_hours": 0.1
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:36pm | Woke up at 2:14am and went back to sleep at 2:20am | Woke up at 8:16am"
+  },
+  {
+    "date": "2025-07-27",
+    "bedtime": "9:56pm",
+    "bedtime_decimal": 21.93,
+    "wake_time": "3:48am",
+    "wake_time_decimal": 27.8,
+    "total_sleep_hours": 5.87,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:56pm | Woke up at 3:48am"
+  },
+  {
+    "date": "2025-07-28",
+    "bedtime": "9:48pm",
+    "bedtime_decimal": 21.8,
+    "wake_time": "8:13am",
+    "wake_time_decimal": 32.22,
+    "total_sleep_hours": 9.03,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:32",
+        "duration_hours": 1.38
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:48pm | Woke up at 2:32am and went back to sleep at 3:55am | Woke up at 8:13am"
+  },
+  {
+    "date": "2025-07-29",
+    "bedtime": "10:50pm",
+    "bedtime_decimal": 22.83,
+    "wake_time": "8:12am",
+    "wake_time_decimal": 32.2,
+    "total_sleep_hours": 9.15,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "3:43",
+        "duration_hours": 0.22
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 10:50pm | Woke up at 3:43am and went back to sleep at 3:56am | Woke up at 8:12am"
+  },
+  {
+    "date": "2025-07-30",
+    "bedtime": "9:56pm",
+    "bedtime_decimal": 21.93,
+    "wake_time": "4:45am",
+    "wake_time_decimal": 28.75,
+    "total_sleep_hours": 6.82,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:56pm | Woke up at 4:45am"
+  },
+  {
+    "date": "2025-07-31",
+    "bedtime": "9:32pm",
+    "bedtime_decimal": 21.53,
+    "wake_time": "7:23am",
+    "wake_time_decimal": 31.38,
+    "total_sleep_hours": 8.08,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "4:27",
+        "duration_hours": 1.77
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:32pm | Woke up at 4:27am and went back to sleep at 6:13am | Woke up at 7:23am"
+  },
+  {
+    "date": "2025-08-01",
+    "bedtime": "10:10pm",
+    "bedtime_decimal": 22.17,
+    "wake_time": "2:53am",
+    "wake_time_decimal": 26.88,
+    "total_sleep_hours": 4.72,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:10pm | Woke up at 2:53am"
+  },
+  {
+    "date": "2025-08-02",
+    "bedtime": "11:10pm",
+    "bedtime_decimal": 23.17,
+    "wake_time": "7:16am",
+    "wake_time_decimal": 31.27,
+    "total_sleep_hours": 8.1,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 11:10pm | Woke up at 7:16am"
+  },
+  {
+    "date": "2025-08-03",
+    "bedtime": "9:35pm",
+    "bedtime_decimal": 21.58,
+    "wake_time": "8:18am",
+    "wake_time_decimal": 32.3,
+    "total_sleep_hours": 7.48,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "4:46",
+        "duration_hours": 3.23
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:35pm | Woke up at 4:46am and went back to sleep at 8am | Woke up at 8:18am"
+  },
+  {
+    "date": "2025-08-04",
+    "bedtime": "9:36pm",
+    "bedtime_decimal": 21.6,
+    "wake_time": "5:37am",
+    "wake_time_decimal": 29.62,
+    "total_sleep_hours": 8.02,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:36pm | Woke up at 5:37am"
+  },
+  {
+    "date": "2025-08-05",
+    "bedtime": "10:23pm",
+    "bedtime_decimal": 22.38,
+    "wake_time": "7:45am",
+    "wake_time_decimal": 31.75,
+    "total_sleep_hours": 7.62,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "22:45",
+        "duration_hours": 0.08
+      },
+      {
+        "wake_time": "4:18",
+        "duration_hours": 1.67
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 10:23pm | Woke up at 10:45pm and went back to sleep at 10:50pm | Woke up at 4:18am and went back to sleep at 5:58am | Woke up at 7:45am"
+  },
+  {
+    "date": "2025-08-06",
+    "bedtime": "10:09pm",
+    "bedtime_decimal": 22.15,
+    "wake_time": "10:19am",
+    "wake_time_decimal": 34.32,
+    "total_sleep_hours": 12.17,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:09pm | Woke up at 10:19am"
+  },
+  {
+    "date": "2025-08-07",
+    "bedtime": "11:29pm",
+    "bedtime_decimal": 23.48,
+    "wake_time": "9:07am",
+    "wake_time_decimal": 33.12,
+    "total_sleep_hours": 8.13,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "0:06",
+        "duration_hours": 1.5
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 11:29pm | Woke up at 12:06am and went back to sleep at 1:36am | Woke up at 9:07am"
+  },
+  {
+    "date": "2025-08-08",
+    "bedtime": "10:05pm",
+    "bedtime_decimal": 22.08,
+    "wake_time": "9:00am",
+    "wake_time_decimal": 33.0,
+    "total_sleep_hours": 10.92,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:05pm | Woke up at 9am"
+  },
+  {
+    "date": "2025-08-09",
+    "bedtime": "10:47pm",
+    "bedtime_decimal": 22.78,
+    "wake_time": "9:35am",
+    "wake_time_decimal": 33.58,
+    "total_sleep_hours": 8.93,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "3:57",
+        "duration_hours": 1.87
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 10:47pm | Woke up at 3:57am and went back to sleep at 5:49am | Woke up at 9:35am"
+  },
+  {
+    "date": "2025-08-10",
+    "bedtime": "9:32pm",
+    "bedtime_decimal": 21.53,
+    "wake_time": "2:58am",
+    "wake_time_decimal": 26.97,
+    "total_sleep_hours": 5.43,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:32pm | Woke up at 2:58am"
+  },
+  {
+    "date": "2025-08-11",
+    "bedtime": "10:14pm",
+    "bedtime_decimal": 22.23,
+    "wake_time": "8:19am",
+    "wake_time_decimal": 32.32,
+    "total_sleep_hours": 10.08,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:14pm | Woke up at 8:19am"
+  },
+  {
+    "date": "2025-08-12",
+    "bedtime": "9:58pm",
+    "bedtime_decimal": 21.97,
+    "wake_time": "7:07am",
+    "wake_time_decimal": 31.12,
+    "total_sleep_hours": 8.97,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "3:59",
+        "duration_hours": 0.18
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:58pm | Woke up at 3:59am and went back to sleep at 4:10am | Woke up at 7:07am"
+  },
+  {
+    "date": "2025-08-13",
+    "bedtime": "9:34pm",
+    "bedtime_decimal": 21.57,
+    "wake_time": "11:50pm",
+    "wake_time_decimal": 23.83,
+    "total_sleep_hours": 2.27,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:34pm | Woke up at 11:50pm"
+  },
+  {
+    "date": "2025-08-14",
+    "bedtime": "7:50pm",
+    "bedtime_decimal": 19.83,
+    "wake_time": "6:44am",
+    "wake_time_decimal": 30.73,
+    "total_sleep_hours": 10.9,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 7:50pm | Woke up at 6:44am"
+  },
+  {
+    "date": "2025-08-15",
+    "bedtime": "10:19pm",
+    "bedtime_decimal": 22.32,
+    "wake_time": "6:07am",
+    "wake_time_decimal": 30.12,
+    "total_sleep_hours": 7.8,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:19pm | Woke up at 6:07am"
+  },
+  {
+    "date": "2025-08-16",
+    "bedtime": "10:56pm",
+    "bedtime_decimal": 22.93,
+    "wake_time": "7:13am",
+    "wake_time_decimal": 31.22,
+    "total_sleep_hours": 8.28,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:56pm | Woke up at 7:13am"
+  },
+  {
+    "date": "2025-08-17",
+    "bedtime": "9:30pm",
+    "bedtime_decimal": 21.5,
+    "wake_time": "2:42am",
+    "wake_time_decimal": 26.7,
+    "total_sleep_hours": 5.2,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:30pm | Woke up at 2:42am"
+  },
+  {
+    "date": "2025-08-18",
+    "bedtime": "10:17pm",
+    "bedtime_decimal": 22.28,
+    "wake_time": "9:15am",
+    "wake_time_decimal": 33.25,
+    "total_sleep_hours": 9.13,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "3:22",
+        "duration_hours": 1.83
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 10:17pm | Woke up at 3:22am and went back to sleep at 5:12am | Woke up at 9:15am"
+  },
+  {
+    "date": "2025-08-19",
+    "bedtime": "10:31pm",
+    "bedtime_decimal": 22.52,
+    "wake_time": "7:54am",
+    "wake_time_decimal": 31.9,
+    "total_sleep_hours": 6.78,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "3:36",
+        "duration_hours": 2.6
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 10:31pm | Woke up at 3:36am and went back to sleep at 6:12am | Woke up at 7:54am"
+  },
+  {
+    "date": "2025-08-20",
+    "bedtime": "10:15pm",
+    "bedtime_decimal": 22.25,
+    "wake_time": "7:59am",
+    "wake_time_decimal": 31.98,
+    "total_sleep_hours": 9.73,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:15pm | Woke up at 7:59am"
+  },
+  {
+    "date": "2025-08-21",
+    "bedtime": "9:39pm",
+    "bedtime_decimal": 21.65,
+    "wake_time": "3:38am",
+    "wake_time_decimal": 27.63,
+    "total_sleep_hours": 5.98,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:39pm | Woke up at 3:38am"
+  },
+  {
+    "date": "2025-08-22",
+    "bedtime": "9:08pm",
+    "bedtime_decimal": 21.13,
+    "wake_time": "3:20am",
+    "wake_time_decimal": 27.33,
+    "total_sleep_hours": 6.2,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:08pm | Woke up at 3:20am"
+  },
+  {
+    "date": "2025-08-23",
+    "bedtime": "9:02pm",
+    "bedtime_decimal": 21.03,
+    "wake_time": "9:01am",
+    "wake_time_decimal": 33.02,
+    "total_sleep_hours": 11.88,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "3:41",
+        "duration_hours": 0.1
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:02pm | Woke up at 3:41am and went back to sleep at 3:47am | Woke up at 9:01am"
+  },
+  {
+    "date": "2025-08-24",
+    "bedtime": "9:04pm",
+    "bedtime_decimal": 21.07,
+    "wake_time": "3:18am",
+    "wake_time_decimal": 27.3,
+    "total_sleep_hours": 6.23,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:04pm | Woke up at 3:18am"
+  },
+  {
+    "date": "2025-08-25",
+    "bedtime": "10:13pm",
+    "bedtime_decimal": 22.22,
+    "wake_time": "7:57am",
+    "wake_time_decimal": 31.95,
+    "total_sleep_hours": 9.73,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:13pm | Woke up at 7:57am"
+  },
+  {
+    "date": "2025-08-26",
+    "bedtime": "10:18pm",
+    "bedtime_decimal": 22.3,
+    "wake_time": "7:13am",
+    "wake_time_decimal": 31.22,
+    "total_sleep_hours": 8.92,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:18pm | Woke up at 7:13am"
+  },
+  {
+    "date": "2025-08-27",
+    "bedtime": "9:35pm",
+    "bedtime_decimal": 21.58,
+    "wake_time": "3:03am",
+    "wake_time_decimal": 27.05,
+    "total_sleep_hours": 5.47,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:35pm | Woke up at 3:03am"
+  },
+  {
+    "date": "2025-08-28",
+    "bedtime": "9:35pm",
+    "bedtime_decimal": 21.58,
+    "wake_time": "7:53am",
+    "wake_time_decimal": 31.88,
+    "total_sleep_hours": 10.3,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:35pm | Woke up at 7:53am"
+  },
+  {
+    "date": "2025-08-29",
+    "bedtime": "10:44pm",
+    "bedtime_decimal": 22.73,
+    "wake_time": "7:30am",
+    "wake_time_decimal": 31.5,
+    "total_sleep_hours": 8.77,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:44pm | Woke up at 7:30am"
+  },
+  {
+    "date": "2025-08-30",
+    "bedtime": "10:39pm",
+    "bedtime_decimal": 22.65,
+    "wake_time": "7:12am",
+    "wake_time_decimal": 31.2,
+    "total_sleep_hours": 8.55,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:39pm | Woke up at 7:12am"
+  },
+  {
+    "date": "2025-08-31",
+    "bedtime": "9:32pm",
+    "bedtime_decimal": 21.53,
+    "wake_time": "3:10am",
+    "wake_time_decimal": 27.17,
+    "total_sleep_hours": 5.63,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:32pm | Woke up at 3:10am"
+  },
+  {
+    "date": "2025-09-01",
+    "bedtime": "9:36pm",
+    "bedtime_decimal": 21.6,
+    "wake_time": "7:55am",
+    "wake_time_decimal": 31.92,
+    "total_sleep_hours": 9.75,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "4:30",
+        "duration_hours": 0.57
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:36pm | Woke up at 4:30am and went back to sleep at 5:04am | Woke up at 7:55am"
+  },
+  {
+    "date": "2025-09-02",
+    "bedtime": "9:55pm",
+    "bedtime_decimal": 21.92,
+    "wake_time": "8:01am",
+    "wake_time_decimal": 32.02,
+    "total_sleep_hours": 7.18,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:20",
+        "duration_hours": 2.92
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:55pm | Woke up at 2:20am and went back to sleep at 5:15am | Woke up at 8:01am"
+  },
+  {
+    "date": "2025-09-03",
+    "bedtime": "10:20pm",
+    "bedtime_decimal": 22.33,
+    "wake_time": "7:53am",
+    "wake_time_decimal": 31.88,
+    "total_sleep_hours": 9.55,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:20pm | Woke up at 7:53am"
+  },
+  {
+    "date": "2025-09-04",
+    "bedtime": "9:35pm",
+    "bedtime_decimal": 21.58,
+    "wake_time": "2:22am",
+    "wake_time_decimal": 26.37,
+    "total_sleep_hours": 4.78,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:35pm | Woke up at 2:22am"
+  },
+  {
+    "date": "2025-09-05",
+    "bedtime": "10:46pm",
+    "bedtime_decimal": 22.77,
+    "wake_time": "8:15am",
+    "wake_time_decimal": 32.25,
+    "total_sleep_hours": 9.48,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:46pm | Woke up at 8:15am"
+  },
+  {
+    "date": "2025-09-06",
+    "bedtime": "10:36pm",
+    "bedtime_decimal": 22.6,
+    "wake_time": "6:45am",
+    "wake_time_decimal": 30.75,
+    "total_sleep_hours": 8.15,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 10:36pm | Woke up at 6:45am"
+  },
+  {
+    "date": "2025-09-07",
+    "bedtime": "9:07pm",
+    "bedtime_decimal": 21.12,
+    "wake_time": "5:11am",
+    "wake_time_decimal": 29.18,
+    "total_sleep_hours": 7.23,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "3:48",
+        "duration_hours": 0.83
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 9:07pm | Woke up at 3:48am and went back to sleep at 4:38am | Woke up at 5:11am"
+  },
+  {
+    "date": "2025-09-08",
+    "bedtime": "9:02pm",
+    "bedtime_decimal": 21.03,
+    "wake_time": "7:54am",
+    "wake_time_decimal": 31.9,
+    "total_sleep_hours": 10.87,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:02pm | Woke up at 7:54am"
+  },
+  {
+    "date": "2025-09-09",
+    "bedtime": "8:56pm",
+    "bedtime_decimal": 20.93,
+    "wake_time": "9:11am",
+    "wake_time_decimal": 33.18,
+    "total_sleep_hours": 6.93,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "0:12",
+        "duration_hours": 5.32
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 8:56pm | Woke up at 12:12am and went back to sleep at 5:31am | Woke up at 9:11am"
+  },
+  {
+    "date": "2025-09-10",
+    "bedtime": "9:30pm",
+    "bedtime_decimal": 21.5,
+    "wake_time": "7:25am",
+    "wake_time_decimal": 31.42,
+    "total_sleep_hours": 9.92,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Fell asleep at 9:30pm | Woke up at 7:25am"
+  },
+  {
+    "date": "2025-09-11",
+    "bedtime": "8:43pm",
+    "bedtime_decimal": 20.72,
+    "wake_time": "9:54am",
+    "wake_time_decimal": 33.9,
+    "total_sleep_hours": 8.12,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "0:59",
+        "duration_hours": 5.07
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Fell asleep at 8:43pm | Woke up at 12:59am and went back to sleep at 6:03am | Woke up at 9:54am"
+  },
+  {
+    "date": "2025-09-12",
+    "bedtime": "6:10am",
+    "bedtime_decimal": 30.17,
+    "wake_time": "9:45am",
+    "wake_time_decimal": 33.75,
+    "total_sleep_hours": 3.58,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi did not sleep in his bed Friday night | Levi slept from 6:10am and woke up at 9:45am"
+  },
+  {
+    "date": "2025-09-13",
+    "bedtime": "9:41pm",
+    "bedtime_decimal": 21.68,
+    "wake_time": "11:32am",
+    "wake_time_decimal": 35.53,
+    "total_sleep_hours": 9.33,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "0:44",
+        "duration_hours": 0.45
+      },
+      {
+        "wake_time": "1:46",
+        "duration_hours": 4.07
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:41pm | Woke up at 12:44am and went back to sleep at 1:11am | Woke up again at 1:46am and went back to sleep at 5:50am | Woke up at 11:32am"
+  },
+  {
+    "date": "2025-09-14",
+    "bedtime": "10:43pm",
+    "bedtime_decimal": 22.72,
+    "wake_time": "7:31am",
+    "wake_time_decimal": 31.52,
+    "total_sleep_hours": 8.42,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "0:32",
+        "duration_hours": 0.38
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 10:43pm | Woke up at 12:32am and went back to sleep at 12:55am | Woke up at 7:31am"
+  },
+  {
+    "date": "2025-09-15",
+    "bedtime": "8:59pm",
+    "bedtime_decimal": 20.98,
+    "wake_time": "2:14am",
+    "wake_time_decimal": 26.23,
+    "total_sleep_hours": 5.25,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 8:59pm | Woke up at 2:14am"
+  },
+  {
+    "date": "2025-09-16",
+    "bedtime": "9:36pm",
+    "bedtime_decimal": 21.6,
+    "wake_time": "7:54am",
+    "wake_time_decimal": 31.9,
+    "total_sleep_hours": 10.3,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:36pm | Woke up at 7:54am"
+  },
+  {
+    "date": "2025-09-17",
+    "bedtime": "9:48pm",
+    "bedtime_decimal": 21.8,
+    "wake_time": "7:46am",
+    "wake_time_decimal": 31.77,
+    "total_sleep_hours": 8.77,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "2:01",
+        "duration_hours": 0.45
+      },
+      {
+        "wake_time": "3:23",
+        "duration_hours": 0.75
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:48pm | Woke up at 2:01am and went back to sleep at 2:28am | Woke up again at 3:23am and went back to sleep at 4:08am | Woke up at 7:46am"
+  },
+  {
+    "date": "2025-09-18",
+    "bedtime": null,
+    "bedtime_decimal": null,
+    "wake_time": "6:26am",
+    "wake_time_decimal": 30.43,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": false,
+    "raw_notes": "No record of Levi falling asleep | Levi is awake at 6:26am"
+  },
+  {
+    "date": "2025-09-19",
+    "bedtime": "2:05am",
+    "bedtime_decimal": 26.08,
+    "wake_time": "9:55am",
+    "wake_time_decimal": 33.92,
+    "total_sleep_hours": 7.83,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "No record of Levi falling asleep at night. He was transferred to his room at 12:08am but he woke up. | Levi fell asleep at 2:05am and woke up at 9:55am"
+  },
+  {
+    "date": "2025-09-20",
+    "bedtime": "11:34pm",
+    "bedtime_decimal": 23.57,
+    "wake_time": "9:09am",
+    "wake_time_decimal": 33.15,
+    "total_sleep_hours": 6.33,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:34pm | Woke up at 12:16am. No record of Levi going back to sleep. (Jake and Levi both went out of the room at 12:52am) | Levi went back to sleep at 2:49am | Levi woke up at 9:09am"
+  },
+  {
+    "date": "2025-09-21",
+    "bedtime": "10:16pm",
+    "bedtime_decimal": 22.27,
+    "wake_time": "2:14am",
+    "wake_time_decimal": 26.23,
+    "total_sleep_hours": 3.97,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:16pm | Woke up at 2:14am"
+  },
+  {
+    "date": "2025-09-22",
+    "bedtime": "10:08pm",
+    "bedtime_decimal": 22.13,
+    "wake_time": "9:44am",
+    "wake_time_decimal": 33.73,
+    "total_sleep_hours": 11.6,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:08pm | Woke up at 9:44am"
+  },
+  {
+    "date": "2025-09-23",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": "No record"
+  },
+  {
+    "date": "2025-09-24",
+    "bedtime": "9:05pm",
+    "bedtime_decimal": 21.08,
+    "wake_time": "7:49am",
+    "wake_time_decimal": 31.82,
+    "total_sleep_hours": 4.62,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "1:29",
+        "duration_hours": 6.12
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:05pm | Woke up at 1:29am and went back to sleep at 7:36am | Woke up at 7:49am"
+  },
+  {
+    "date": "2025-09-25",
+    "bedtime": "8:50pm",
+    "bedtime_decimal": 20.83,
+    "wake_time": "7:56am",
+    "wake_time_decimal": 31.93,
+    "total_sleep_hours": 11.1,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 8:50pm | Levi woke up at 7:56am"
+  },
+  {
+    "date": "2025-09-26",
+    "bedtime": "10:00pm",
+    "bedtime_decimal": 22.0,
+    "wake_time": "9:57am",
+    "wake_time_decimal": 33.95,
+    "total_sleep_hours": 8.35,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:14",
+        "duration_hours": 3.6
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 10pm | Levi woke up at 2:14am and went back to sleep at 5:50am | Levi woke up at 9:57am"
+  },
+  {
+    "date": "2025-09-27",
+    "bedtime": "11:07pm",
+    "bedtime_decimal": 23.12,
+    "wake_time": "9:52am",
+    "wake_time_decimal": 33.87,
+    "total_sleep_hours": 10.75,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:07pm | Levi woke up at 9:52am"
+  },
+  {
+    "date": "2025-09-28",
+    "bedtime": null,
+    "bedtime_decimal": null,
+    "wake_time": "6:07am",
+    "wake_time_decimal": 30.12,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": false,
+    "raw_notes": "Recording stopped at about 9:47pm and resumed at 5:41am | Levi woke up at 6:07am"
+  },
+  {
+    "date": "2025-09-29",
+    "bedtime": "10:07pm",
+    "bedtime_decimal": 22.12,
+    "wake_time": "7:53am",
+    "wake_time_decimal": 31.88,
+    "total_sleep_hours": 9.77,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:07pm | Levi woke up at 7:53am"
+  },
+  {
+    "date": "2025-09-30",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": "No sleep activity recorded in Levi\u2019s bed"
+  },
+  {
+    "date": "2025-10-01",
+    "bedtime": "9:30pm",
+    "bedtime_decimal": 21.5,
+    "wake_time": "3:07am",
+    "wake_time_decimal": 27.12,
+    "total_sleep_hours": 5.62,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Based on the recordings, I cannot determine the exact time Levi fell asleep. **The best estimate is around 9:30pm,** though it is likely that he fell asleep somewhat earlier. | Levi woke up at 3:07am"
+  },
+  {
+    "date": "2025-10-02",
+    "bedtime": "9:12pm",
+    "bedtime_decimal": 21.2,
+    "wake_time": "7:53am",
+    "wake_time_decimal": 31.88,
+    "total_sleep_hours": 10.68,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:12pm | Levi woke up at 7:53am"
+  },
+  {
+    "date": "2025-10-03",
+    "bedtime": "11:08pm",
+    "bedtime_decimal": 23.13,
+    "wake_time": "9:10am",
+    "wake_time_decimal": 33.17,
+    "total_sleep_hours": 10.03,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:08pm | Levi woke up at 9:10am"
+  },
+  {
+    "date": "2025-10-04",
+    "bedtime": "10:34pm",
+    "bedtime_decimal": 22.57,
+    "wake_time": "11:09am",
+    "wake_time_decimal": 35.15,
+    "total_sleep_hours": 9.55,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "3:33",
+        "duration_hours": 3.03
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 10:34pm | Levi woke up at 3:33am and went back to sleep at 6:35am | Levi woke up at 11:09am"
+  },
+  {
+    "date": "2025-10-05",
+    "bedtime": "11:14pm",
+    "bedtime_decimal": 23.23,
+    "wake_time": "7:53am",
+    "wake_time_decimal": 31.88,
+    "total_sleep_hours": 8.65,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:14pm | Levi woke up at 7:53am"
+  },
+  {
+    "date": "2025-10-06",
+    "bedtime": "12:15am",
+    "bedtime_decimal": 24.25,
+    "wake_time": "8:10am",
+    "wake_time_decimal": 32.17,
+    "total_sleep_hours": 7.92,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 12:15am | Levi woke up at 8:10am"
+  },
+  {
+    "date": "2025-10-07",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": "No sleep activity recorded in Levi\u2019s bed"
+  },
+  {
+    "date": "2025-10-08",
+    "bedtime": "8:59pm",
+    "bedtime_decimal": 20.98,
+    "wake_time": "7:36am",
+    "wake_time_decimal": 31.6,
+    "total_sleep_hours": 10.62,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 8:59pm | Levi woke up at 7:36am"
+  },
+  {
+    "date": "2025-10-09",
+    "bedtime": "9:13pm",
+    "bedtime_decimal": 21.22,
+    "wake_time": "6:55am",
+    "wake_time_decimal": 30.92,
+    "total_sleep_hours": 6.75,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:25",
+        "duration_hours": 2.95
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:13pm | Levi woke up at 2:25am and went back to sleep at 5:22am | Levi woke up at 6:55am"
+  },
+  {
+    "date": "2025-10-10",
+    "bedtime": "11:06pm",
+    "bedtime_decimal": 23.1,
+    "wake_time": "9:19am",
+    "wake_time_decimal": 33.32,
+    "total_sleep_hours": 10.22,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:06pm | Levi woke up at 9:19am"
+  },
+  {
+    "date": "2025-10-11",
+    "bedtime": "9:06pm",
+    "bedtime_decimal": 21.1,
+    "wake_time": "10:50am",
+    "wake_time_decimal": 34.83,
+    "total_sleep_hours": 7.72,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "0:00",
+        "duration_hours": 6.02
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:06pm | Levi woke up at 12am and went back to sleep at 6:01am | Levi woke up at 10:50am"
+  },
+  {
+    "date": "2025-10-12",
+    "bedtime": "12:00am",
+    "bedtime_decimal": 24.0,
+    "wake_time": "7:55am",
+    "wake_time_decimal": 31.92,
+    "total_sleep_hours": 7.92,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 12am | Levi woke up at 7:55am"
+  },
+  {
+    "date": "2025-10-13",
+    "bedtime": "9:53pm",
+    "bedtime_decimal": 21.88,
+    "wake_time": "3:52am",
+    "wake_time_decimal": 27.87,
+    "total_sleep_hours": 5.58,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "1:19",
+        "duration_hours": 0.4
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:53pm | Levi woke up at 1:19am and went back to sleep at 1:43am | Levi woke up at 3:52am"
+  },
+  {
+    "date": "2025-10-14",
+    "bedtime": "9:27pm",
+    "bedtime_decimal": 21.45,
+    "wake_time": "7:50am",
+    "wake_time_decimal": 31.83,
+    "total_sleep_hours": 10.38,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:27pm | Levi woke up at 7:50am"
+  },
+  {
+    "date": "2025-10-15",
+    "bedtime": "8:41pm",
+    "bedtime_decimal": 20.68,
+    "wake_time": "8:00am",
+    "wake_time_decimal": 32.0,
+    "total_sleep_hours": 6.63,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "0:49",
+        "duration_hours": 4.68
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 8:41pm | Levi woke up at 12:49am and went back to sleep at 5:30am | Levi woke up at 8am"
+  },
+  {
+    "date": "2025-10-16",
+    "bedtime": "9:00pm",
+    "bedtime_decimal": 21.0,
+    "wake_time": "7:56am",
+    "wake_time_decimal": 31.93,
+    "total_sleep_hours": 10.93,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9pm | Levi woke up at 7:56am"
+  },
+  {
+    "date": "2025-10-17",
+    "bedtime": "9:46pm",
+    "bedtime_decimal": 21.77,
+    "wake_time": "4:31am",
+    "wake_time_decimal": 28.52,
+    "total_sleep_hours": 6.75,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Based on the recordings, I cannot determine the exact time Levi fell asleep. **The best estimate is after 9:46pm.** | Levi woke up at 4:31am"
+  },
+  {
+    "date": "2025-10-18",
+    "bedtime": "8:57pm",
+    "bedtime_decimal": 20.95,
+    "wake_time": "7:04am",
+    "wake_time_decimal": 31.07,
+    "total_sleep_hours": 10.12,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 8:57pm | Levi woke up at 7:04am"
+  },
+  {
+    "date": "2025-10-19",
+    "bedtime": "10:31pm",
+    "bedtime_decimal": 22.52,
+    "wake_time": "4:41am",
+    "wake_time_decimal": 28.68,
+    "total_sleep_hours": 6.17,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Based on the recordings, I cannot determine the exact time Levi fell asleep. **The best estimate is after 10:31pm.** | Levi woke up at 4:41am"
+  },
+  {
+    "date": "2025-10-20",
+    "bedtime": "9:20pm",
+    "bedtime_decimal": 21.33,
+    "wake_time": "5:31am",
+    "wake_time_decimal": 29.52,
+    "total_sleep_hours": 8.18,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:20pm | Levi woke up at 5:31am"
+  },
+  {
+    "date": "2025-10-21",
+    "bedtime": "9:09pm",
+    "bedtime_decimal": 21.15,
+    "wake_time": "6:59am",
+    "wake_time_decimal": 30.98,
+    "total_sleep_hours": 9.83,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:09pm | Levi woke up at 6:59am"
+  },
+  {
+    "date": "2025-10-22",
+    "bedtime": "10:19pm",
+    "bedtime_decimal": 22.32,
+    "wake_time": "7:41am",
+    "wake_time_decimal": 31.68,
+    "total_sleep_hours": 9.37,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:19pm | Levi woke up at 7:41am"
+  },
+  {
+    "date": "2025-10-23",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": "No sleep activity recorded in Levi\u2019s bed"
+  },
+  {
+    "date": "2025-10-24",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": "No sleep activity recorded in Levi\u2019s bed"
+  },
+  {
+    "date": "2025-10-25",
+    "bedtime": "11:54pm",
+    "bedtime_decimal": 23.9,
+    "wake_time": "10:01am",
+    "wake_time_decimal": 34.02,
+    "total_sleep_hours": 5.17,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "4:34",
+        "duration_hours": 0.6
+      },
+      {
+        "wake_time": "5:40",
+        "duration_hours": null
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Based on the recordings, I cannot determine the exact time Levi fell asleep. **The best estimate is before 11:54pm.** | Levi woke up at 4:34am and went back to sleep at 5:10am | Levi woke up at 5:40am and went back to sleep after 5:58am | Levi woke up at 10:01am"
+  },
+  {
+    "date": "2025-10-26",
+    "bedtime": "10:10pm",
+    "bedtime_decimal": 22.17,
+    "wake_time": "8:10am",
+    "wake_time_decimal": 32.17,
+    "total_sleep_hours": 4.83,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "1:35",
+        "duration_hours": 5.17
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 10:10pm | Levi woke up at 1:35am and went back to sleep at 6:45am | Levi woke up at 8:10am"
+  },
+  {
+    "date": "2025-10-27",
+    "bedtime": "11:18pm",
+    "bedtime_decimal": 23.3,
+    "wake_time": "7:46am",
+    "wake_time_decimal": 31.77,
+    "total_sleep_hours": 8.47,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:18pm | Levi woke up at 7:46am"
+  },
+  {
+    "date": "2025-10-28",
+    "bedtime": "10:58pm",
+    "bedtime_decimal": 22.97,
+    "wake_time": "7:48am",
+    "wake_time_decimal": 31.8,
+    "total_sleep_hours": 8.83,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:58pm | Levi woke up at 7:48am"
+  },
+  {
+    "date": "2025-10-29",
+    "bedtime": "9:36pm",
+    "bedtime_decimal": 21.6,
+    "wake_time": "4:00am",
+    "wake_time_decimal": 28.0,
+    "total_sleep_hours": 6.4,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:36pm | Levi woke up at 4am"
+  },
+  {
+    "date": "2025-10-30",
+    "bedtime": "9:37pm",
+    "bedtime_decimal": 21.62,
+    "wake_time": "7:44am",
+    "wake_time_decimal": 31.73,
+    "total_sleep_hours": 10.12,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:37pm | Levi woke up at 7:44am"
+  },
+  {
+    "date": "2025-10-31",
+    "bedtime": "9:54pm",
+    "bedtime_decimal": 21.9,
+    "wake_time": "6:31am",
+    "wake_time_decimal": 30.52,
+    "total_sleep_hours": 7.05,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "3:48",
+        "duration_hours": 1.27
+      },
+      {
+        "wake_time": "5:47",
+        "duration_hours": 0.3
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:54pm | Levi woke up at 3:48am and went back to sleep at 5:04am | Levi woke up at 5:47am and went back to sleep at 6:05am | Levi woke up at 6:31am"
+  },
+  {
+    "date": "2025-11-01",
+    "bedtime": "8:45pm",
+    "bedtime_decimal": 20.75,
+    "wake_time": "9:44am",
+    "wake_time_decimal": 33.73,
+    "total_sleep_hours": 9.58,
+    "night_wakings": 3,
+    "waking_details": [
+      {
+        "wake_time": "1:16",
+        "duration_hours": 1.1
+      },
+      {
+        "wake_time": "2:50",
+        "duration_hours": 1.9
+      },
+      {
+        "wake_time": "6:04",
+        "duration_hours": 0.4
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 8:45pm | Levi woke up at 1:16am and went back to sleep at 2:22am | Levi woke up at 2:50am and went back to sleep at 4:44am | Levi woke up at 6:04am and went back to sleep at 6:28am | Levi woke up at 9:44am"
+  },
+  {
+    "date": "2025-11-02",
+    "bedtime": "10:23pm",
+    "bedtime_decimal": 22.38,
+    "wake_time": "8:01am",
+    "wake_time_decimal": 32.02,
+    "total_sleep_hours": 8.73,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:54",
+        "duration_hours": 0.9
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 10:23pm | Levi woke up at 2:54am and went back to sleep at 3:48am | Levi woke up at 8:01am"
+  },
+  {
+    "date": "2025-11-03",
+    "bedtime": "8:41pm",
+    "bedtime_decimal": 20.68,
+    "wake_time": "7:43am",
+    "wake_time_decimal": 31.72,
+    "total_sleep_hours": 11.03,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 8:41pm | Levi woke up at 7:43am"
+  },
+  {
+    "date": "2025-11-04",
+    "bedtime": "9:15pm",
+    "bedtime_decimal": 21.25,
+    "wake_time": "7:52am",
+    "wake_time_decimal": 31.87,
+    "total_sleep_hours": 6.45,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "0:58",
+        "duration_hours": 4.17
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:15pm | Levi woke up at 12:58am and went back to sleep at 5:08am | Levi woke up at 7:52am"
+  },
+  {
+    "date": "2025-11-05",
+    "bedtime": "9:24pm",
+    "bedtime_decimal": 21.4,
+    "wake_time": "7:43am",
+    "wake_time_decimal": 31.72,
+    "total_sleep_hours": 10.32,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:24pm | Levi woke up at 7:43am"
+  },
+  {
+    "date": "2025-11-06",
+    "bedtime": "9:06pm",
+    "bedtime_decimal": 21.1,
+    "wake_time": "7:45am",
+    "wake_time_decimal": 31.75,
+    "total_sleep_hours": 10.65,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:06pm | Levi woke up at 7:45am"
+  },
+  {
+    "date": "2025-11-07",
+    "bedtime": "10:46pm",
+    "bedtime_decimal": 22.77,
+    "wake_time": "7:15am",
+    "wake_time_decimal": 31.25,
+    "total_sleep_hours": 7.4,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "4:53",
+        "duration_hours": 1.08
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 10:46pm | Levi woke. up at 4:53am and went back to sleep at 5:58am | Levi woke up at 7:15am"
+  },
+  {
+    "date": "2025-11-08",
+    "bedtime": "9:07pm",
+    "bedtime_decimal": 21.12,
+    "wake_time": "7:39am",
+    "wake_time_decimal": 31.65,
+    "total_sleep_hours": 10.53,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:07pm | Levi woke up at 7:39am"
+  },
+  {
+    "date": "2025-11-09",
+    "bedtime": "10:10pm",
+    "bedtime_decimal": 22.17,
+    "wake_time": "6:22am",
+    "wake_time_decimal": 30.37,
+    "total_sleep_hours": 8.2,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:10pm | Levi woke up at 6:22am"
+  },
+  {
+    "date": "2025-11-10",
+    "bedtime": "11:01pm",
+    "bedtime_decimal": 23.02,
+    "wake_time": "9:57am",
+    "wake_time_decimal": 33.95,
+    "total_sleep_hours": 8.55,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:41",
+        "duration_hours": 2.38
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 11:01pm | Levi woke up at 2:41am and went back to sleep at 5:04am | Levi woke up at 9:57am"
+  },
+  {
+    "date": "2025-11-11",
+    "bedtime": "11:23pm",
+    "bedtime_decimal": 23.38,
+    "wake_time": "8:07am",
+    "wake_time_decimal": 32.12,
+    "total_sleep_hours": 8.73,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:23pm | Levi woke up at 8:07am"
+  },
+  {
+    "date": "2025-11-12",
+    "bedtime": "9:15pm",
+    "bedtime_decimal": 21.25,
+    "wake_time": "2:40am",
+    "wake_time_decimal": 26.67,
+    "total_sleep_hours": 5.42,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:15pm | Levi woke up at 2:40am"
+  },
+  {
+    "date": "2025-11-13",
+    "bedtime": "9:07pm",
+    "bedtime_decimal": 21.12,
+    "wake_time": "6:42am",
+    "wake_time_decimal": 30.7,
+    "total_sleep_hours": 9.58,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:07pm | Levi woke up at 6:42am"
+  },
+  {
+    "date": "2025-11-14",
+    "bedtime": "10:05pm",
+    "bedtime_decimal": 22.08,
+    "wake_time": "9:05am",
+    "wake_time_decimal": 33.08,
+    "total_sleep_hours": 9.72,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "4:38",
+        "duration_hours": 1.28
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 10:05pm | Levi woke up at 4:38am and went back to sleep at 5:55am | Levi woke up at 9:05am"
+  },
+  {
+    "date": "2025-11-15",
+    "bedtime": "11:04pm",
+    "bedtime_decimal": 23.07,
+    "wake_time": "6:19am",
+    "wake_time_decimal": 30.32,
+    "total_sleep_hours": 7.25,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:04pm | Levi woke up at 6:19am"
+  },
+  {
+    "date": "2025-11-16",
+    "bedtime": "9:29pm",
+    "bedtime_decimal": 21.48,
+    "wake_time": "4:36am",
+    "wake_time_decimal": 28.6,
+    "total_sleep_hours": 7.12,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:29pm | Levi woke up at 4:36am"
+  },
+  {
+    "date": "2025-11-17",
+    "bedtime": "11:05pm",
+    "bedtime_decimal": 23.08,
+    "wake_time": "8:04am",
+    "wake_time_decimal": 32.07,
+    "total_sleep_hours": 8.77,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "6:02",
+        "duration_hours": 0.22
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 11:05pm | Levi woke up at 6:02am and went back to sleep at 6:15am | Levi woke up at 8:04am"
+  },
+  {
+    "date": "2025-11-18",
+    "bedtime": "10:16pm",
+    "bedtime_decimal": 22.27,
+    "wake_time": "7:53am",
+    "wake_time_decimal": 31.88,
+    "total_sleep_hours": 7.55,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:51",
+        "duration_hours": 2.07
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 10:16pm | Levi woke up at 2:51am and went back to sleep at 4:55am | Levi woke up at 7:53am"
+  },
+  {
+    "date": "2025-11-19",
+    "bedtime": "9:25pm",
+    "bedtime_decimal": 21.42,
+    "wake_time": "7:52am",
+    "wake_time_decimal": 31.87,
+    "total_sleep_hours": 10.45,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:25pm | Levi woke up at 7:52am"
+  },
+  {
+    "date": "2025-11-20",
+    "bedtime": "10:38pm",
+    "bedtime_decimal": 22.63,
+    "wake_time": "9:50am",
+    "wake_time_decimal": 33.83,
+    "total_sleep_hours": 5.55,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:29",
+        "duration_hours": 5.65
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 10:38pm | Levi woke up at 2:29am and went back to sleep at 8:08am | Levi woke up at 9:50am"
+  },
+  {
+    "date": "2025-11-21",
+    "bedtime": "11:06pm",
+    "bedtime_decimal": 23.1,
+    "wake_time": "8:56am",
+    "wake_time_decimal": 32.93,
+    "total_sleep_hours": 9.83,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:06pm | Levi woke up at 8:56am"
+  },
+  {
+    "date": "2025-11-22",
+    "bedtime": "11:11pm",
+    "bedtime_decimal": 23.18,
+    "wake_time": "8:00am",
+    "wake_time_decimal": 32.0,
+    "total_sleep_hours": 8.82,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:11pm | Levi woke up at 8am"
+  },
+  {
+    "date": "2025-11-23",
+    "bedtime": "9:40pm",
+    "bedtime_decimal": 21.67,
+    "wake_time": "6:54am",
+    "wake_time_decimal": 30.9,
+    "total_sleep_hours": 6.93,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:44",
+        "duration_hours": 2.3
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:40pm | Levi woke up at 2:44am and went back to sleep at 5:02am | Levi woke up at 6:54am"
+  },
+  {
+    "date": "2025-11-24",
+    "bedtime": "3:35am",
+    "bedtime_decimal": 27.58,
+    "wake_time": "8:25am",
+    "wake_time_decimal": 32.42,
+    "total_sleep_hours": 4.83,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 3:35am | Levi woke up at 8:25am"
+  },
+  {
+    "date": "2025-11-25",
+    "bedtime": "10:27pm",
+    "bedtime_decimal": 22.45,
+    "wake_time": "8:21am",
+    "wake_time_decimal": 32.35,
+    "total_sleep_hours": 9.9,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:27pm | Levi woke up at 8:21am"
+  },
+  {
+    "date": "2025-11-26",
+    "bedtime": "10:57pm",
+    "bedtime_decimal": 22.95,
+    "wake_time": "6:18am",
+    "wake_time_decimal": 30.3,
+    "total_sleep_hours": 6.73,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "3:32",
+        "duration_hours": 0.62
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 10:57pm | Levi woke up at 3:32am and went back to sleep at 4:09am | Levi woke up at 6:18am"
+  },
+  {
+    "date": "2025-11-27",
+    "bedtime": "10:25pm",
+    "bedtime_decimal": 22.42,
+    "wake_time": "9:26am",
+    "wake_time_decimal": 33.43,
+    "total_sleep_hours": 11.02,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:25pm | Levi woke up at 9:26am"
+  },
+  {
+    "date": "2025-11-28",
+    "bedtime": "11:18pm",
+    "bedtime_decimal": 23.3,
+    "wake_time": "9:09am",
+    "wake_time_decimal": 33.15,
+    "total_sleep_hours": 9.85,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:18pm | Levi woke up at 9:09am"
+  },
+  {
+    "date": "2025-11-29",
+    "bedtime": "12:23am",
+    "bedtime_decimal": 24.38,
+    "wake_time": "7:44am",
+    "wake_time_decimal": 31.73,
+    "total_sleep_hours": 7.35,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 12:23am | Levi woke up at 7:44am"
+  },
+  {
+    "date": "2025-11-30",
+    "bedtime": "9:59pm",
+    "bedtime_decimal": 21.98,
+    "wake_time": "3:41am",
+    "wake_time_decimal": 27.68,
+    "total_sleep_hours": 5.7,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:59pm | Levi woke up at 3:41am"
+  },
+  {
+    "date": "2025-12-01",
+    "bedtime": "10:43pm",
+    "bedtime_decimal": 22.72,
+    "wake_time": "7:45am",
+    "wake_time_decimal": 31.75,
+    "total_sleep_hours": 9.03,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:43pm | Levi woke up at 7:45am"
+  },
+  {
+    "date": "2025-12-02",
+    "bedtime": "10:00pm",
+    "bedtime_decimal": 22.0,
+    "wake_time": "7:43am",
+    "wake_time_decimal": 31.72,
+    "total_sleep_hours": 9.72,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10pm | Levi woke up at 7:43am"
+  },
+  {
+    "date": "2025-12-03",
+    "bedtime": "10:57pm",
+    "bedtime_decimal": 22.95,
+    "wake_time": "7:29am",
+    "wake_time_decimal": 31.48,
+    "total_sleep_hours": 8.53,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:57pm | Levi woke up at 7:29am"
+  },
+  {
+    "date": "2025-12-04",
+    "bedtime": "9:58pm",
+    "bedtime_decimal": 21.97,
+    "wake_time": "7:57am",
+    "wake_time_decimal": 31.95,
+    "total_sleep_hours": 6.58,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "1:38",
+        "duration_hours": 3.4
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:58pm | Levi woke up at 1:38am and went back to sleep at 5:02am | Levi woke up at 7:57am"
+  },
+  {
+    "date": "2025-12-05",
+    "bedtime": "11:19pm",
+    "bedtime_decimal": 23.32,
+    "wake_time": "8:22am",
+    "wake_time_decimal": 32.37,
+    "total_sleep_hours": 9.05,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:19pm | Levi woke up at 8:22am"
+  },
+  {
+    "date": "2025-12-06",
+    "bedtime": "11:18pm",
+    "bedtime_decimal": 23.3,
+    "wake_time": "5:38am",
+    "wake_time_decimal": 29.63,
+    "total_sleep_hours": 6.33,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:18pm | Levi woke up at 5:38am"
+  },
+  {
+    "date": "2025-12-07",
+    "bedtime": "9:54pm",
+    "bedtime_decimal": 21.9,
+    "wake_time": "6:42am",
+    "wake_time_decimal": 30.7,
+    "total_sleep_hours": 8.8,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:54pm | Levi woke up at 6:42am"
+  },
+  {
+    "date": "2025-12-08",
+    "bedtime": "12:05am",
+    "bedtime_decimal": 24.08,
+    "wake_time": "7:41am",
+    "wake_time_decimal": 31.68,
+    "total_sleep_hours": 7.37,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "5:58",
+        "duration_hours": 0.23
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 12:05am | Levi woke up at 5:58am and went back to sleep at 6:12am | Levi woke up at 7:41am"
+  },
+  {
+    "date": "2025-12-09",
+    "bedtime": "11:12pm",
+    "bedtime_decimal": 23.2,
+    "wake_time": "7:34am",
+    "wake_time_decimal": 31.57,
+    "total_sleep_hours": 8.37,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:12pm | Levi woke up at 7:34am"
+  },
+  {
+    "date": "2025-12-10",
+    "bedtime": "10:47pm",
+    "bedtime_decimal": 22.78,
+    "wake_time": "4:13am",
+    "wake_time_decimal": 28.22,
+    "total_sleep_hours": 5.43,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:47pm | Levi woke up at 4:13am"
+  },
+  {
+    "date": "2025-12-11",
+    "bedtime": "10:35pm",
+    "bedtime_decimal": 22.58,
+    "wake_time": "8:03am",
+    "wake_time_decimal": 32.05,
+    "total_sleep_hours": 8.8,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "5:41",
+        "duration_hours": 0.67
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 10:35pm | Levi woke up at 5:41am and went back to sleep at 6:21am | Levi woke up at 8:03am"
+  },
+  {
+    "date": "2025-12-12",
+    "bedtime": "10:37pm",
+    "bedtime_decimal": 22.62,
+    "wake_time": "8:23am",
+    "wake_time_decimal": 32.38,
+    "total_sleep_hours": 9.77,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:37pm | Levi woke up at 8:23am"
+  },
+  {
+    "date": "2025-12-13",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": "No sleep activity recorded in Levi\u2019s bed"
+  },
+  {
+    "date": "2025-12-14",
+    "bedtime": "11:43pm",
+    "bedtime_decimal": 23.72,
+    "wake_time": "8:00am",
+    "wake_time_decimal": 32.0,
+    "total_sleep_hours": 8.28,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:43pm | Levi woke up at 8am"
+  },
+  {
+    "date": "2025-12-15",
+    "bedtime": "10:43pm",
+    "bedtime_decimal": 22.72,
+    "wake_time": "4:23am",
+    "wake_time_decimal": 28.38,
+    "total_sleep_hours": 5.67,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:43pm | Levi woke up at 4:23am"
+  },
+  {
+    "date": "2025-12-16",
+    "bedtime": "9:25pm",
+    "bedtime_decimal": 21.42,
+    "wake_time": "8:07am",
+    "wake_time_decimal": 32.12,
+    "total_sleep_hours": 5.8,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "3:13",
+        "duration_hours": null
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:25pm | Levi woke up at 3:13am and went back to sleep at 4:05pm | Levi woke up at 8:07am"
+  },
+  {
+    "date": "2025-12-17",
+    "bedtime": "10:02pm",
+    "bedtime_decimal": 22.03,
+    "wake_time": "7:54am",
+    "wake_time_decimal": 31.9,
+    "total_sleep_hours": 9.87,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:02pm | Levi woke up at 7:54am"
+  },
+  {
+    "date": "2025-12-18",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": ""
+  },
+  {
+    "date": "2025-12-19",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": ""
+  },
+  {
+    "date": "2025-12-20",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": ""
+  },
+  {
+    "date": "2025-12-21",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": ""
+  },
+  {
+    "date": "2025-12-22",
+    "bedtime": "12:14am",
+    "bedtime_decimal": 24.23,
+    "wake_time": "8:51am",
+    "wake_time_decimal": 32.85,
+    "total_sleep_hours": 8.62,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 12:14am | Levi woke up at 8:51am"
+  },
+  {
+    "date": "2025-12-23",
+    "bedtime": "10:10pm",
+    "bedtime_decimal": 22.17,
+    "wake_time": "9:13am",
+    "wake_time_decimal": 33.22,
+    "total_sleep_hours": 11.05,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:10pm | Levi woke up at 9:13am"
+  },
+  {
+    "date": "2025-12-24",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": "No record"
+  },
+  {
+    "date": "2025-12-25",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": "No record"
+  },
+  {
+    "date": "2025-12-26",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": "No record"
+  },
+  {
+    "date": "2025-12-27",
+    "bedtime": "9:17pm",
+    "bedtime_decimal": 21.28,
+    "wake_time": "5:21am",
+    "wake_time_decimal": 29.35,
+    "total_sleep_hours": 8.07,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:17pm | Levi woke up at 5:21am"
+  },
+  {
+    "date": "2025-12-28",
+    "bedtime": "11:17pm",
+    "bedtime_decimal": 23.28,
+    "wake_time": "7:41am",
+    "wake_time_decimal": 31.68,
+    "total_sleep_hours": 8.4,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:17pm | Levi woke up at 7:41am"
+  },
+  {
+    "date": "2025-12-29",
+    "bedtime": "11:41pm",
+    "bedtime_decimal": 23.68,
+    "wake_time": "9:04am",
+    "wake_time_decimal": 33.07,
+    "total_sleep_hours": 9.38,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:41pm | Levi woke up at 9:04am"
+  },
+  {
+    "date": "2025-12-30",
+    "bedtime": "10:57pm",
+    "bedtime_decimal": 22.95,
+    "wake_time": "10:42am",
+    "wake_time_decimal": 34.7,
+    "total_sleep_hours": 10.28,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "4:59",
+        "duration_hours": 1.47
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 10:57pm | Levi woke up at 4:59am and went back to sleep at 6:27am | Levi woke up at 10:42am"
+  },
+  {
+    "date": "2025-12-31",
+    "bedtime": "12:35am",
+    "bedtime_decimal": 24.58,
+    "wake_time": "7:41am",
+    "wake_time_decimal": 31.68,
+    "total_sleep_hours": 7.1,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "7:41",
+        "duration_hours": null
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 12:35am | Levi woke up at 10:37am | Levi woke up at 7:41am"
+  },
+  {
+    "date": "2026-01-01",
+    "bedtime": "11:58pm",
+    "bedtime_decimal": 23.97,
+    "wake_time": "7:41am",
+    "wake_time_decimal": 31.68,
+    "total_sleep_hours": 7.72,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:58pm | Levi woke up at 7:41am"
+  },
+  {
+    "date": "2026-01-02",
+    "bedtime": "11:34pm",
+    "bedtime_decimal": 23.57,
+    "wake_time": "8:49am",
+    "wake_time_decimal": 32.82,
+    "total_sleep_hours": 9.25,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:34pm | Levi woke up at 8:49am"
+  },
+  {
+    "date": "2026-01-03",
+    "bedtime": "11:16pm",
+    "bedtime_decimal": 23.27,
+    "wake_time": "9:46am",
+    "wake_time_decimal": 33.77,
+    "total_sleep_hours": 9.32,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "4:15",
+        "duration_hours": 0.48
+      },
+      {
+        "wake_time": "5:25",
+        "duration_hours": 0.7
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 11:16pm | Levi woke up at 4:15am and went back to sleep at 4:44am | Levi woke up at 5:25am and went back to sleep at 6:07am | Levi woke up at 9:46am"
+  },
+  {
+    "date": "2026-01-04",
+    "bedtime": "8:43pm",
+    "bedtime_decimal": 20.72,
+    "wake_time": "8:50am",
+    "wake_time_decimal": 32.83,
+    "total_sleep_hours": 12.12,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 8:43pm | Levi woke up at 8:50am"
+  },
+  {
+    "date": "2026-01-05",
+    "bedtime": "1:32am",
+    "bedtime_decimal": 25.53,
+    "wake_time": "7:59am",
+    "wake_time_decimal": 31.98,
+    "total_sleep_hours": 6.45,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 1:32am | Levi woke up at 7:59am"
+  },
+  {
+    "date": "2026-01-06",
+    "bedtime": "9:44pm",
+    "bedtime_decimal": 21.73,
+    "wake_time": "7:12am",
+    "wake_time_decimal": 31.2,
+    "total_sleep_hours": 9.47,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:44pm | Levi woke up at 7:12am"
+  },
+  {
+    "date": "2026-01-07",
+    "bedtime": "11:13pm",
+    "bedtime_decimal": 23.22,
+    "wake_time": "7:55am",
+    "wake_time_decimal": 31.92,
+    "total_sleep_hours": 8.7,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:13pm | Levi woke up at 7:55am"
+  },
+  {
+    "date": "2026-01-08",
+    "bedtime": "10:03pm",
+    "bedtime_decimal": 22.05,
+    "wake_time": "7:53am",
+    "wake_time_decimal": 31.88,
+    "total_sleep_hours": 9.83,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:03pm | Levi woke up at 7:53am"
+  },
+  {
+    "date": "2026-01-09",
+    "bedtime": "9:38pm",
+    "bedtime_decimal": 21.63,
+    "wake_time": "8:10am",
+    "wake_time_decimal": 32.17,
+    "total_sleep_hours": 10.53,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:38pm | Levi woke up at 8:10am"
+  },
+  {
+    "date": "2026-01-10",
+    "bedtime": "11:37pm",
+    "bedtime_decimal": 23.62,
+    "wake_time": "8:39am",
+    "wake_time_decimal": 32.65,
+    "total_sleep_hours": 9.03,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:37pm | Levi woke up at 8:39am"
+  },
+  {
+    "date": "2026-01-11",
+    "bedtime": "10:05pm",
+    "bedtime_decimal": 22.08,
+    "wake_time": "4:14am",
+    "wake_time_decimal": 28.23,
+    "total_sleep_hours": 6.15,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:05pm | Levi woke up at 4:14am"
+  },
+  {
+    "date": "2026-01-12",
+    "bedtime": "11:29pm",
+    "bedtime_decimal": 23.48,
+    "wake_time": "7:43am",
+    "wake_time_decimal": 31.72,
+    "total_sleep_hours": 8.23,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:29pm | Levi woke up at 7:43am"
+  },
+  {
+    "date": "2026-01-13",
+    "bedtime": "9:50pm",
+    "bedtime_decimal": 21.83,
+    "wake_time": "8:01am",
+    "wake_time_decimal": 32.02,
+    "total_sleep_hours": 5.7,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:04",
+        "duration_hours": 4.48
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:50pm | Levi woke up at 2:04am and went back to sleep at 6:33am | Levi woke up at 8:01am"
+  },
+  {
+    "date": "2026-01-14",
+    "bedtime": "10:45pm",
+    "bedtime_decimal": 22.75,
+    "wake_time": "7:55am",
+    "wake_time_decimal": 31.92,
+    "total_sleep_hours": 9.17,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:45pm | Levi woke up at 7:55am"
+  },
+  {
+    "date": "2026-01-15",
+    "bedtime": "10:57pm",
+    "bedtime_decimal": 22.95,
+    "wake_time": "7:46am",
+    "wake_time_decimal": 31.77,
+    "total_sleep_hours": 6.75,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "4:08",
+        "duration_hours": 2.07
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 10:57pm | Levi woke up at 4:08am and went back to sleep at 6:12am | Levi woke up at 7:46am"
+  },
+  {
+    "date": "2026-01-16",
+    "bedtime": "11:11pm",
+    "bedtime_decimal": 23.18,
+    "wake_time": "8:38am",
+    "wake_time_decimal": 32.63,
+    "total_sleep_hours": 9.45,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:11pm | Levi woke up at 8:38am"
+  },
+  {
+    "date": "2026-01-17",
+    "bedtime": "1:52am",
+    "bedtime_decimal": 25.87,
+    "wake_time": "8:02am",
+    "wake_time_decimal": 32.03,
+    "total_sleep_hours": 5.85,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "4:17",
+        "duration_hours": 0.32
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 1:52am | Levi woke up at 4:17am and went back to sleep at 4:36am | Levi woke up at 8:02am"
+  },
+  {
+    "date": "2026-01-18",
+    "bedtime": "9:05pm",
+    "bedtime_decimal": 21.08,
+    "wake_time": "8:59am",
+    "wake_time_decimal": 32.98,
+    "total_sleep_hours": 6.52,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "0:42",
+        "duration_hours": 5.38
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:05pm | Levi woke up at 12:42am and went back to sleep at 6:05am | Levi woke up at 8:59am"
+  },
+  {
+    "date": "2026-01-19",
+    "bedtime": "9:58pm",
+    "bedtime_decimal": 21.97,
+    "wake_time": "8:04am",
+    "wake_time_decimal": 32.07,
+    "total_sleep_hours": 10.1,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:58pm | Levi woke up at 8:04am"
+  },
+  {
+    "date": "2026-01-20",
+    "bedtime": "9:17pm",
+    "bedtime_decimal": 21.28,
+    "wake_time": "8:01am",
+    "wake_time_decimal": 32.02,
+    "total_sleep_hours": 9.15,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "3:49",
+        "duration_hours": 1.58
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:17pm | Levi woke up at 3:49am and went back to sleep at 5:24am | Levi woke up at 8:01am"
+  },
+  {
+    "date": "2026-01-21",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": "Levi did not sleep in his bed Wednesday night"
+  },
+  {
+    "date": "2026-01-22",
+    "bedtime": "9:37pm",
+    "bedtime_decimal": 21.62,
+    "wake_time": "7:45am",
+    "wake_time_decimal": 31.75,
+    "total_sleep_hours": 10.13,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:37pm | Levi woke up at 7:45am"
+  },
+  {
+    "date": "2026-01-23",
+    "bedtime": "10:06pm",
+    "bedtime_decimal": 22.1,
+    "wake_time": "7:27am",
+    "wake_time_decimal": 31.45,
+    "total_sleep_hours": 9.35,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:06pm | Levi woke up at 7:27am"
+  },
+  {
+    "date": "2026-01-24",
+    "bedtime": "9:48pm",
+    "bedtime_decimal": 21.8,
+    "wake_time": "3:39am",
+    "wake_time_decimal": 27.65,
+    "total_sleep_hours": 5.85,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:48pm | Levi woke up at 3:39am"
+  },
+  {
+    "date": "2026-01-25",
+    "bedtime": "9:11pm",
+    "bedtime_decimal": 21.18,
+    "wake_time": "7:52am",
+    "wake_time_decimal": 31.87,
+    "total_sleep_hours": 9.42,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "4:22",
+        "duration_hours": 1.27
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:11pm | Levi woke up at 4:22am and went back to sleep at 5:38am | Levi woke up at 7:52am"
+  },
+  {
+    "date": "2026-01-26",
+    "bedtime": "9:02pm",
+    "bedtime_decimal": 21.03,
+    "wake_time": "7:52am",
+    "wake_time_decimal": 31.87,
+    "total_sleep_hours": 6.97,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:30",
+        "duration_hours": 3.87
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:02pm | Levi woke up at 2:30am and went back to sleep at 6:22am | Levi woke up at 7:52am"
+  },
+  {
+    "date": "2026-01-27",
+    "bedtime": "9:46pm",
+    "bedtime_decimal": 21.77,
+    "wake_time": "8:08am",
+    "wake_time_decimal": 32.13,
+    "total_sleep_hours": 8.4,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "3:49",
+        "duration_hours": 1.97
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:46pm | Levi woke up at 3:49am and went back to sleep at 5:47am | Levi woke up at 8:08am"
+  },
+  {
+    "date": "2026-01-28",
+    "bedtime": "10:15pm",
+    "bedtime_decimal": 22.25,
+    "wake_time": "7:57am",
+    "wake_time_decimal": 31.95,
+    "total_sleep_hours": 9.7,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:15pm | Levi woke up at 7:57am"
+  },
+  {
+    "date": "2026-01-29",
+    "bedtime": "10:26pm",
+    "bedtime_decimal": 22.43,
+    "wake_time": "7:57am",
+    "wake_time_decimal": 31.95,
+    "total_sleep_hours": 6.57,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "3:18",
+        "duration_hours": 2.95
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 10:26pm | Levi woke up at 3:18am and went back to sleep at 6:15am | Levi woke up at 7:57am"
+  },
+  {
+    "date": "2026-01-30",
+    "bedtime": "9:35pm",
+    "bedtime_decimal": 21.58,
+    "wake_time": "8:59am",
+    "wake_time_decimal": 32.98,
+    "total_sleep_hours": 8.9,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "1:43",
+        "duration_hours": 2.5
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Based on the recordings, I cannot determine the exact time Levi fell asleep. **The best estimate is around 9:35pm,** though it is likely that he fell asleep somewhat earlier. | Levi woke up at 1:43am and went back to sleep at 4:13am | Levi woke up at 8:59am"
+  },
+  {
+    "date": "2026-01-31",
+    "bedtime": "12:24am",
+    "bedtime_decimal": 24.4,
+    "wake_time": "9:11am",
+    "wake_time_decimal": 33.18,
+    "total_sleep_hours": 8.78,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Based on the recordings, I cannot determine the exact time Levi fell asleep. **The best estimate is around 12:24am,** though it is likely that he fell asleep somewhat earlier. | Levi woke up at 9:11am"
+  },
+  {
+    "date": "2026-02-01",
+    "bedtime": "9:45pm",
+    "bedtime_decimal": 21.75,
+    "wake_time": "8:07am",
+    "wake_time_decimal": 32.12,
+    "total_sleep_hours": 5.82,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "1:47",
+        "duration_hours": 4.55
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:45pm | Levi woke up at 1:47am and went back to sleep at 6:20am | Levi woke up at 8:07am"
+  },
+  {
+    "date": "2026-02-02",
+    "bedtime": "8:55pm",
+    "bedtime_decimal": 20.92,
+    "wake_time": "7:34am",
+    "wake_time_decimal": 31.57,
+    "total_sleep_hours": 10.65,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 8:55pm | Levi woke up at 7:34am"
+  },
+  {
+    "date": "2026-02-03",
+    "bedtime": "9:13pm",
+    "bedtime_decimal": 21.22,
+    "wake_time": "7:42am",
+    "wake_time_decimal": 31.7,
+    "total_sleep_hours": 10.48,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:13pm | Levi woke up at 7:42am"
+  },
+  {
+    "date": "2026-02-04",
+    "bedtime": "9:37pm",
+    "bedtime_decimal": 21.62,
+    "wake_time": "4:22am",
+    "wake_time_decimal": 28.37,
+    "total_sleep_hours": 6.75,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:37pm | Levi woke up at 4:22am"
+  },
+  {
+    "date": "2026-02-05",
+    "bedtime": "10:17pm",
+    "bedtime_decimal": 22.28,
+    "wake_time": "7:41am",
+    "wake_time_decimal": 31.68,
+    "total_sleep_hours": 9.4,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:17pm | Levi woke up at 7:41am"
+  },
+  {
+    "date": "2026-02-06",
+    "bedtime": "10:11pm",
+    "bedtime_decimal": 22.18,
+    "wake_time": "7:12am",
+    "wake_time_decimal": 31.2,
+    "total_sleep_hours": 9.02,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:11pm | Levi woke up at 7:12am"
+  },
+  {
+    "date": "2026-02-07",
+    "bedtime": "9:39pm",
+    "bedtime_decimal": 21.65,
+    "wake_time": "7:24am",
+    "wake_time_decimal": 31.4,
+    "total_sleep_hours": 9.75,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:39pm | Levi woke up at 7:24am"
+  },
+  {
+    "date": "2026-02-08",
+    "bedtime": "10:38pm",
+    "bedtime_decimal": 22.63,
+    "wake_time": "4:50am",
+    "wake_time_decimal": 28.83,
+    "total_sleep_hours": 6.2,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:38pm | Levi woke up at 4:50am"
+  },
+  {
+    "date": "2026-02-09",
+    "bedtime": "10:23pm",
+    "bedtime_decimal": 22.38,
+    "wake_time": "7:37am",
+    "wake_time_decimal": 31.62,
+    "total_sleep_hours": 9.23,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:23pm | Levi woke up at 7:37am"
+  },
+  {
+    "date": "2026-02-10",
+    "bedtime": "10:27pm",
+    "bedtime_decimal": 22.45,
+    "wake_time": "7:58am",
+    "wake_time_decimal": 31.97,
+    "total_sleep_hours": 5.82,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "1:48",
+        "duration_hours": 3.7
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 10:27pm | Levi woke up at 1:48am and went back to sleep at 5:30am | Levi woke up at 7:58am"
+  },
+  {
+    "date": "2026-02-11",
+    "bedtime": "9:17pm",
+    "bedtime_decimal": 21.28,
+    "wake_time": "8:00am",
+    "wake_time_decimal": 32.0,
+    "total_sleep_hours": 7.77,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:28",
+        "duration_hours": 2.95
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:17pm | Levi woke up at 2:28am and went back to sleep at 5:25am | Levi woke up at 8am"
+  },
+  {
+    "date": "2026-02-12",
+    "bedtime": "9:54pm",
+    "bedtime_decimal": 21.9,
+    "wake_time": "7:05am",
+    "wake_time_decimal": 31.08,
+    "total_sleep_hours": 9.18,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:54pm | Levi woke up at 7:05am"
+  },
+  {
+    "date": "2026-02-13",
+    "bedtime": "9:14pm",
+    "bedtime_decimal": 21.23,
+    "wake_time": "10:48am",
+    "wake_time_decimal": 34.8,
+    "total_sleep_hours": 9.1,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:00",
+        "duration_hours": 4.47
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:14pm | Levi woke up at 2am and went back to sleep at 6:28am | Levi woke up at 10:48am"
+  },
+  {
+    "date": "2026-02-14",
+    "bedtime": "1:12am",
+    "bedtime_decimal": 25.2,
+    "wake_time": "9:03am",
+    "wake_time_decimal": 33.05,
+    "total_sleep_hours": 7.85,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 1:12am | Levi woke up at 9:03am"
+  },
+  {
+    "date": "2026-02-15",
+    "bedtime": "9:29pm",
+    "bedtime_decimal": 21.48,
+    "wake_time": "8:54am",
+    "wake_time_decimal": 32.9,
+    "total_sleep_hours": 6.15,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "0:51",
+        "duration_hours": 5.27
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:29pm | Levi woke up at 12:51am and went back to sleep at 6:07am | Levi woke up at 8:54am"
+  },
+  {
+    "date": "2026-02-16",
+    "bedtime": "9:12pm",
+    "bedtime_decimal": 21.2,
+    "wake_time": "8:44am",
+    "wake_time_decimal": 32.73,
+    "total_sleep_hours": 7.6,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:07",
+        "duration_hours": 3.93
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:12pm | Levi woke up at 2:07am and went back to sleep at 6:03am | Levi woke up at 8:44am"
+  },
+  {
+    "date": "2026-02-17",
+    "bedtime": "10:40pm",
+    "bedtime_decimal": 22.67,
+    "wake_time": "8:29am",
+    "wake_time_decimal": 32.48,
+    "total_sleep_hours": 9.82,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:40pm | Levi woke up at 8:29am"
+  },
+  {
+    "date": "2026-02-18",
+    "bedtime": "9:45pm",
+    "bedtime_decimal": 21.75,
+    "wake_time": "9:05am",
+    "wake_time_decimal": 33.08,
+    "total_sleep_hours": 9.32,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "4:11",
+        "duration_hours": 2.02
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:45pm | Levi woke up at 4:11am and went back to sleep at 6:12am | Levi woke up at 9:05am"
+  },
+  {
+    "date": "2026-02-19",
+    "bedtime": "9:32pm",
+    "bedtime_decimal": 21.53,
+    "wake_time": "7:41am",
+    "wake_time_decimal": 31.68,
+    "total_sleep_hours": 10.15,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:32pm | Levi woke up at 7:41am"
+  },
+  {
+    "date": "2026-02-20",
+    "bedtime": "9:48pm",
+    "bedtime_decimal": 21.8,
+    "wake_time": "8:13am",
+    "wake_time_decimal": 32.22,
+    "total_sleep_hours": 7.72,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "21:56",
+        "duration_hours": 2.7
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:48pm | Levi woke up at 9:56pm and went back to sleep at 12:38am | Levi woke up at 8:13am"
+  },
+  {
+    "date": "2026-02-21",
+    "bedtime": "9:46pm",
+    "bedtime_decimal": 21.77,
+    "wake_time": "7:58am",
+    "wake_time_decimal": 31.97,
+    "total_sleep_hours": 10.2,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:46pm | Levi woke up at 7:58am"
+  },
+  {
+    "date": "2026-02-22",
+    "bedtime": "10:54pm",
+    "bedtime_decimal": 22.9,
+    "wake_time": "8:57am",
+    "wake_time_decimal": 32.95,
+    "total_sleep_hours": 6.28,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:33",
+        "duration_hours": 3.77
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 10:54pm | Levi woke up at 2:33am and went back to sleep at 6:19am | Levi woke up at 8:57am"
+  },
+  {
+    "date": "2026-02-23",
+    "bedtime": "10:18pm",
+    "bedtime_decimal": 22.3,
+    "wake_time": "8:43am",
+    "wake_time_decimal": 32.72,
+    "total_sleep_hours": 10.42,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:18pm | Levi woke up at 8:43am"
+  },
+  {
+    "date": "2026-02-24",
+    "bedtime": "9:56pm",
+    "bedtime_decimal": 21.93,
+    "wake_time": "7:48am",
+    "wake_time_decimal": 31.8,
+    "total_sleep_hours": 5.82,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "2:55",
+        "duration_hours": 4.05
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:56pm | Levi woke up at 2:55am and went back to sleep at 6:58am | Levi woke up at 7:48am"
+  },
+  {
+    "date": "2026-02-25",
+    "bedtime": "8:37pm",
+    "bedtime_decimal": 20.62,
+    "wake_time": "7:44am",
+    "wake_time_decimal": 31.73,
+    "total_sleep_hours": 11.12,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 8:37pm | Levi woke up at 7:44am"
+  },
+  {
+    "date": "2026-02-26",
+    "bedtime": "11:44pm",
+    "bedtime_decimal": 23.73,
+    "wake_time": "7:40am",
+    "wake_time_decimal": 31.67,
+    "total_sleep_hours": 7.93,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11:44pm | Levi woke up at 7:40am"
+  },
+  {
+    "date": "2026-02-27",
+    "bedtime": "10:03pm",
+    "bedtime_decimal": 22.05,
+    "wake_time": "7:36am",
+    "wake_time_decimal": 31.6,
+    "total_sleep_hours": 9.55,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:03pm | Levi woke up at 7:36am"
+  },
+  {
+    "date": "2026-02-28",
+    "bedtime": "11:00pm",
+    "bedtime_decimal": 23.0,
+    "wake_time": "4:39am",
+    "wake_time_decimal": 28.65,
+    "total_sleep_hours": 5.65,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 11pm | Levi woke up at 4:39am"
+  },
+  {
+    "date": "2026-03-01",
+    "bedtime": "8:45pm",
+    "bedtime_decimal": 20.75,
+    "wake_time": "4:50am",
+    "wake_time_decimal": 28.83,
+    "total_sleep_hours": 8.08,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 8:45pm | Levi woke up at 4:50am"
+  },
+  {
+    "date": "2026-03-02",
+    "bedtime": "9:29pm",
+    "bedtime_decimal": 21.48,
+    "wake_time": "7:42am",
+    "wake_time_decimal": 31.7,
+    "total_sleep_hours": 8.6,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "1:33",
+        "duration_hours": 1.62
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:29pm | Levi woke up at 1:33am and went back to sleep at 3:10am | Levi woke up at 7:42am"
+  },
+  {
+    "date": "2026-03-03",
+    "bedtime": "8:50pm",
+    "bedtime_decimal": 20.83,
+    "wake_time": "7:54am",
+    "wake_time_decimal": 31.9,
+    "total_sleep_hours": 7.87,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "1:21",
+        "duration_hours": 3.2
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 8:50pm | Levi woke up at 1:21am and went back to sleep at 4:33am | Levi woke up at 7:54am"
+  },
+  {
+    "date": "2026-03-04",
+    "bedtime": "9:12pm",
+    "bedtime_decimal": 21.2,
+    "wake_time": "1:27am",
+    "wake_time_decimal": 25.45,
+    "total_sleep_hours": 4.25,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:12pm | Levi woke up at 1:27am"
+  },
+  {
+    "date": "2026-03-05",
+    "bedtime": "8:14pm",
+    "bedtime_decimal": 20.23,
+    "wake_time": "8:03am",
+    "wake_time_decimal": 32.05,
+    "total_sleep_hours": 11.82,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 8:14pm | Levi woke up at 8:03am"
+  },
+  {
+    "date": "2026-03-06",
+    "bedtime": "8:42pm",
+    "bedtime_decimal": 20.7,
+    "wake_time": "3:52am",
+    "wake_time_decimal": 27.87,
+    "total_sleep_hours": 7.17,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 8:42pm | Levi woke up at 3:52am"
+  },
+  {
+    "date": "2026-03-07",
+    "bedtime": "8:37pm",
+    "bedtime_decimal": 20.62,
+    "wake_time": "8:15am",
+    "wake_time_decimal": 32.25,
+    "total_sleep_hours": 11.63,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 8:37pm | Levi woke up at 8:15am"
+  },
+  {
+    "date": "2026-03-08",
+    "bedtime": "8:45pm",
+    "bedtime_decimal": 20.75,
+    "wake_time": "6:36am",
+    "wake_time_decimal": 30.6,
+    "total_sleep_hours": 9.85,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 8:45pm | Levi woke up at 6:36am"
+  },
+  {
+    "date": "2026-03-09",
+    "bedtime": "9:05pm",
+    "bedtime_decimal": 21.08,
+    "wake_time": "4:45am",
+    "wake_time_decimal": 28.75,
+    "total_sleep_hours": 7.67,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:05pm | Levi woke up at 4:45am"
+  },
+  {
+    "date": "2026-03-10",
+    "bedtime": "9:50pm",
+    "bedtime_decimal": 21.83,
+    "wake_time": "7:46am",
+    "wake_time_decimal": 31.77,
+    "total_sleep_hours": 9.93,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:50pm | Levi woke up at 7:46am"
+  },
+  {
+    "date": "2026-03-11",
+    "bedtime": "2:00am",
+    "bedtime_decimal": 26.0,
+    "wake_time": "7:25am",
+    "wake_time_decimal": 31.42,
+    "total_sleep_hours": 5.42,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 2am | Levi woke up at 7:25am"
+  },
+  {
+    "date": "2026-03-12",
+    "bedtime": "9:26pm",
+    "bedtime_decimal": 21.43,
+    "wake_time": "1:59am",
+    "wake_time_decimal": 25.98,
+    "total_sleep_hours": 4.55,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:26pm | Levi woke up at 1:59am"
+  },
+  {
+    "date": "2026-03-13",
+    "bedtime": "8:12pm",
+    "bedtime_decimal": 20.2,
+    "wake_time": "5:09am",
+    "wake_time_decimal": 29.15,
+    "total_sleep_hours": 8.95,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 8:12pm | Levi woke up at 5:09am"
+  },
+  {
+    "date": "2026-03-14",
+    "bedtime": "9:02pm",
+    "bedtime_decimal": 21.03,
+    "wake_time": "7:28am",
+    "wake_time_decimal": 31.47,
+    "total_sleep_hours": 10.43,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:02pm | Levi woke up at 7:28am"
+  },
+  {
+    "date": "2026-03-15",
+    "bedtime": "8:22pm",
+    "bedtime_decimal": 20.37,
+    "wake_time": "8:05am",
+    "wake_time_decimal": 32.08,
+    "total_sleep_hours": 7.32,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "0:34",
+        "duration_hours": 4.4
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 8:22pm | Levi woke up at 12:34am and went back to sleep at 4:58am | Levi woke up at 8:05am"
+  },
+  {
+    "date": "2026-03-16",
+    "bedtime": "8:34pm",
+    "bedtime_decimal": 20.57,
+    "wake_time": "7:55am",
+    "wake_time_decimal": 31.92,
+    "total_sleep_hours": 7.73,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "0:41",
+        "duration_hours": 3.62
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 8:34pm | Levi woke up at 12:41am and went back to sleep at 4:18am | Levi woke up at 7:55am"
+  },
+  {
+    "date": "2026-03-17",
+    "bedtime": "8:28pm",
+    "bedtime_decimal": 20.47,
+    "wake_time": "8:59am",
+    "wake_time_decimal": 32.98,
+    "total_sleep_hours": 9.42,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "1:49",
+        "duration_hours": 3.1
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 8:28pm | Levi woke up at 1:49am and went back to sleep at 4:55am | Levi woke up at 8:59am"
+  },
+  {
+    "date": "2026-03-18",
+    "bedtime": "8:58pm",
+    "bedtime_decimal": 20.97,
+    "wake_time": "7:55am",
+    "wake_time_decimal": 31.92,
+    "total_sleep_hours": 6.87,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "0:08",
+        "duration_hours": 4.08
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 8:58pm | Levi woke up at 12:08am and went back to sleep at 4:13am | Levi woke up at 7:55am"
+  },
+  {
+    "date": "2026-03-19",
+    "bedtime": "9:58pm",
+    "bedtime_decimal": 21.97,
+    "wake_time": "4:18am",
+    "wake_time_decimal": 28.3,
+    "total_sleep_hours": 6.33,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:58pm | Levi woke up at 4:18am"
+  },
+  {
+    "date": "2026-03-20",
+    "bedtime": "9:16am",
+    "bedtime_decimal": 33.27,
+    "wake_time": "5:10am",
+    "wake_time_decimal": 29.17,
+    "total_sleep_hours": 7.48,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "5:10",
+        "duration_hours": 4.1
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 9:16 | Levi woke up at 9:25pm and went back to sleep at 9:41pm | Levi woke up at 5:10am"
+  },
+  {
+    "date": "2026-03-21",
+    "bedtime": "9:45pm",
+    "bedtime_decimal": 21.75,
+    "wake_time": "8:19am",
+    "wake_time_decimal": 32.32,
+    "total_sleep_hours": 10.57,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:45pm | Levi woke up at 8:19am"
+  },
+  {
+    "date": "2026-03-22",
+    "bedtime": "9:40pm",
+    "bedtime_decimal": 21.67,
+    "wake_time": "4:03am",
+    "wake_time_decimal": 28.05,
+    "total_sleep_hours": 6.38,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:40pm | Levi woke up at 4:03am"
+  },
+  {
+    "date": "2026-03-23",
+    "bedtime": "5:48pm",
+    "bedtime_decimal": 17.8,
+    "wake_time": "5:22am",
+    "wake_time_decimal": 29.37,
+    "total_sleep_hours": 11.57,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 5:48pm | Levi woke up at 5:22am"
+  },
+  {
+    "date": "2026-03-24",
+    "bedtime": "8:41pm",
+    "bedtime_decimal": 20.68,
+    "wake_time": "6:44am",
+    "wake_time_decimal": 30.73,
+    "total_sleep_hours": 7.62,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "23:34",
+        "duration_hours": 0.95
+      },
+      {
+        "wake_time": "2:20",
+        "duration_hours": 1.48
+      }
+    ],
+    "slept_through": false,
+    "raw_notes": "Levi fell asleep at 8:41pm | Levi woke up at 11:34pm and went back to sleep at 12:31am | Levi woke up at 2:20am and went back to sleep at 3:49am | Levi woke up at 6:44am"
+  },
+  {
+    "date": "2026-03-25",
+    "bedtime": "12:02am",
+    "bedtime_decimal": 24.03,
+    "wake_time": "5:47am",
+    "wake_time_decimal": 29.78,
+    "total_sleep_hours": 5.75,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 12:02am | Levi woke up at 5:47am"
+  },
+  {
+    "date": "2026-03-26",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": "Levi did not sleep last night"
+  },
+  {
+    "date": "2026-03-27",
+    "bedtime": "9:30pm",
+    "bedtime_decimal": 21.5,
+    "wake_time": "1:41am",
+    "wake_time_decimal": 25.68,
+    "total_sleep_hours": 4.18,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:30pm | Levi woke up at 1:41am"
+  },
+  {
+    "date": "2026-03-28",
+    "bedtime": "9:09pm",
+    "bedtime_decimal": 21.15,
+    "wake_time": "2:17am",
+    "wake_time_decimal": 26.28,
+    "total_sleep_hours": 5.13,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 9:09pm | Levi woke up at 2:17am"
+  },
+  {
+    "date": "2026-03-29",
+    "bedtime": "10:17pm",
+    "bedtime_decimal": 22.28,
+    "wake_time": "7:19am",
+    "wake_time_decimal": 31.32,
+    "total_sleep_hours": 9.03,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": true,
+    "raw_notes": "Levi fell asleep at 10:17pm | Levi woke up at 7:19am"
+  },
+  {
+    "date": "2026-03-30",
+    "bedtime": null,
+    "wake_time": null,
+    "total_sleep_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "slept_through": null,
+    "raw_notes": ""
+  }
+];
