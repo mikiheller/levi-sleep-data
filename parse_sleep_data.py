@@ -134,8 +134,7 @@ def extract_times_from_text(text):
                 for m in re.finditer(pat, part):
                     t = parse_time(m.group(1))
                     if t:
-                        if ("sleep", t[0], t[1]) not in events:
-                            events.append(("sleep", t[0], t[1]))
+                        events.append(("sleep", t[0], t[1]))
 
     and_sleep = re.findall(
         r"and (?:woke\.?\s*up|awake) at (\d{1,2}:\d{2}\s*[ap]m|\d{1,2}\s*[ap]m)",
@@ -143,10 +142,16 @@ def extract_times_from_text(text):
     )
     for time_str in and_sleep:
         t = parse_time(time_str)
-        if t and ("wake", t[0], t[1]) not in events:
+        if t:
             events.append(("wake", t[0], t[1]))
 
-    return events
+    seen = set()
+    deduped = []
+    for e in events:
+        if e not in seen:
+            seen.add(e)
+            deduped.append(e)
+    return deduped
 
 
 def parse_markdown_table(filepath):
@@ -202,12 +207,21 @@ def process_night(date_tuple, lines):
         events = extract_times_from_text(line)
         all_events.extend(events)
 
+    seen = set()
+    deduped = []
+    for e in all_events:
+        if e not in seen:
+            seen.add(e)
+            deduped.append(e)
+    all_events = deduped
+
     if not all_events:
         return {
             "date": date_str,
             "bedtime": None,
             "wake_time": None,
             "total_sleep_hours": None,
+            "total_awake_hours": None,
             "night_wakings": 0,
             "waking_details": [],
             "slept_through": None,
@@ -287,6 +301,11 @@ def process_night(date_tuple, lines):
         night_waking_count = 0
         waking_details = []
 
+    total_awake = sum(
+        w["duration_hours"] for w in waking_details
+        if w["duration_hours"] is not None
+    )
+
     bedtime_str = None
     if bedtime:
         h, m = bedtime
@@ -312,6 +331,7 @@ def process_night(date_tuple, lines):
         "wake_time": wake_str,
         "wake_time_decimal": round(wake_decimal, 2) if wake_decimal else None,
         "total_sleep_hours": round(total_sleep, 2) if total_sleep > 0 else None,
+        "total_awake_hours": round(total_awake, 2) if total_awake > 0 else None,
         "night_wakings": night_waking_count,
         "waking_details": waking_details,
         "slept_through": night_waking_count == 0 and bedtime is not None,

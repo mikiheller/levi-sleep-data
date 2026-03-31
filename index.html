@@ -300,6 +300,16 @@
             </div>
             <div class="chart-container"><canvas id="wakingsChart"></canvas></div>
         </div>
+
+        <div class="chart-card">
+            <h2>Time Awake at Night</h2>
+            <div class="chart-sub">Total hours spent awake during the night (0 = slept through)</div>
+            <div class="legend-hint">
+                <div class="legend-item"><div class="legend-dot" style="background: rgba(248, 113, 113, 0.3)"></div> Daily</div>
+                <div class="legend-item"><div class="legend-dot" style="background: #f87171"></div> Rolling average</div>
+            </div>
+            <div class="chart-container"><canvas id="awakeChart"></canvas></div>
+        </div>
     </div>
 
     <div class="chart-section">
@@ -314,6 +324,7 @@
                             <th>Wake time</th>
                             <th>Sleep hours</th>
                             <th>Wakings</th>
+                            <th>Time awake</th>
                             <th>Slept through?</th>
                             <th>Notes</th>
                         </tr>
@@ -413,9 +424,15 @@
             const bedtimes = filtered.map(d => d.bedtime_decimal);
             const wakings = filtered.map(d => d.total_sleep_hours != null ? d.night_wakings : null);
 
+            const awakeHours = filtered.map(d => {
+                if (d.total_sleep_hours == null) return null;
+                return d.total_awake_hours || 0;
+            });
+
             const sleepAvg = rollingAvg(sleepHours, avgWindow);
             const bedAvg = rollingAvg(bedtimes, avgWindow);
             const wakAvg = rollingAvg(wakings, avgWindow);
+            const awakeAvg = rollingAvg(awakeHours, avgWindow);
 
             const commonScaleOpts = {
                 x: {
@@ -447,6 +464,7 @@
             if (charts.sleep) charts.sleep.destroy();
             if (charts.bed) charts.bed.destroy();
             if (charts.wak) charts.wak.destroy();
+            if (charts.awake) charts.awake.destroy();
 
             charts.sleep = new Chart(document.getElementById('sleepHoursChart'), {
                 type: 'bar',
@@ -621,6 +639,82 @@
                     },
                 },
             });
+
+            charts.awake = new Chart(document.getElementById('awakeChart'), {
+                type: 'bar',
+                data: {
+                    labels: dates,
+                    datasets: [
+                        {
+                            label: 'Hours awake',
+                            data: awakeHours,
+                            backgroundColor: ctx => {
+                                const v = ctx.raw;
+                                if (v === 0 || v === null) return 'rgba(74, 222, 128, 0.2)';
+                                if (v <= 1) return 'rgba(251, 191, 36, 0.3)';
+                                return 'rgba(248, 113, 113, 0.3)';
+                            },
+                            borderColor: ctx => {
+                                const v = ctx.raw;
+                                if (v === 0 || v === null) return 'rgba(74, 222, 128, 0.4)';
+                                if (v <= 1) return 'rgba(251, 191, 36, 0.5)';
+                                return 'rgba(248, 113, 113, 0.5)';
+                            },
+                            borderWidth: 1,
+                            borderRadius: 2,
+                            barPercentage: 0.9,
+                            categoryPercentage: 1.0,
+                        },
+                        {
+                            label: `${avgWindow}-day avg`,
+                            data: awakeAvg,
+                            type: 'line',
+                            borderColor: '#f87171',
+                            borderWidth: 2.5,
+                            pointRadius: 0,
+                            pointHoverRadius: 4,
+                            tension: 0.3,
+                            spanGaps: true,
+                        },
+                    ],
+                },
+                options: {
+                    ...commonOpts,
+                    scales: {
+                        ...commonScaleOpts,
+                        y: {
+                            min: 0,
+                            grid: { color: 'rgba(255,255,255,0.04)' },
+                            ticks: {
+                                color: '#8b8fa3',
+                                callback: v => {
+                                    if (v === 0) return '0';
+                                    const h = Math.floor(v);
+                                    const m = Math.round((v - h) * 60);
+                                    return h > 0 ? `${h}h${m > 0 ? m + 'm' : ''}` : `${m}m`;
+                                },
+                            },
+                        },
+                    },
+                    plugins: {
+                        ...commonOpts.plugins,
+                        tooltip: {
+                            ...commonOpts.plugins.tooltip,
+                            callbacks: {
+                                label: ctx => {
+                                    if (ctx.raw == null) return null;
+                                    const v = ctx.raw;
+                                    if (v === 0) return `${ctx.dataset.label}: 0 (slept through)`;
+                                    const h = Math.floor(v);
+                                    const m = Math.round((v - h) * 60);
+                                    const str = h > 0 ? `${h}h ${m}m` : `${m}m`;
+                                    return `${ctx.dataset.label}: ${str}`;
+                                },
+                            },
+                        },
+                    },
+                },
+            });
         }
 
         function buildTable(filtered) {
@@ -653,12 +747,18 @@
                     }).join('; ')
                     : '';
 
+                const awakeBadge = d.total_awake_hours == null ? '-'
+                    : d.total_awake_hours === 0 || !d.total_awake_hours ? '<span class="badge badge-good">0</span>'
+                    : d.total_awake_hours <= 1 ? `<span class="badge badge-warn">${Math.round(d.total_awake_hours * 60)}m</span>`
+                    : `<span class="badge badge-bad">${d.total_awake_hours.toFixed(1)}h</span>`;
+
                 return `<tr>
                     <td>${dateStr}</td>
                     <td>${d.bedtime || '<span class="no-data">-</span>'}</td>
                     <td>${d.wake_time || '<span class="no-data">-</span>'}</td>
                     <td>${sleepBadge}</td>
                     <td>${wakingsBadge}</td>
+                    <td>${awakeBadge}</td>
                     <td>${throughBadge}</td>
                     <td style="max-width:300px; font-size:0.8rem; color: var(--text-muted)">${wakingNotes}</td>
                 </tr>`;
