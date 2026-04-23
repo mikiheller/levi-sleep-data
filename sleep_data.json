@@ -6251,22 +6251,22 @@
   },
   {
     "date": "2026-03-20",
-    "bedtime": "9:16am",
-    "bedtime_decimal": 33.27,
+    "bedtime": "9:16pm",
+    "bedtime_decimal": 21.27,
     "wake_time": "5:10am",
     "wake_time_decimal": 29.17,
-    "total_sleep_hours": 7.48,
-    "total_awake_hours": 4.1,
+    "total_sleep_hours": 7.63,
+    "total_awake_hours": 0.27,
     "night_wakings": 1,
     "waking_details": [
       {
-        "wake_time": "5:10am",
-        "return_time": "9:16am",
-        "duration_hours": 4.1
+        "wake_time": "9:25pm",
+        "return_time": "9:41pm",
+        "duration_hours": 0.27
       }
     ],
     "night_type": "resettled",
-    "raw_notes": "Levi fell asleep at 9:16 | Levi woke up at 9:25pm and went back to sleep at 9:41pm | Levi woke up at 5:10am"
+    "raw_notes": "Levi fell asleep at 9:16pm | Levi woke up at 9:25pm and went back to sleep at 9:41pm | Levi woke up at 5:10am"
   },
   {
     "date": "2026-03-21",

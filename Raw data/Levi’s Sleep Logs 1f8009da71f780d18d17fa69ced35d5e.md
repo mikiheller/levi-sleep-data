@@ -187,7 +187,7 @@
 |  | Levi woke up at 7:55am |  |
 | Mar 19 (Thu) night | Levi fell asleep at 9:58pm |  |
 |  | Levi woke up at 4:18am  |  |
-| Mar 20 (Fri) night | Levi fell asleep at 9:16 |  |
+| Mar 20 (Fri) night | Levi fell asleep at 9:16pm |  |
 |  | Levi woke up at 9:25pm and went back to sleep at 9:41pm |  |
 |  | Levi woke up at 5:10am |  |
 | Mar 21 (Sat) night | Levi fell asleep at 9:45pm |  |
