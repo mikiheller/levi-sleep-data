@@ -159,6 +159,58 @@
             margin-bottom: 1rem;
         }
 
+        .detail-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .detail-header h2 {
+            margin-bottom: 0;
+        }
+
+        .jump-to-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .jump-to-date input[type="date"] {
+            background: var(--surface-hover);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.4rem 0.6rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-family: inherit;
+            color-scheme: dark;
+            cursor: pointer;
+        }
+
+        .jump-to-date input[type="date"]:hover,
+        .jump-to-date input[type="date"]:focus {
+            border-color: var(--accent);
+            outline: none;
+        }
+
+        .jump-to-date .jump-msg {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        @keyframes rowFlash {
+            0%   { background: rgba(108, 140, 255, 0.35); }
+            100% { background: transparent; }
+        }
+        .detail-table tr.flash-row td {
+            animation: rowFlash 1.6s ease-out;
+        }
+
         .detail-table {
             width: 100%;
             border-collapse: collapse;
@@ -317,8 +369,15 @@
 
     <div class="chart-section">
         <div class="detail-panel">
-            <h2>Nightly Details</h2>
-            <div class="table-wrapper">
+            <div class="detail-header">
+                <h2>Nightly Details</h2>
+                <label class="jump-to-date">
+                    Jump to date:
+                    <input type="date" id="jumpDate">
+                    <span class="jump-msg" id="jumpMsg"></span>
+                </label>
+            </div>
+            <div class="table-wrapper" id="tableWrapper">
                 <table class="detail-table">
                     <thead>
                         <tr>
@@ -871,7 +930,7 @@
                         ? `<span class="badge badge-warn">${Math.round(d.total_awake_hours * 60)}m</span>`
                         : `<span class="badge badge-bad">${d.total_awake_hours.toFixed(1)}h</span>`;
 
-                return `<tr>
+                return `<tr data-date="${d.date}">
                     <td>${dateStr}</td>
                     <td>${d.bedtime || '<span class="no-data">-</span>'}</td>
                     <td>${d.wake_time || '<span class="no-data">-</span>'}</td>
@@ -914,6 +973,41 @@
         }
 
         populateMonthSelect();
+
+        const jumpInput = document.getElementById('jumpDate');
+        const jumpMsg = document.getElementById('jumpMsg');
+        if (data.length > 0) {
+            jumpInput.min = data[0].date;
+            jumpInput.max = data[data.length - 1].date;
+        }
+
+        let flashTimeout = null;
+        function jumpToDate(iso) {
+            const row = document.querySelector(`#detailBody tr[data-date="${iso}"]`);
+            if (!row) {
+                const exists = data.some(d => d.date === iso);
+                if (!exists) {
+                    jumpMsg.textContent = 'No entry for that date';
+                    return;
+                }
+                document.getElementById('rangeSelect').value = 'all';
+                document.getElementById('monthSelect').value = 'all';
+                update();
+                requestAnimationFrame(() => jumpToDate(iso));
+                return;
+            }
+            jumpMsg.textContent = '';
+            row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            row.classList.remove('flash-row');
+            void row.offsetWidth;
+            row.classList.add('flash-row');
+            if (flashTimeout) clearTimeout(flashTimeout);
+            flashTimeout = setTimeout(() => row.classList.remove('flash-row'), 1800);
+        }
+        jumpInput.addEventListener('change', e => {
+            if (e.target.value) jumpToDate(e.target.value);
+        });
+
         document.getElementById('rangeSelect').addEventListener('change', update);
         document.getElementById('avgSelect').addEventListener('change', update);
         document.getElementById('monthSelect').addEventListener('change', update);
