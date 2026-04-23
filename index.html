@@ -276,7 +276,7 @@
             <div class="chart-sub">Hours of sleep each night (bedtime to final wake, minus awake periods)</div>
             <div class="legend-hint">
                 <div class="legend-item"><div class="legend-dot" style="background: rgba(108, 140, 255, 0.3)"></div> Daily</div>
-                <div class="legend-item"><div class="legend-dot" style="background: #6c8cff"></div> Rolling average</div>
+                <div class="legend-item"><div class="legend-dot" style="background: #6c8cff"></div> <span data-rolling-label>Rolling average</span></div>
             </div>
             <div class="chart-container"><canvas id="sleepHoursChart"></canvas></div>
         </div>
@@ -286,14 +286,14 @@
             <div class="chart-sub">What time Levi fell asleep each night</div>
             <div class="legend-hint">
                 <div class="legend-item"><div class="legend-dot" style="background: rgba(168, 130, 255, 0.3)"></div> Daily</div>
-                <div class="legend-item"><div class="legend-dot" style="background: #a882ff"></div> Rolling average</div>
+                <div class="legend-item"><div class="legend-dot" style="background: #a882ff"></div> <span data-rolling-label>Rolling average</span></div>
             </div>
             <div class="chart-container"><canvas id="bedtimeChart"></canvas></div>
         </div>
 
         <div class="chart-card">
             <h2>Night Type Distribution</h2>
-            <div class="chart-sub">Rolling share of full nights, resettled nights, and early wakes (wake before 5:30am with no return)</div>
+            <div class="chart-sub"><span id="nightTypeWindowLabel">7-day rolling</span> share of full nights, resettled nights, and early wakes (wake before 5:30am with no return)</div>
             <div class="legend-hint">
                 <div class="legend-item"><div class="legend-dot" style="background: #4ade80"></div> Full night</div>
                 <div class="legend-item"><div class="legend-dot" style="background: #fbbf24"></div> Woke &amp; resettled</div>
@@ -461,6 +461,13 @@
         function buildCharts(filtered) {
             const avgWindow = parseInt(document.getElementById('avgSelect').value);
             const effectiveWindow = avgWindow > 0 ? avgWindow : 7;
+
+            const rollingLabel = avgWindow > 0 ? `${avgWindow}-day rolling average` : 'Rolling average (off)';
+            document.querySelectorAll('[data-rolling-label]').forEach(el => { el.textContent = rollingLabel; });
+            const nightTypeLabel = document.getElementById('nightTypeWindowLabel');
+            if (nightTypeLabel) {
+                nightTypeLabel.textContent = avgWindow > 0 ? `${avgWindow}-day rolling` : '7-day rolling (default)';
+            }
             const dates = filtered.map(d => d.date);
             const sleepHours = filtered.map(d => d.total_sleep_hours);
             const bedtimes = filtered.map(d => d.bedtime_decimal);
