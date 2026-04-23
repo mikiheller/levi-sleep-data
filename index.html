@@ -305,12 +305,11 @@
 
         <div class="chart-card">
             <h2>Sleep Window</h2>
-            <div class="chart-sub">Bedtime → final wake each night. Red segment = awake period in the middle of the night.</div>
+            <div class="chart-sub">Faint bar = time in bed (bedtime → final wake). Solid bar = asleep. Gaps in the solid bar show awake periods in the middle of the night.</div>
             <div class="legend-hint">
                 <div class="legend-item"><div class="legend-dot" style="background: #4ade80"></div> Full night</div>
-                <div class="legend-item"><div class="legend-dot" style="background: #fbbf24"></div> Resettled</div>
+                <div class="legend-item"><div class="legend-dot" style="background: #fbbf24"></div> Resettled (woke &amp; returned)</div>
                 <div class="legend-item"><div class="legend-dot" style="background: #f87171"></div> Early wake</div>
-                <div class="legend-item"><div class="legend-dot" style="background: rgba(248, 113, 113, 0.8); border: 1px solid #f87171"></div> Awake during night</div>
             </div>
             <div class="chart-container"><canvas id="sleepWindowChart"></canvas></div>
         </div>
@@ -477,24 +476,41 @@
 
             const typePercents = rollingNightTypePercent(filtered, effectiveWindow);
 
-            const sleepWindows = filtered.map(d => {
+            function parseClockToDecimal(timeStr, referenceDec) {
+                if (!timeStr) return null;
+                const m = timeStr.match(/(\d+):(\d+)\s*(am|pm)/i);
+                if (!m) return null;
+                let h = parseInt(m[1]);
+                const min = parseInt(m[2]);
+                const ampm = m[3].toLowerCase();
+                if (ampm === 'pm' && h !== 12) h += 12;
+                if (ampm === 'am' && h === 12) h = 0;
+                let dec = h + min / 60;
+                if (referenceDec != null && dec < referenceDec - 12) dec += 24;
+                return dec;
+            }
+
+            const timeInBed = filtered.map(d => {
                 if (d.bedtime_decimal == null || d.wake_time_decimal == null) return null;
                 return [d.bedtime_decimal, d.wake_time_decimal];
             });
-            const awakeGaps = filtered.map(d => {
+            const sleepSegmentA = filtered.map(d => {
+                if (d.bedtime_decimal == null || d.wake_time_decimal == null) return null;
+                if (!d.waking_details || d.waking_details.length === 0) {
+                    return [d.bedtime_decimal, d.wake_time_decimal];
+                }
+                const w = d.waking_details[0];
+                const wakeAt = parseClockToDecimal(w.wake_time, d.bedtime_decimal);
+                if (wakeAt == null) return [d.bedtime_decimal, d.wake_time_decimal];
+                return [d.bedtime_decimal, wakeAt];
+            });
+            const sleepSegmentB = filtered.map(d => {
+                if (d.bedtime_decimal == null || d.wake_time_decimal == null) return null;
                 if (!d.waking_details || d.waking_details.length === 0) return null;
                 const w = d.waking_details[0];
-                if (w.duration_hours == null || d.bedtime_decimal == null) return null;
-                let bed = d.bedtime_decimal;
-                const [hStr, mRaw] = w.wake_time.match(/(\d+):(\d+)/).slice(1);
-                const ampm = w.wake_time.slice(-2).toLowerCase();
-                let h = parseInt(hStr);
-                const m = parseInt(mRaw);
-                if (ampm === 'pm' && h !== 12) h += 12;
-                if (ampm === 'am' && h === 12) h = 0;
-                let wakeDec = h + m / 60;
-                if (wakeDec < bed - 12) wakeDec += 24;
-                return [wakeDec, wakeDec + w.duration_hours];
+                const returnAt = parseClockToDecimal(w.return_time, d.bedtime_decimal);
+                if (returnAt == null) return null;
+                return [returnAt, d.wake_time_decimal];
             });
 
             const commonScaleOpts = {
@@ -697,14 +713,19 @@
                 },
             });
 
-            const sleepWindowColors = filtered.map(d => {
-                if (!d.night_type) return 'rgba(148, 154, 170, 0.35)';
-                return NIGHT_TYPE_COLOR[d.night_type] + '55';
+            const backBgColors = filtered.map(d => {
+                const c = NIGHT_TYPE_COLOR[d.night_type] || '#4b5160';
+                return c + '26';
             });
-            const sleepWindowBorders = filtered.map(d => {
-                if (!d.night_type) return '#4b5160';
-                return NIGHT_TYPE_COLOR[d.night_type];
+            const backBorderColors = filtered.map(d => {
+                const c = NIGHT_TYPE_COLOR[d.night_type] || '#4b5160';
+                return c + '55';
             });
+            const solidBgColors = filtered.map(d => {
+                const c = NIGHT_TYPE_COLOR[d.night_type] || '#4b5160';
+                return c + 'dd';
+            });
+            const solidBorderColors = filtered.map(d => NIGHT_TYPE_COLOR[d.night_type] || '#4b5160');
 
             const yMin = 19;
             const yMax = 33;
@@ -715,24 +736,36 @@
                     labels: dates,
                     datasets: [
                         {
-                            label: 'Sleep window',
-                            data: sleepWindows,
-                            backgroundColor: sleepWindowColors,
-                            borderColor: sleepWindowBorders,
+                            label: 'Time in bed',
+                            data: timeInBed,
+                            backgroundColor: backBgColors,
+                            borderColor: backBorderColors,
+                            borderWidth: 1,
+                            borderRadius: 3,
+                            barPercentage: 0.9,
+                            categoryPercentage: 1.0,
+                            order: 3,
+                        },
+                        {
+                            label: 'Asleep',
+                            data: sleepSegmentA,
+                            backgroundColor: solidBgColors,
+                            borderColor: solidBorderColors,
                             borderWidth: 1,
                             borderRadius: 3,
                             barPercentage: 0.9,
                             categoryPercentage: 1.0,
                             order: 2,
+                            grouped: false,
                         },
                         {
-                            label: 'Awake during night',
-                            data: awakeGaps,
-                            backgroundColor: '#f87171dd',
-                            borderColor: '#f87171',
+                            label: 'Asleep (after resettling)',
+                            data: sleepSegmentB,
+                            backgroundColor: solidBgColors,
+                            borderColor: solidBorderColors,
                             borderWidth: 1,
-                            borderRadius: 2,
-                            barPercentage: 0.45,
+                            borderRadius: 3,
+                            barPercentage: 0.9,
                             categoryPercentage: 1.0,
                             order: 1,
                             grouped: false,
@@ -764,11 +797,12 @@
                         ...commonOpts.plugins,
                         tooltip: {
                             ...commonOpts.plugins.tooltip,
+                            filter: item => item.datasetIndex === 0,
                             callbacks: {
                                 title: items => {
                                     if (!items.length) return '';
-                                    const idx = items[0].dataIndex;
-                                    const d = filtered[idx];
+                                    const d = filtered[items[0].dataIndex];
+                                    if (!d) return '';
                                     const date = new Date(d.date + 'T00:00:00');
                                     const opts = { weekday: 'short', month: 'short', day: 'numeric' };
                                     return date.toLocaleDateString('en-US', opts);
@@ -776,16 +810,20 @@
                                 label: ctx => {
                                     const d = filtered[ctx.dataIndex];
                                     if (!d || !d.bedtime) return null;
-                                    if (ctx.datasetIndex === 0) {
-                                        const typeLabel = NIGHT_TYPE_LABEL[d.night_type] || '';
-                                        return `${d.bedtime} → ${d.wake_time}  ·  ${typeLabel}`;
+                                    const lines = [];
+                                    lines.push(`${d.bedtime} → ${d.wake_time}`);
+                                    const typeLabel = NIGHT_TYPE_LABEL[d.night_type] || '';
+                                    if (typeLabel) lines.push(typeLabel);
+                                    if (d.waking_details && d.waking_details.length > 0) {
+                                        for (const w of d.waking_details) {
+                                            if (w.return_time) {
+                                                lines.push(`Awake from ${w.wake_time} to ${w.return_time}`);
+                                            } else {
+                                                lines.push(`Woke at ${w.wake_time}`);
+                                            }
+                                        }
                                     }
-                                    const w = d.waking_details && d.waking_details[0];
-                                    if (!w) return null;
-                                    if (w.return_time) {
-                                        return `Awake from ${w.wake_time} to ${w.return_time}`;
-                                    }
-                                    return `Awake starting ${w.wake_time}`;
+                                    return lines;
                                 },
                             },
                         },
