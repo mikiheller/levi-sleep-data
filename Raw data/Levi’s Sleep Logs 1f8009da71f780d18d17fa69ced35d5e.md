@@ -209,7 +209,52 @@
 |  | Levi woke up at 2:17am |  |
 | Mar 29 (Sun) night | Levi fell asleep at 10:17pm |  |
 |  | Levi woke up at 7:19am |  |
-| Mar 30 (Mon) night |  |  |
+| Mar 30 (Mon) night | Levi fell asleep at 9:13pm |  |
+|  | Levi woke up at 5:50am |  |
+| Mar 31 (Tue) night | Levi fell asleep at 9:49pm |  |
+|  | Levi woke up at 8:50am |  |
+| Apr 1 (Wed) night | Levi fell asleep at 9:31pm |  |
+|  | Levi woke up at 7:41am |  |
+| Apr 2 (Thu) night | Levi fell asleep at 9:01pm |  |
+|  | Levi woke up at 2:50am |  |
+| Apr 3 (Fri) night | Levi fell asleep at 8:52pm |  |
+|  | Levi woke up at 6:57am |  |
+| Apr 4 (Sat) night | Levi fell asleep at 9:23pm |  |
+|  | Levi woke up at 11:57pm and went back to sleep at 6:53am |  |
+|  | Levi woke up at 9:36am |  |
+| Apr 5 (Sun) night | Levi fell asleep at 9:07pm |  |
+|  | Levi woke up at 7:44am |  |
+| Apr 6 (Mon) night |  | No data |
+| Apr 7 (Tue) night | Levi fell asleep at 10:28pm |  |
+|  | Levi woke up at 3:31am |  |
+| Apr 8 (Wed) night | Levi fell asleep at 10:16pm |  |
+|  | Levi woke up at 1:12am |  |
+| Apr 9 (Thu) night | Levi fell asleep at 8:27pm |  |
+|  | Levi woke up at 8:25am |  |
+| Apr 10 (Fri) night | Levi fell asleep at 9pm |  |
+|  | Levi woke up at 7:15am |  |
+| Apr 11 (Sat) night | Levi fell asleep at 11:03pm |  |
+|  | Levi woke up at 5:06am |  |
+| Apr 12 (Sun) night | Levi fell asleep at 9:23pm |  |
+|  | Levi woke up at 7:56am |  |
+| Apr 13 (Mon) night | Levi fell asleep at 9:08pm |  |
+|  | Levi woke up at 7:38am |  |
+| Apr 14 (Tue) night | Levi fell asleep at 8:53pm |  |
+|  | Levi woke up at 3:04am |  |
+| Apr 15 (Wed) night | Levi fell asleep at 9:38pm |  |
+|  | Levi woke up at 7:47am |  |
+| Apr 16 (Thu) night | Levi fell asleep at 9:21pm |  |
+|  | Levi woke up at 2:13am |  |
+| Apr 17 (Fri) night | Levi fell asleep at 8:20pm |  |
+|  | Levi woke up at 7:35am |  |
+| Apr 18 (Sat) night | Levi fell asleep at 8:58pm |  |
+|  | Levi woke up at 6:43am |  |
+| Apr 19 (Sun) night | Levi fell asleep at 10:03pm |  |
+|  | Levi woke up at 2:55am |  |
+| Apr 20 (Mon) night | Levi fell asleep at 8:44pm |  |
+|  | Levi woke up at 7:28am |  |
+| Apr 21 (Tue) night | Levi fell asleep at 9:02pm |  |
+|  | Levi woke up at 1:08am |  |
 |  |  |  |
 |  |  |  |
 |  |  |  |
