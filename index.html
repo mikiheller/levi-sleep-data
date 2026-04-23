@@ -292,23 +292,27 @@
         </div>
 
         <div class="chart-card">
-            <h2>Night Wakings</h2>
-            <div class="chart-sub">Number of times Levi woke up during the night</div>
+            <h2>Night Type Distribution</h2>
+            <div class="chart-sub">Rolling share of full nights, resettled nights, and early wakes (wake before 5:30am with no return)</div>
             <div class="legend-hint">
-                <div class="legend-item"><div class="legend-dot" style="background: rgba(251, 191, 36, 0.3)"></div> Daily</div>
-                <div class="legend-item"><div class="legend-dot" style="background: #fbbf24"></div> Rolling average</div>
+                <div class="legend-item"><div class="legend-dot" style="background: #4ade80"></div> Full night</div>
+                <div class="legend-item"><div class="legend-dot" style="background: #fbbf24"></div> Woke &amp; resettled</div>
+                <div class="legend-item"><div class="legend-dot" style="background: #f87171"></div> Early wake (no return)</div>
+                <div class="legend-item"><div class="legend-dot" style="background: #4b5160"></div> No data</div>
             </div>
-            <div class="chart-container"><canvas id="wakingsChart"></canvas></div>
+            <div class="chart-container"><canvas id="nightTypeChart"></canvas></div>
         </div>
 
         <div class="chart-card">
-            <h2>Time Awake at Night</h2>
-            <div class="chart-sub">Total hours spent awake during the night (0 = slept through)</div>
+            <h2>Sleep Window</h2>
+            <div class="chart-sub">Bedtime → final wake each night. Red segment = awake period in the middle of the night.</div>
             <div class="legend-hint">
-                <div class="legend-item"><div class="legend-dot" style="background: rgba(248, 113, 113, 0.3)"></div> Daily</div>
-                <div class="legend-item"><div class="legend-dot" style="background: #f87171"></div> Rolling average</div>
+                <div class="legend-item"><div class="legend-dot" style="background: #4ade80"></div> Full night</div>
+                <div class="legend-item"><div class="legend-dot" style="background: #fbbf24"></div> Resettled</div>
+                <div class="legend-item"><div class="legend-dot" style="background: #f87171"></div> Early wake</div>
+                <div class="legend-item"><div class="legend-dot" style="background: rgba(248, 113, 113, 0.8); border: 1px solid #f87171"></div> Awake during night</div>
             </div>
-            <div class="chart-container"><canvas id="awakeChart"></canvas></div>
+            <div class="chart-container"><canvas id="sleepWindowChart"></canvas></div>
         </div>
     </div>
 
@@ -323,9 +327,8 @@
                             <th>Bedtime</th>
                             <th>Wake time</th>
                             <th>Sleep hours</th>
-                            <th>Wakings</th>
+                            <th>Night type</th>
                             <th>Time awake</th>
-                            <th>Slept through?</th>
                             <th>Notes</th>
                         </tr>
                     </thead>
@@ -373,16 +376,16 @@
         function updateStats(filtered) {
             const valid = filtered.filter(d => d.total_sleep_hours != null);
             const avg = valid.length ? (valid.reduce((s, d) => s + d.total_sleep_hours, 0) / valid.length) : 0;
-            const sleptThrough = valid.filter(d => d.slept_through).length;
-            const pctThrough = valid.length ? ((sleptThrough / valid.length) * 100) : 0;
 
             const bedtimes = valid.filter(d => d.bedtime_decimal != null);
             const avgBedtime = bedtimes.length ? bedtimes.reduce((s, d) => s + d.bedtime_decimal, 0) / bedtimes.length : 0;
 
-            const wakings = valid.filter(d => d.night_wakings > 0);
-            const avgWakings = wakings.length
-                ? (valid.reduce((s, d) => s + d.night_wakings, 0) / valid.length)
-                : 0;
+            const classified = filtered.filter(d => d.night_type && d.night_type !== 'no_data');
+            const fullCount = classified.filter(d => d.night_type === 'full').length;
+            const resettledCount = classified.filter(d => d.night_type === 'resettled').length;
+            const earlyCount = classified.filter(d => d.night_type === 'early_wake').length;
+            const total = classified.length;
+            const pct = n => total ? ((n / total) * 100).toFixed(0) : '0';
 
             function decimalToTime(dec) {
                 let h = Math.floor(dec) % 24;
@@ -405,34 +408,87 @@
                     <div class="sub">${bedtimes.length} nights with data</div>
                 </div>
                 <div class="stat-card">
-                    <div class="label">Slept Through</div>
-                    <div class="value">${pctThrough.toFixed(0)}%</div>
-                    <div class="sub">${sleptThrough} of ${valid.length} nights</div>
+                    <div class="label">Full Nights</div>
+                    <div class="value">${pct(fullCount)}%</div>
+                    <div class="sub">${fullCount} of ${total} · straight through to 5:30am+</div>
                 </div>
                 <div class="stat-card">
-                    <div class="label">Avg Wakings / Night</div>
-                    <div class="value">${avgWakings.toFixed(2)}</div>
-                    <div class="sub">${wakings.length} nights with wakings</div>
+                    <div class="label">Resettled</div>
+                    <div class="value">${pct(resettledCount)}%</div>
+                    <div class="sub">${resettledCount} of ${total} · woke and went back to sleep</div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">Early Wakes</div>
+                    <div class="value">${pct(earlyCount)}%</div>
+                    <div class="sub">${earlyCount} of ${total} · woke before 5:30am, didn't return</div>
                 </div>
             `;
         }
 
+        const NIGHT_TYPE_COLOR = {
+            full: '#4ade80',
+            resettled: '#fbbf24',
+            early_wake: '#f87171',
+            no_data: '#4b5160',
+        };
+        const NIGHT_TYPE_LABEL = {
+            full: 'Full night',
+            resettled: 'Resettled',
+            early_wake: 'Early wake',
+            no_data: 'No data',
+        };
+
+        function rollingNightTypePercent(filtered, window) {
+            const types = ['full', 'resettled', 'early_wake', 'no_data'];
+            const series = Object.fromEntries(types.map(t => [t, []]));
+            const minWindow = Math.min(3, window);
+            for (let i = 0; i < filtered.length; i++) {
+                const slice = filtered.slice(Math.max(0, i - window + 1), i + 1);
+                if (slice.length < minWindow) {
+                    types.forEach(t => series[t].push(null));
+                    continue;
+                }
+                const counts = Object.fromEntries(types.map(t => [t, 0]));
+                for (const d of slice) {
+                    const nt = d.night_type || 'no_data';
+                    counts[nt] = (counts[nt] || 0) + 1;
+                }
+                types.forEach(t => series[t].push((counts[t] / slice.length) * 100));
+            }
+            return series;
+        }
+
         function buildCharts(filtered) {
             const avgWindow = parseInt(document.getElementById('avgSelect').value);
+            const effectiveWindow = avgWindow > 0 ? avgWindow : 7;
             const dates = filtered.map(d => d.date);
             const sleepHours = filtered.map(d => d.total_sleep_hours);
             const bedtimes = filtered.map(d => d.bedtime_decimal);
-            const wakings = filtered.map(d => d.total_sleep_hours != null ? d.night_wakings : null);
-
-            const awakeHours = filtered.map(d => {
-                if (d.total_sleep_hours == null) return null;
-                return d.total_awake_hours || 0;
-            });
 
             const sleepAvg = rollingAvg(sleepHours, avgWindow);
             const bedAvg = rollingAvg(bedtimes, avgWindow);
-            const wakAvg = rollingAvg(wakings, avgWindow);
-            const awakeAvg = rollingAvg(awakeHours, avgWindow);
+
+            const typePercents = rollingNightTypePercent(filtered, effectiveWindow);
+
+            const sleepWindows = filtered.map(d => {
+                if (d.bedtime_decimal == null || d.wake_time_decimal == null) return null;
+                return [d.bedtime_decimal, d.wake_time_decimal];
+            });
+            const awakeGaps = filtered.map(d => {
+                if (!d.waking_details || d.waking_details.length === 0) return null;
+                const w = d.waking_details[0];
+                if (w.duration_hours == null || d.bedtime_decimal == null) return null;
+                let bed = d.bedtime_decimal;
+                const [hStr, mRaw] = w.wake_time.match(/(\d+):(\d+)/).slice(1);
+                const ampm = w.wake_time.slice(-2).toLowerCase();
+                let h = parseInt(hStr);
+                const m = parseInt(mRaw);
+                if (ampm === 'pm' && h !== 12) h += 12;
+                if (ampm === 'am' && h === 12) h = 0;
+                let wakeDec = h + m / 60;
+                if (wakeDec < bed - 12) wakeDec += 24;
+                return [wakeDec, wakeDec + w.duration_hours];
+            });
 
             const commonScaleOpts = {
                 x: {
@@ -463,8 +519,8 @@
 
             if (charts.sleep) charts.sleep.destroy();
             if (charts.bed) charts.bed.destroy();
-            if (charts.wak) charts.wak.destroy();
-            if (charts.awake) charts.awake.destroy();
+            if (charts.nightType) charts.nightType.destroy();
+            if (charts.sleepWindow) charts.sleepWindow.destroy();
 
             charts.sleep = new Chart(document.getElementById('sleepHoursChart'), {
                 type: 'bar',
@@ -589,43 +645,23 @@
                 },
             });
 
-            charts.wak = new Chart(document.getElementById('wakingsChart'), {
-                type: 'bar',
+            const typeOrder = ['full', 'resettled', 'early_wake', 'no_data'];
+            charts.nightType = new Chart(document.getElementById('nightTypeChart'), {
+                type: 'line',
                 data: {
                     labels: dates,
-                    datasets: [
-                        {
-                            label: 'Wakings',
-                            data: wakings,
-                            backgroundColor: ctx => {
-                                const v = ctx.raw;
-                                if (v === 0) return 'rgba(74, 222, 128, 0.25)';
-                                if (v === 1) return 'rgba(251, 191, 36, 0.25)';
-                                return 'rgba(248, 113, 113, 0.25)';
-                            },
-                            borderColor: ctx => {
-                                const v = ctx.raw;
-                                if (v === 0) return 'rgba(74, 222, 128, 0.5)';
-                                if (v === 1) return 'rgba(251, 191, 36, 0.5)';
-                                return 'rgba(248, 113, 113, 0.5)';
-                            },
-                            borderWidth: 1,
-                            borderRadius: 2,
-                            barPercentage: 0.9,
-                            categoryPercentage: 1.0,
-                        },
-                        {
-                            label: `${avgWindow}-day avg`,
-                            data: wakAvg,
-                            type: 'line',
-                            borderColor: '#fbbf24',
-                            borderWidth: 2.5,
-                            pointRadius: 0,
-                            pointHoverRadius: 4,
-                            tension: 0.3,
-                            spanGaps: true,
-                        },
-                    ],
+                    datasets: typeOrder.map(t => ({
+                        label: NIGHT_TYPE_LABEL[t],
+                        data: typePercents[t],
+                        backgroundColor: NIGHT_TYPE_COLOR[t] + 'cc',
+                        borderColor: NIGHT_TYPE_COLOR[t],
+                        borderWidth: 1,
+                        fill: true,
+                        pointRadius: 0,
+                        pointHoverRadius: 3,
+                        tension: 0.25,
+                        spanGaps: false,
+                    })),
                 },
                 options: {
                     ...commonOpts,
@@ -633,67 +669,10 @@
                         ...commonScaleOpts,
                         y: {
                             min: 0,
+                            max: 100,
+                            stacked: true,
                             grid: { color: 'rgba(255,255,255,0.04)' },
-                            ticks: { color: '#8b8fa3', stepSize: 1 },
-                        },
-                    },
-                },
-            });
-
-            charts.awake = new Chart(document.getElementById('awakeChart'), {
-                type: 'bar',
-                data: {
-                    labels: dates,
-                    datasets: [
-                        {
-                            label: 'Hours awake',
-                            data: awakeHours,
-                            backgroundColor: ctx => {
-                                const v = ctx.raw;
-                                if (v === 0 || v === null) return 'rgba(74, 222, 128, 0.2)';
-                                if (v <= 1) return 'rgba(251, 191, 36, 0.3)';
-                                return 'rgba(248, 113, 113, 0.3)';
-                            },
-                            borderColor: ctx => {
-                                const v = ctx.raw;
-                                if (v === 0 || v === null) return 'rgba(74, 222, 128, 0.4)';
-                                if (v <= 1) return 'rgba(251, 191, 36, 0.5)';
-                                return 'rgba(248, 113, 113, 0.5)';
-                            },
-                            borderWidth: 1,
-                            borderRadius: 2,
-                            barPercentage: 0.9,
-                            categoryPercentage: 1.0,
-                        },
-                        {
-                            label: `${avgWindow}-day avg`,
-                            data: awakeAvg,
-                            type: 'line',
-                            borderColor: '#f87171',
-                            borderWidth: 2.5,
-                            pointRadius: 0,
-                            pointHoverRadius: 4,
-                            tension: 0.3,
-                            spanGaps: true,
-                        },
-                    ],
-                },
-                options: {
-                    ...commonOpts,
-                    scales: {
-                        ...commonScaleOpts,
-                        y: {
-                            min: 0,
-                            grid: { color: 'rgba(255,255,255,0.04)' },
-                            ticks: {
-                                color: '#8b8fa3',
-                                callback: v => {
-                                    if (v === 0) return '0';
-                                    const h = Math.floor(v);
-                                    const m = Math.round((v - h) * 60);
-                                    return h > 0 ? `${h}h${m > 0 ? m + 'm' : ''}` : `${m}m`;
-                                },
-                            },
+                            ticks: { color: '#8b8fa3', callback: v => v + '%' },
                         },
                     },
                     plugins: {
@@ -703,12 +682,103 @@
                             callbacks: {
                                 label: ctx => {
                                     if (ctx.raw == null) return null;
-                                    const v = ctx.raw;
-                                    if (v === 0) return `${ctx.dataset.label}: 0 (slept through)`;
-                                    const h = Math.floor(v);
-                                    const m = Math.round((v - h) * 60);
-                                    const str = h > 0 ? `${h}h ${m}m` : `${m}m`;
-                                    return `${ctx.dataset.label}: ${str}`;
+                                    return `${ctx.dataset.label}: ${ctx.raw.toFixed(0)}%`;
+                                },
+                            },
+                        },
+                    },
+                },
+            });
+
+            const sleepWindowColors = filtered.map(d => {
+                if (!d.night_type) return 'rgba(148, 154, 170, 0.35)';
+                return NIGHT_TYPE_COLOR[d.night_type] + '55';
+            });
+            const sleepWindowBorders = filtered.map(d => {
+                if (!d.night_type) return '#4b5160';
+                return NIGHT_TYPE_COLOR[d.night_type];
+            });
+
+            const yMin = 19;
+            const yMax = 33;
+
+            charts.sleepWindow = new Chart(document.getElementById('sleepWindowChart'), {
+                type: 'bar',
+                data: {
+                    labels: dates,
+                    datasets: [
+                        {
+                            label: 'Sleep window',
+                            data: sleepWindows,
+                            backgroundColor: sleepWindowColors,
+                            borderColor: sleepWindowBorders,
+                            borderWidth: 1,
+                            borderRadius: 3,
+                            barPercentage: 0.9,
+                            categoryPercentage: 1.0,
+                            order: 2,
+                        },
+                        {
+                            label: 'Awake during night',
+                            data: awakeGaps,
+                            backgroundColor: '#f87171dd',
+                            borderColor: '#f87171',
+                            borderWidth: 1,
+                            borderRadius: 2,
+                            barPercentage: 0.45,
+                            categoryPercentage: 1.0,
+                            order: 1,
+                            grouped: false,
+                        },
+                    ],
+                },
+                options: {
+                    ...commonOpts,
+                    scales: {
+                        ...commonScaleOpts,
+                        y: {
+                            min: yMin,
+                            max: yMax,
+                            reverse: true,
+                            grid: { color: 'rgba(255,255,255,0.04)' },
+                            ticks: {
+                                color: '#8b8fa3',
+                                stepSize: 2,
+                                callback: v => {
+                                    let h = Math.floor(v) % 24;
+                                    const ampm = h >= 12 ? 'pm' : 'am';
+                                    const dh = h % 12 || 12;
+                                    return `${dh}${ampm}`;
+                                },
+                            },
+                        },
+                    },
+                    plugins: {
+                        ...commonOpts.plugins,
+                        tooltip: {
+                            ...commonOpts.plugins.tooltip,
+                            callbacks: {
+                                title: items => {
+                                    if (!items.length) return '';
+                                    const idx = items[0].dataIndex;
+                                    const d = filtered[idx];
+                                    const date = new Date(d.date + 'T00:00:00');
+                                    const opts = { weekday: 'short', month: 'short', day: 'numeric' };
+                                    return date.toLocaleDateString('en-US', opts);
+                                },
+                                label: ctx => {
+                                    const d = filtered[ctx.dataIndex];
+                                    if (!d || !d.bedtime) return null;
+                                    if (ctx.datasetIndex === 0) {
+                                        const typeLabel = NIGHT_TYPE_LABEL[d.night_type] || '';
+                                        return `${d.bedtime} → ${d.wake_time}  ·  ${typeLabel}`;
+                                    }
+                                    const w = d.waking_details && d.waking_details[0];
+                                    if (!w) return null;
+                                    if (w.return_time) {
+                                        return `Awake from ${w.wake_time} to ${w.return_time}`;
+                                    }
+                                    return `Awake starting ${w.wake_time}`;
                                 },
                             },
                         },
@@ -726,40 +796,43 @@
                     : d.total_sleep_hours >= 7 ? `<span class="badge badge-warn">${d.total_sleep_hours.toFixed(1)}h</span>`
                     : `<span class="badge badge-bad">${d.total_sleep_hours.toFixed(1)}h</span>`;
 
-                const throughBadge = d.slept_through == null ? '-'
-                    : d.slept_through ? '<span class="badge badge-good">Yes</span>'
-                    : '<span class="badge badge-bad">No</span>';
-
-                const wakingsBadge = d.total_sleep_hours == null ? '-'
-                    : d.night_wakings === 0 ? '<span class="badge badge-good">0</span>'
-                    : d.night_wakings === 1 ? `<span class="badge badge-warn">${d.night_wakings}</span>`
-                    : `<span class="badge badge-bad">${d.night_wakings}</span>`;
+                const typeBadgeClass = {
+                    full: 'badge-good',
+                    resettled: 'badge-warn',
+                    early_wake: 'badge-bad',
+                    no_data: '',
+                };
+                const typeBadge = !d.night_type || d.night_type === 'no_data'
+                    ? '<span class="no-data">-</span>'
+                    : `<span class="badge ${typeBadgeClass[d.night_type]}">${NIGHT_TYPE_LABEL[d.night_type]}</span>`;
 
                 const dateObj = new Date(d.date + 'T00:00:00');
                 const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
                 const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
                 const dateStr = `${dayNames[dateObj.getDay()]}, ${monthNames[dateObj.getMonth()]} ${dateObj.getDate()}`;
 
-                const wakingNotes = d.waking_details.length > 0
+                const wakingNotes = d.waking_details && d.waking_details.length > 0
                     ? d.waking_details.map(w => {
-                        const dur = w.duration_hours != null ? ` (${(w.duration_hours * 60).toFixed(0)}min)` : '';
-                        return `Woke at ${w.wake_time}${dur}`;
+                        if (w.return_time) {
+                            return `Awake from ${w.wake_time} to ${w.return_time}`;
+                        }
+                        return `Woke at ${w.wake_time}`;
                     }).join('; ')
                     : '';
 
-                const awakeBadge = d.total_awake_hours == null ? '-'
-                    : d.total_awake_hours === 0 || !d.total_awake_hours ? '<span class="badge badge-good">0</span>'
-                    : d.total_awake_hours <= 1 ? `<span class="badge badge-warn">${Math.round(d.total_awake_hours * 60)}m</span>`
-                    : `<span class="badge badge-bad">${d.total_awake_hours.toFixed(1)}h</span>`;
+                const awakeBadge = d.total_awake_hours == null || !d.total_awake_hours
+                    ? '-'
+                    : d.total_awake_hours <= 1
+                        ? `<span class="badge badge-warn">${Math.round(d.total_awake_hours * 60)}m</span>`
+                        : `<span class="badge badge-bad">${d.total_awake_hours.toFixed(1)}h</span>`;
 
                 return `<tr>
                     <td>${dateStr}</td>
                     <td>${d.bedtime || '<span class="no-data">-</span>'}</td>
                     <td>${d.wake_time || '<span class="no-data">-</span>'}</td>
                     <td>${sleepBadge}</td>
-                    <td>${wakingsBadge}</td>
+                    <td>${typeBadge}</td>
                     <td>${awakeBadge}</td>
-                    <td>${throughBadge}</td>
                     <td style="max-width:300px; font-size:0.8rem; color: var(--text-muted)">${wakingNotes}</td>
                 </tr>`;
             }).join('');

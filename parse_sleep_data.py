@@ -11,6 +11,11 @@ import json
 from datetime import datetime, timedelta
 from pathlib import Path
 
+# A final wake at or after this time = "morning"; earlier (with no return to sleep)
+# = "early wake". Used to classify each night as full / resettled / early_wake / no_data.
+NORMAL_MORNING_HOUR = 5
+NORMAL_MORNING_MINUTE = 30
+
 MONTH_MAP = {
     "jan": 1, "january": 1,
     "feb": 2, "february": 2,
@@ -45,6 +50,15 @@ def parse_time(time_str):
 def time_to_decimal(hour, minute):
     """Convert hour/minute to decimal hours."""
     return hour + minute / 60.0
+
+
+def format_time_12h(hour, minute):
+    """Format (hour, minute) as a 12h string like '2:30am' or '9:07pm'."""
+    ampm = "am" if hour < 12 else "pm"
+    display_h = hour % 12
+    if display_h == 0:
+        display_h = 12
+    return f"{display_h}:{minute:02d}{ampm}"
 
 
 def parse_date_cell(date_str):
@@ -219,12 +233,14 @@ def process_night(date_tuple, lines):
         return {
             "date": date_str,
             "bedtime": None,
+            "bedtime_decimal": None,
             "wake_time": None,
+            "wake_time_decimal": None,
             "total_sleep_hours": None,
             "total_awake_hours": None,
             "night_wakings": 0,
             "waking_details": [],
-            "slept_through": None,
+            "night_type": "no_data",
             "raw_notes": " | ".join(lines),
         }
 
@@ -288,10 +304,13 @@ def process_night(date_tuple, lines):
                         next_sleep = ordered_events[j]
                         break
                 duration = None
+                return_time_str = None
                 if next_sleep:
                     duration = round(next_sleep[0] - dec, 2)
+                    return_time_str = format_time_12h(next_sleep[2], next_sleep[3])
                 waking_details.append({
-                    "wake_time": f"{h}:{m:02d}",
+                    "wake_time": format_time_12h(h, m),
+                    "return_time": return_time_str,
                     "duration_hours": duration,
                 })
             elif etype == "wake" and i == len(ordered_events) - 1 and i > 1:
@@ -306,23 +325,22 @@ def process_night(date_tuple, lines):
         if w["duration_hours"] is not None
     )
 
-    bedtime_str = None
-    if bedtime:
-        h, m = bedtime
-        ampm = "am" if h < 12 else "pm"
-        display_h = h % 12
-        if display_h == 0:
-            display_h = 12
-        bedtime_str = f"{display_h}:{m:02d}{ampm}"
+    bedtime_str = format_time_12h(*bedtime) if bedtime else None
+    wake_str = format_time_12h(*final_wake) if final_wake else None
 
-    wake_str = None
-    if final_wake:
-        h, m = final_wake
-        ampm = "am" if h < 12 else "pm"
-        display_h = h % 12
-        if display_h == 0:
-            display_h = 12
-        wake_str = f"{display_h}:{m:02d}{ampm}"
+    # Classify night structure (does not factor in total sleep quantity).
+    morning_threshold = time_to_decimal(NORMAL_MORNING_HOUR, NORMAL_MORNING_MINUTE)
+    if morning_threshold < 12:
+        morning_threshold += 24
+
+    if bedtime is None or final_wake is None:
+        night_type = "no_data"
+    elif night_waking_count > 0:
+        night_type = "resettled"
+    elif wake_decimal is not None and wake_decimal < morning_threshold:
+        night_type = "early_wake"
+    else:
+        night_type = "full"
 
     return {
         "date": date_str,
@@ -334,7 +352,7 @@ def process_night(date_tuple, lines):
         "total_awake_hours": round(total_awake, 2) if total_awake > 0 else None,
         "night_wakings": night_waking_count,
         "waking_details": waking_details,
-        "slept_through": night_waking_count == 0 and bedtime is not None,
+        "night_type": night_type,
         "raw_notes": " | ".join(lines),
     }
 
