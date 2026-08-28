@@ -7704,133 +7704,163 @@ const SLEEP_DATA = [
   },
   {
     "date": "2026-07-08",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
-    "total_awake_hours": null,
-    "night_wakings": 0,
-    "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "bedtime": "9:25pm",
+    "bedtime_decimal": 21.42,
+    "wake_time": "7:51am",
+    "wake_time_decimal": 31.85,
+    "total_sleep_hours": 5.58,
+    "total_awake_hours": 4.85,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "1:02am",
+        "return_time": "5:53am",
+        "duration_hours": 4.85
+      }
+    ],
+    "night_type": "resettled",
+    "raw_notes": "Asleep: 9:25pm | Awake: 1:02am-5:53am (sat up 2:10am, not upset; occasionally lay back down but mostly sitting up) | Woke up: 7:51am"
   },
   {
     "date": "2026-07-09",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
+    "bedtime": "9:20pm",
+    "bedtime_decimal": 21.33,
+    "wake_time": "6:53am",
+    "wake_time_decimal": 30.88,
+    "total_sleep_hours": 9.55,
     "total_awake_hours": null,
     "night_wakings": 0,
     "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "night_type": "full",
+    "raw_notes": "Asleep: 9:20pm | Woke up: 6:53am | Brief awake 12:56-12:57am (under 30 min, not counted per family rule)"
   },
   {
     "date": "2026-07-10",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
+    "bedtime": "9:18pm",
+    "bedtime_decimal": 21.3,
+    "wake_time": "7:37am",
+    "wake_time_decimal": 31.62,
+    "total_sleep_hours": 10.32,
     "total_awake_hours": null,
     "night_wakings": 0,
     "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "night_type": "full",
+    "raw_notes": "Asleep: 9:18pm | Woke up: 7:37am"
   },
   {
     "date": "2026-07-11",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
-    "total_awake_hours": null,
-    "night_wakings": 0,
-    "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "bedtime": "9:24pm",
+    "bedtime_decimal": 21.4,
+    "wake_time": "9:32am",
+    "wake_time_decimal": 33.53,
+    "total_sleep_hours": 6.1,
+    "total_awake_hours": 6.03,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "12:40am",
+        "return_time": "6:42am",
+        "duration_hours": 6.03
+      }
+    ],
+    "night_type": "resettled",
+    "raw_notes": "Asleep: 9:24pm | Awake: 12:40am-6:42am (not upset; 4:55am-5:15am Levi got out of bed) | Woke up: 9:32am"
   },
   {
     "date": "2026-07-12",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
+    "bedtime": "9:16pm",
+    "bedtime_decimal": 21.27,
+    "wake_time": "1:53am",
+    "wake_time_decimal": 25.88,
+    "total_sleep_hours": 4.61,
     "total_awake_hours": null,
     "night_wakings": 0,
     "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "night_type": "early_wake",
+    "raw_notes": "Asleep: 9:16pm | Woke up: 1:53am | Out of bed: 4:42am-5:39am, 5:51am-6:27am, 6:49am until Jake entered | Removed shorts 5:31am, shirt 6:12am"
   },
   {
     "date": "2026-07-13",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
-    "total_awake_hours": null,
-    "night_wakings": 0,
-    "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "bedtime": "9:27pm",
+    "bedtime_decimal": 21.45,
+    "wake_time": "7:29am",
+    "wake_time_decimal": 31.48,
+    "total_sleep_hours": 7.23,
+    "total_awake_hours": 2.8,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "1:54am",
+        "return_time": "4:42am",
+        "duration_hours": 2.8
+      }
+    ],
+    "night_type": "resettled",
+    "raw_notes": "Asleep: 9:27pm (already asleep when transferred to his room) | Awake: 1:54am-4:42am (not upset; 3:19am got out of bed; 3:39am Jake entered) | Woke up: 7:29am"
   },
   {
     "date": "2026-07-14",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
-    "total_awake_hours": null,
-    "night_wakings": 0,
-    "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "bedtime": "9:08pm",
+    "bedtime_decimal": 21.13,
+    "wake_time": "6:35am",
+    "wake_time_decimal": 30.58,
+    "total_sleep_hours": 7.73,
+    "total_awake_hours": 1.72,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "3:02am",
+        "return_time": "4:45am",
+        "duration_hours": 1.72
+      }
+    ],
+    "night_type": "resettled",
+    "raw_notes": "Asleep: 9:08pm | Awake: 3:02am-4:45am (not upset, mostly sitting and lying down) | Woke up: 6:35am (crying)"
   },
   {
     "date": "2026-07-15",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
+    "bedtime": "9:14pm",
+    "bedtime_decimal": 21.23,
+    "wake_time": "8:14am",
+    "wake_time_decimal": 32.23,
+    "total_sleep_hours": 11.0,
     "total_awake_hours": null,
     "night_wakings": 0,
     "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "night_type": "full",
+    "raw_notes": "Asleep: 9:14pm | Woke up: 8:14am"
   },
   {
     "date": "2026-07-16",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
+    "bedtime": "9:36pm",
+    "bedtime_decimal": 21.6,
+    "wake_time": "1:50am",
+    "wake_time_decimal": 25.83,
+    "total_sleep_hours": 4.23,
     "total_awake_hours": null,
     "night_wakings": 0,
     "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "night_type": "early_wake",
+    "raw_notes": "Asleep: 9:36pm | Woke up: 1:50am (not upset; did not go back to sleep) | 5:51am got out of bed; 6:42am removed shorts; 7:04am Jake entered"
   },
   {
     "date": "2026-07-17",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
-    "total_awake_hours": null,
-    "night_wakings": 0,
-    "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "bedtime": "9:15pm",
+    "bedtime_decimal": 21.25,
+    "wake_time": "9:36am",
+    "wake_time_decimal": 33.6,
+    "total_sleep_hours": 11.55,
+    "total_awake_hours": 0.8,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "4:10am",
+        "return_time": "4:58am",
+        "duration_hours": 0.8
+      }
+    ],
+    "night_type": "resettled",
+    "raw_notes": "Fell asleep: ~9:15pm (estimated) | Awake period: 4:10am-4:58am (calm; mostly lying down, briefly sat up) | Final wake-up: 9:36am"
   },
   {
     "date": "2026-07-18",
@@ -7843,38 +7873,38 @@ const SLEEP_DATA = [
     "night_wakings": 0,
     "waking_details": [],
     "night_type": "no_data",
-    "raw_notes": ""
+    "raw_notes": "No clear events captured - bed camera fell around 9:48pm; other cameras showed no captures. Last captured events: Levi's room 9:32pm, bed cam 9:14pm"
   },
   {
     "date": "2026-07-19",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
+    "bedtime": "9:39pm",
+    "bedtime_decimal": 21.65,
+    "wake_time": "12:55am",
+    "wake_time_decimal": 24.92,
+    "total_sleep_hours": 3.27,
     "total_awake_hours": null,
     "night_wakings": 0,
     "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "night_type": "early_wake",
+    "raw_notes": "Fell asleep: ~9:39pm (estimated) | Woke up: 12:55am (not upset) | 3:53am got up from bed; 5:29am removed shirt; 5:43am removed shorts; 6:01am tried to open the door; 6:19am started crying; 6:20am Jake entered"
   },
   {
     "date": "2026-07-20",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
+    "bedtime": "1:35am",
+    "bedtime_decimal": 25.58,
+    "wake_time": "7:32am",
+    "wake_time_decimal": 31.53,
+    "total_sleep_hours": 5.95,
     "total_awake_hours": null,
     "night_wakings": 0,
     "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "night_type": "full",
+    "raw_notes": "Fell asleep: 1:35am | Woke up: 7:32am"
   },
   {
     "date": "2026-07-21",
-    "bedtime": null,
-    "bedtime_decimal": null,
+    "bedtime": "9:16pm",
+    "bedtime_decimal": 21.27,
     "wake_time": null,
     "wake_time_decimal": null,
     "total_sleep_hours": null,
@@ -7882,20 +7912,20 @@ const SLEEP_DATA = [
     "night_wakings": 0,
     "waking_details": [],
     "night_type": "no_data",
-    "raw_notes": ""
+    "raw_notes": "Fell asleep: ~9:16pm (estimated) | Awake period: 1:26am (not upset) | 3:19am Jake entered the room; 5:10am Jake and Levi went out of the room | No final wake-up time recorded"
   },
   {
     "date": "2026-07-22",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
+    "bedtime": "10:23pm",
+    "bedtime_decimal": 22.38,
+    "wake_time": "9:31am",
+    "wake_time_decimal": 33.52,
+    "total_sleep_hours": 11.14,
     "total_awake_hours": null,
     "night_wakings": 0,
     "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "night_type": "full",
+    "raw_notes": "Fell asleep: 10:23pm | Final wake-up: 9:31am | Two brief awake periods, each under 30 minutes (not counted per family rule)"
   },
   {
     "date": "2026-07-23",
@@ -7908,7 +7938,7 @@ const SLEEP_DATA = [
     "night_wakings": 0,
     "waking_details": [],
     "night_type": "no_data",
-    "raw_notes": ""
+    "raw_notes": "No data - Levi at the hospital"
   },
   {
     "date": "2026-07-24",
@@ -7921,155 +7951,173 @@ const SLEEP_DATA = [
     "night_wakings": 0,
     "waking_details": [],
     "night_type": "no_data",
-    "raw_notes": ""
+    "raw_notes": "No data - Levi at the hospital"
   },
   {
     "date": "2026-07-25",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
+    "bedtime": "9:10pm",
+    "bedtime_decimal": 21.17,
+    "wake_time": "12:04am",
+    "wake_time_decimal": 24.07,
+    "total_sleep_hours": 2.9,
     "total_awake_hours": null,
     "night_wakings": 0,
     "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "night_type": "early_wake",
+    "raw_notes": "Fell asleep: ~9:10pm (estimated) | Woke up: 12:04am and got up from bed; 12:20am Jake entered Levi's room"
   },
   {
     "date": "2026-07-26",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
+    "bedtime": "9:57pm",
+    "bedtime_decimal": 21.95,
+    "wake_time": "6:24am",
+    "wake_time_decimal": 30.4,
+    "total_sleep_hours": 8.45,
     "total_awake_hours": null,
     "night_wakings": 0,
     "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "night_type": "full",
+    "raw_notes": "Fell asleep: ~9:57pm (estimated) | Final wake-up: ~6:24am (estimated) | Brief awake 12:49am-1:09am (under 30 min, not counted; Levi got up from bed 12:49am; Jake in Levi's room 1:05am)"
   },
   {
     "date": "2026-07-27",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
+    "bedtime": "9:29pm",
+    "bedtime_decimal": 21.48,
+    "wake_time": "6:46am",
+    "wake_time_decimal": 30.77,
+    "total_sleep_hours": 9.29,
     "total_awake_hours": null,
     "night_wakings": 0,
     "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "night_type": "full",
+    "raw_notes": "Fell asleep: 9:29pm | Woke up: 6:46am | Brief awake at 12:24am (under 30 min, not counted)"
   },
   {
     "date": "2026-07-28",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
+    "bedtime": "9:10pm",
+    "bedtime_decimal": 21.17,
+    "wake_time": "8:06am",
+    "wake_time_decimal": 32.1,
+    "total_sleep_hours": 10.93,
     "total_awake_hours": null,
     "night_wakings": 0,
     "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "night_type": "full",
+    "raw_notes": "Fell asleep: 9:10pm | Woke up: 8:06am"
   },
   {
     "date": "2026-07-29",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
+    "bedtime": "9:10pm",
+    "bedtime_decimal": 21.17,
+    "wake_time": "1:48am",
+    "wake_time_decimal": 25.8,
+    "total_sleep_hours": 4.63,
     "total_awake_hours": null,
     "night_wakings": 0,
     "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "night_type": "early_wake",
+    "raw_notes": "Fell asleep: 9:10pm | Woke up: 1:48am (sat up, not upset); 2:15am Jake entered the room"
   },
   {
     "date": "2026-07-30",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
+    "bedtime": "8:57pm",
+    "bedtime_decimal": 20.95,
+    "wake_time": "1:51am",
+    "wake_time_decimal": 25.85,
+    "total_sleep_hours": 4.9,
     "total_awake_hours": null,
     "night_wakings": 0,
     "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "night_type": "early_wake",
+    "raw_notes": "Fell asleep: 8:57pm | Woke up: 1:51am - got out of bed, walked to door, opened bedroom door and walked out (first time observed); stood in doorway briefly, then walked away"
   },
   {
     "date": "2026-07-31",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
+    "bedtime": "9:55pm",
+    "bedtime_decimal": 21.92,
+    "wake_time": "9:40am",
+    "wake_time_decimal": 33.67,
+    "total_sleep_hours": 11.75,
     "total_awake_hours": null,
     "night_wakings": 0,
     "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "night_type": "full",
+    "raw_notes": "Fell asleep: 9:55pm | Woke up: 9:40am"
   },
   {
     "date": "2026-08-01",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
+    "bedtime": "9:46pm",
+    "bedtime_decimal": 21.77,
+    "wake_time": "3:40am",
+    "wake_time_decimal": 27.67,
+    "total_sleep_hours": 5.9,
     "total_awake_hours": null,
     "night_wakings": 0,
     "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "night_type": "early_wake",
+    "raw_notes": "Fell asleep: 9:46pm | Woke up: 3:40am (not upset); 3:51am Jake entered the room; 6:55am Jake and Levi left the room"
   },
   {
     "date": "2026-08-02",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
+    "bedtime": "9:16pm",
+    "bedtime_decimal": 21.27,
+    "wake_time": "9:00am",
+    "wake_time_decimal": 33.0,
     "total_sleep_hours": null,
     "total_awake_hours": null,
-    "night_wakings": 0,
-    "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "4:24am",
+        "return_time": null,
+        "duration_hours": null
+      }
+    ],
+    "night_type": "resettled",
+    "raw_notes": "Fell asleep: 9:16pm | Awake: 4:24am (not upset); 4:25am Levi left his room, came to parents' room and mostly slept through the night | Woke up: 9am"
   },
   {
     "date": "2026-08-03",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
-    "total_awake_hours": null,
-    "night_wakings": 0,
-    "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "bedtime": "9:34pm",
+    "bedtime_decimal": 21.57,
+    "wake_time": "9:16am",
+    "wake_time_decimal": 33.27,
+    "total_sleep_hours": 9.55,
+    "total_awake_hours": 2.15,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "4:00am",
+        "return_time": "6:09am",
+        "duration_hours": 2.15
+      }
+    ],
+    "night_type": "resettled",
+    "raw_notes": "Fell asleep: 9:34pm | Awake period: 4am-6:09am (4:01am Levi left the room; 4:37am Jake and Levi entered the room) | Final wake up: 9:16am"
   },
   {
     "date": "2026-08-04",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
-    "total_awake_hours": null,
-    "night_wakings": 0,
-    "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "bedtime": "9:40pm",
+    "bedtime_decimal": 21.67,
+    "wake_time": "8:55am",
+    "wake_time_decimal": 32.92,
+    "total_sleep_hours": 8.14,
+    "total_awake_hours": 3.11,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "1:34am",
+        "return_time": "4:41am",
+        "duration_hours": 3.11
+      }
+    ],
+    "night_type": "resettled",
+    "raw_notes": "Fell asleep: 9:40pm | Awake period: 1:34am-4:41am (2:58am Levi got up from bed; 3:01am Jake entered Levi's room) | Final wake up: 8:55am"
   },
   {
     "date": "2026-08-05",
-    "bedtime": null,
-    "bedtime_decimal": null,
+    "bedtime": "9:45pm",
+    "bedtime_decimal": 21.75,
     "wake_time": null,
     "wake_time_decimal": null,
     "total_sleep_hours": null,
@@ -8077,90 +8125,119 @@ const SLEEP_DATA = [
     "night_wakings": 0,
     "waking_details": [],
     "night_type": "no_data",
-    "raw_notes": ""
+    "raw_notes": "Fell asleep: 9:45pm | Awake period: 3:40am (5:10am removed shirt; 5:26am got up from bed; 5:27am left his room; 5:44am Jake and Levi entered his room) | No final wake-up time recorded"
   },
   {
     "date": "2026-08-06",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
-    "total_awake_hours": null,
-    "night_wakings": 0,
-    "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "bedtime": "8:41pm",
+    "bedtime_decimal": 20.68,
+    "wake_time": "8:10am",
+    "wake_time_decimal": 32.17,
+    "total_sleep_hours": 10.21,
+    "total_awake_hours": 1.28,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "3:54am",
+        "return_time": "5:11am",
+        "duration_hours": 1.28
+      }
+    ],
+    "night_type": "resettled",
+    "raw_notes": "Fell asleep: 8:41pm | Awake period: 3:54am-5:11am (3:56am Levi left his room; 4:13am Jake and Levi entered his room) | Final wake up: 8:10am"
   },
   {
     "date": "2026-08-07",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
-    "total_awake_hours": null,
-    "night_wakings": 0,
-    "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "bedtime": "9:27pm",
+    "bedtime_decimal": 21.45,
+    "wake_time": "8:37am",
+    "wake_time_decimal": 32.62,
+    "total_sleep_hours": 8.95,
+    "total_awake_hours": 2.2199999999999998,
+    "night_wakings": 2,
+    "waking_details": [
+      {
+        "wake_time": "3:00am",
+        "return_time": "4:26am",
+        "duration_hours": 1.43
+      },
+      {
+        "wake_time": "4:53am",
+        "return_time": "5:40am",
+        "duration_hours": 0.79
+      }
+    ],
+    "night_type": "resettled",
+    "raw_notes": "Fell asleep: ~9:27pm (estimated; already asleep when brought to his room) | Awake periods: 3am-4:26am (Miki inside the room with Levi) and 4:53am-5:40am (5:01am Miki entered) | Final wake up: 8:37am"
   },
   {
     "date": "2026-08-08",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
-    "total_awake_hours": null,
-    "night_wakings": 0,
-    "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "bedtime": "9:30pm",
+    "bedtime_decimal": 21.5,
+    "wake_time": "8:06am",
+    "wake_time_decimal": 32.1,
+    "total_sleep_hours": 9.64,
+    "total_awake_hours": 0.96,
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "1:10am",
+        "return_time": "2:08am",
+        "duration_hours": 0.96
+      }
+    ],
+    "night_type": "resettled",
+    "raw_notes": "Fell asleep: 9:30pm | Awake period: 1:10am-2:08am (1:16am Levi got up from bed; Jake entered the room) | Final wake up: 8:06am"
   },
   {
     "date": "2026-08-09",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
+    "bedtime": "9:00pm",
+    "bedtime_decimal": 21.0,
+    "wake_time": "5:25am",
+    "wake_time_decimal": 29.42,
+    "total_sleep_hours": 8.42,
     "total_awake_hours": null,
     "night_wakings": 0,
     "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "night_type": "early_wake",
+    "raw_notes": "Fell asleep: 9pm | Final wake up: 5:25am | Brief awake periods (under 30 min, not counted): 12:03am-12:09am (left room 12:04, Levi and Jake entered 12:05) and 1:36am-1:43am (Jake already inside)"
   },
   {
     "date": "2026-08-10",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
+    "bedtime": "9:44pm",
+    "bedtime_decimal": 21.73,
+    "wake_time": "7:00am",
+    "wake_time_decimal": 31.0,
+    "total_sleep_hours": 9.27,
     "total_awake_hours": null,
     "night_wakings": 0,
     "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": ""
+    "night_type": "full",
+    "raw_notes": "Fell asleep: 9:44pm | Woke up: 7am | Brief awake 3:29am-3:45am (under 30 min, not counted; 3:30am Levi left his room, slept in parents' room from ~3:45am until ~7am per Jake)"
   },
   {
     "date": "2026-08-11",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
+    "bedtime": "9:56pm",
+    "bedtime_decimal": 21.93,
+    "wake_time": "7:00am",
+    "wake_time_decimal": 31.0,
     "total_sleep_hours": null,
     "total_awake_hours": null,
-    "night_wakings": 0,
-    "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": "Sheryl (Slack): \"Just noting that on August 11, he did sleep in our room until let's say 7am\""
+    "night_wakings": 1,
+    "waking_details": [
+      {
+        "wake_time": "12:56am",
+        "return_time": null,
+        "duration_hours": null
+      }
+    ],
+    "night_type": "resettled",
+    "raw_notes": "Fell asleep: 9:56pm | Awake period: 12:56am - Levi got up and left his room; slept in parents' room until ~7am (Miki); 7:20am Levi went back to his room | Woke up: 7am"
   },
   {
     "date": "2026-08-12",
-    "bedtime": null,
-    "bedtime_decimal": null,
+    "bedtime": "9:38pm",
+    "bedtime_decimal": 21.63,
     "wake_time": null,
     "wake_time_decimal": null,
     "total_sleep_hours": null,
@@ -8168,7 +8245,7 @@ const SLEEP_DATA = [
     "night_wakings": 0,
     "waking_details": [],
     "night_type": "no_data",
-    "raw_notes": ""
+    "raw_notes": "Fell asleep: 9:38pm | Awake period: 3:08am (3:09am got up and left his room; 3:27am went back with Jake; 5:55am Jake and Levi left the room) | Woke up briefly at 2:28am | No final wake-up time recorded"
   },
   {
     "date": "2026-08-13",
@@ -8303,7 +8380,7 @@ const SLEEP_DATA = [
     "night_wakings": 0,
     "waking_details": [],
     "night_type": "early_wake",
-    "raw_notes": "Fell asleep: 9:12pm | Woke up: 2:36am (3:02am Levi got up and left his room; 3:14am Levi went back to his room with Jake)"
+    "raw_notes": "Fell asleep: 9:12pm | Woke up: 2:36am (3:02am Levi got up and left his room; 3:14am Levi went back to his room with Jake) | Miki: Levi didn't go back to sleep after that"
   },
   {
     "date": "2026-08-22",
@@ -8311,18 +8388,12 @@ const SLEEP_DATA = [
     "bedtime_decimal": 21.65,
     "wake_time": "7:30am",
     "wake_time_decimal": 31.5,
-    "total_sleep_hours": 9.78,
-    "total_awake_hours": 0.07,
-    "night_wakings": 1,
-    "waking_details": [
-      {
-        "wake_time": "2:51am",
-        "return_time": "2:55am",
-        "duration_hours": 0.07
-      }
-    ],
-    "night_type": "resettled",
-    "raw_notes": "Fell asleep: 9:39pm | Awake period: 2:51am-2:55am (estimated; just a brief awake time; 2:52am Levi got up and left his room) | Woke up: 7:30am"
+    "total_sleep_hours": 9.85,
+    "total_awake_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "night_type": "full",
+    "raw_notes": "Fell asleep: 9:39pm | Woke up: 7:30am | Brief awake 2:51am-2:55am (under 30 min, not counted; 2:52am Levi got up and left his room) | Miki: Levi came to our room and slept through the night, woke up at 7:30am"
   },
   {
     "date": "2026-08-23",
@@ -8335,7 +8406,7 @@ const SLEEP_DATA = [
     "night_wakings": 0,
     "waking_details": [],
     "night_type": "early_wake",
-    "raw_notes": "Fell asleep: 8:57pm | Woke up: 12:12am (12:13am Levi got up and left his room; 12:54am Levi went back to his room with Jake; 2:57am Levi left his room; 4:20am Jake left Levi's room) | Woke up briefly: 12:44am"
+    "raw_notes": "Fell asleep: 8:57pm | Woke up: 12:12am (12:13am Levi got up and left his room; 12:54am Levi went back to his room with Jake; 2:57am Levi left his room; 4:20am Jake left Levi's room) | Woke up briefly: 12:44am | Miki: he didn't go back to sleep after this"
   },
   {
     "date": "2026-08-24",
@@ -8343,18 +8414,12 @@ const SLEEP_DATA = [
     "bedtime_decimal": 19.78,
     "wake_time": "7:30am",
     "wake_time_decimal": 31.5,
-    "total_sleep_hours": 11.64,
-    "total_awake_hours": 0.08,
-    "night_wakings": 1,
-    "waking_details": [
-      {
-        "wake_time": "2:10am",
-        "return_time": "2:15am",
-        "duration_hours": 0.08
-      }
-    ],
-    "night_type": "resettled",
-    "raw_notes": "Fell asleep: 7:47pm | Awake period: 2:10am-2:15am (estimated, brief awake time; 2:11am Levi got up and left his room) | Woke up: 7:30am"
+    "total_sleep_hours": 11.72,
+    "total_awake_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "night_type": "full",
+    "raw_notes": "Fell asleep: 7:47pm | Woke up: 7:30am | Brief awake 2:10am-2:15am (under 30 min, not counted; 2:11am Levi got up and left his room) | Jake: he came to our room and fell asleep soon after, awake at 7:30am"
   },
   {
     "date": "2026-08-25",
@@ -8362,18 +8427,12 @@ const SLEEP_DATA = [
     "bedtime_decimal": 20.83,
     "wake_time": "7:00am",
     "wake_time_decimal": 31.0,
-    "total_sleep_hours": 10.12,
-    "total_awake_hours": 0.05,
-    "night_wakings": 1,
-    "waking_details": [
-      {
-        "wake_time": "11:42pm",
-        "return_time": "11:45pm",
-        "duration_hours": 0.05
-      }
-    ],
-    "night_type": "resettled",
-    "raw_notes": "Fell asleep: 8:50pm | Awake period: 11:42pm-11:45pm (estimated, brief awake time; 11:43pm Levi got up and left his room) | Woke up: 7am"
+    "total_sleep_hours": 10.17,
+    "total_awake_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "night_type": "full",
+    "raw_notes": "Fell asleep: 8:50pm | Woke up: 7am | Brief awake 11:42pm-11:45pm (under 30 min, not counted; 11:43pm Levi got up and left his room) | Jake: he came to our bed and stayed there all night, basically slept the whole time, up at 7am"
   },
   {
     "date": "2026-08-26",
@@ -8381,18 +8440,12 @@ const SLEEP_DATA = [
     "bedtime_decimal": 21.02,
     "wake_time": "6:30am",
     "wake_time_decimal": 30.5,
-    "total_sleep_hours": 9.42,
-    "total_awake_hours": 0.06,
-    "night_wakings": 1,
-    "waking_details": [
-      {
-        "wake_time": "12:31am",
-        "return_time": "12:35am",
-        "duration_hours": 0.06
-      }
-    ],
-    "night_type": "resettled",
-    "raw_notes": "Fell asleep: 9:01pm | Awake period: 12:31am-12:35am (estimated, brief wake time; 12:32am Levi got up and left his room) | Woke up: 6:30am"
+    "total_sleep_hours": 9.48,
+    "total_awake_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "night_type": "full",
+    "raw_notes": "Fell asleep: 9:01pm | Woke up: 6:30am | Brief awake 12:31am-12:35am (under 30 min, not counted; 12:32am Levi got up and left his room) | Miki: he fell asleep immediately in our room and woke up at around 6:30"
   },
   {
     "date": "2026-08-27",
@@ -8405,6 +8458,6 @@ const SLEEP_DATA = [
     "night_wakings": 0,
     "waking_details": [],
     "night_type": "full",
-    "raw_notes": "Fell asleep: 9:15pm | Woke up: 7:45am | Levi slept through the night (per Sheryl in Slack)"
+    "raw_notes": "Fell asleep: 9:15pm | Woke up: 7:45am | Levi slept through the night (Sheryl)"
   }
 ];
