@@ -8543,5 +8543,18 @@ const SLEEP_DATA = [
     "waking_details": [],
     "night_type": "full",
     "raw_notes": "Fell asleep: 9:15pm | Woke up: 7:45am | Levi slept through the night (Sheryl)"
+  },
+  {
+    "date": "2026-08-28",
+    "bedtime": "9:02pm",
+    "bedtime_decimal": 21.03,
+    "wake_time": "6:00am",
+    "wake_time_decimal": 30.0,
+    "total_sleep_hours": 8.97,
+    "total_awake_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "night_type": "full",
+    "raw_notes": "Fell asleep: 9:02pm | Woke up: 6am | Brief awake 11:52pm (under 30 min, not counted) | Brief awake 5:03am-5:05am (under 30 min, not counted; 5:03am Levi got up and left his room) | Miki: he came to our room and slept from 5-6am"
   }
 ];
