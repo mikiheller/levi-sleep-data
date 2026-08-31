@@ -8569,5 +8569,18 @@ const SLEEP_DATA = [
     "waking_details": [],
     "night_type": "full",
     "raw_notes": "Fell asleep: 8:47pm | Woke up: 7am | Sheryl: another win, Levi slept through the night again"
+  },
+  {
+    "date": "2026-08-30",
+    "bedtime": null,
+    "bedtime_decimal": null,
+    "wake_time": null,
+    "wake_time_decimal": null,
+    "total_sleep_hours": null,
+    "total_awake_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "night_type": "no_data",
+    "raw_notes": "No data - Levi did not sleep in his room"
   }
 ];
