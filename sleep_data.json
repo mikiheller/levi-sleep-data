@@ -8582,5 +8582,18 @@
     "waking_details": [],
     "night_type": "full",
     "raw_notes": "Fell asleep: 8:45pm | Woke up: 7:15am | Slept in Jake and Miki's room | Brief wake 3:30am (under 30 min, not counted)"
+  },
+  {
+    "date": "2026-08-31",
+    "bedtime": "8:57pm",
+    "bedtime_decimal": 20.95,
+    "wake_time": "3:59am",
+    "wake_time_decimal": 27.98,
+    "total_sleep_hours": 7.03,
+    "total_awake_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "night_type": "early_wake",
+    "raw_notes": "Fell asleep: 8:57pm | Woke up: 3:59am (4:16am Levi got up and left his room; 4:44am Levi went back to his room with Jake; 5:25am Levi and Jake left the room)"
   }
 ]
