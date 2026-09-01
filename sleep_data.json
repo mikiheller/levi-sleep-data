@@ -8572,15 +8572,15 @@
   },
   {
     "date": "2026-08-30",
-    "bedtime": null,
-    "bedtime_decimal": null,
-    "wake_time": null,
-    "wake_time_decimal": null,
-    "total_sleep_hours": null,
+    "bedtime": "8:45pm",
+    "bedtime_decimal": 20.75,
+    "wake_time": "7:15am",
+    "wake_time_decimal": 31.25,
+    "total_sleep_hours": 10.5,
     "total_awake_hours": null,
     "night_wakings": 0,
     "waking_details": [],
-    "night_type": "no_data",
-    "raw_notes": "No data - Levi did not sleep in his room"
+    "night_type": "full",
+    "raw_notes": "Fell asleep: 8:45pm | Woke up: 7:15am | Slept in Jake and Miki's room | Brief wake 3:30am (under 30 min, not counted)"
   }
 ]
