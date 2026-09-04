@@ -8621,5 +8621,18 @@ const SLEEP_DATA = [
     "waking_details": [],
     "night_type": "full",
     "raw_notes": "Fell asleep: 9:12pm | Woke up: 7:30am | Brief awake 2:48am-3:08am (20 min, under 30, not counted; 2:48am Levi got up and left his room) | Sheryl note: Levi was given 1.5ml of trazodone at 3:30am to help him fall back asleep"
+  },
+  {
+    "date": "2026-09-03",
+    "bedtime": "10:13pm",
+    "bedtime_decimal": 22.22,
+    "wake_time": "6:24am",
+    "wake_time_decimal": 30.4,
+    "total_sleep_hours": 8.18,
+    "total_awake_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "night_type": "full",
+    "raw_notes": "Fell asleep: 10:13pm (estimated; Levi was already asleep when he was brought to his room) | Woke up: 6:24am (6:24am Levi got up and left his room)"
   }
 ];
