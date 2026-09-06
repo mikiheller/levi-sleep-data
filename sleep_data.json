@@ -8634,5 +8634,18 @@
     "waking_details": [],
     "night_type": "full",
     "raw_notes": "Fell asleep: 10:13pm (estimated; Levi was already asleep when he was brought to his room) | Woke up: 6:24am (6:24am Levi got up and left his room)"
+  },
+  {
+    "date": "2026-09-04",
+    "bedtime": null,
+    "bedtime_decimal": null,
+    "wake_time": null,
+    "wake_time_decimal": null,
+    "total_sleep_hours": null,
+    "total_awake_hours": null,
+    "night_wakings": 0,
+    "waking_details": [],
+    "night_type": "no_data",
+    "raw_notes": "No record of Levi sleeping in his room | 4:11am Levi went inside his room (with Miki); 4:23am Levi and Miki left his room"
   }
 ]
