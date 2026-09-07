@@ -8652,19 +8652,32 @@
    }
   ],
   "night_type": "resettled",
-  "raw_notes": "Sheryl: No record of Levi sleeping in his room (4:11am Levi went inside his room (with Miki); 4:23am Levi and Miki left his room) | Miki: He slept in our room from 9-2 and then 5-8"
+  "raw_notes": "Levi slept in Jake and Miki's room | Fell asleep: 9pm | Awake time: 2am-5am (4:11am Levi went inside his room (with Miki); 4:23am Levi and Miki left his room) | Woke up: 8am | Miki: He slept in our room from 9-2 and then 5-8"
  },
  {
   "date": "2026-09-05",
-  "bedtime": "11:29pm",
-  "bedtime_decimal": 23.48,
+  "bedtime": "8:30pm",
+  "bedtime_decimal": 20.5,
   "wake_time": "7:05am",
   "wake_time_decimal": 31.08,
-  "total_sleep_hours": 7.6,
+  "total_sleep_hours": 10.58,
   "total_awake_hours": null,
   "night_wakings": 0,
   "waking_details": [],
   "night_type": "full",
-  "raw_notes": "Fell asleep: 11:29pm | Woke up: 7:05am | Jake: He fell asleep initially around 8:30pm in our room, then came downstairs"
+  "raw_notes": "Fell asleep: 8:30pm | Awake time: 11:18-11:29pm (brief awake time, Levi moved from Jake and Miki's room to his room) | Woke up: 7:05am | Jake: He fell asleep initially around 8:30pm in our room, then came downstairs"
+ },
+ {
+  "date": "2026-09-06",
+  "bedtime": "9:17pm",
+  "bedtime_decimal": 21.28,
+  "wake_time": "7:00am",
+  "wake_time_decimal": 31.0,
+  "total_sleep_hours": 9.72,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "full",
+  "raw_notes": "Fell asleep: 9:17pm | Awake period: 1:49-1:55am (estimated, brief awake time; 1:51am Levi got up and left his room) | Woke up: 7am"
  }
 ]
