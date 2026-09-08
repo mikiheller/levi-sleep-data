@@ -8679,5 +8679,24 @@ const SLEEP_DATA = [
   "waking_details": [],
   "night_type": "full",
   "raw_notes": "Fell asleep: 9:17pm | Awake period: 1:49-1:55am (estimated, brief awake time; 1:51am Levi got up and left his room) | Woke up: 7am | Miki: He came to our room and slept until about 7 AM"
+ },
+ {
+  "date": "2026-09-07",
+  "bedtime": "8:54pm",
+  "bedtime_decimal": 20.9,
+  "wake_time": "6:31am",
+  "wake_time_decimal": 30.52,
+  "total_sleep_hours": 7.95,
+  "total_awake_hours": 1.67,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "3:55am",
+    "return_time": "5:35am",
+    "duration_hours": 1.67
+   }
+  ],
+  "night_type": "resettled",
+  "raw_notes": "Fell asleep: 8:54pm | Awake period: 3:55am-5:35am (3:56am Levi got up and left his room; 5:04am Levi went back to his room (with Jake)) | Woke up: 6:31am"
  }
 ];
