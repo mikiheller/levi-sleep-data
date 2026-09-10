@@ -8722,13 +8722,13 @@
   "date": "2026-09-09",
   "bedtime": "9:03pm",
   "bedtime_decimal": 21.05,
-  "wake_time": null,
-  "wake_time_decimal": null,
-  "total_sleep_hours": null,
+  "wake_time": "6:00am",
+  "wake_time_decimal": 30.0,
+  "total_sleep_hours": 8.95,
   "total_awake_hours": null,
   "night_wakings": 0,
   "waking_details": [],
-  "night_type": "no_data",
-  "raw_notes": "Fell asleep: 9:03pm | Woke up: 12:27am (12:27am Levi got up and left his room) | No final wake-up time recorded"
+  "night_type": "full",
+  "raw_notes": "Fell asleep: 9:03pm | Awake period: 12:27am-12:35am (estimated, brief awake time; 12:27am Levi got up and left his room) | Woke up: 6am"
  }
 ]
