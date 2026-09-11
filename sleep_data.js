@@ -8735,13 +8735,13 @@ const SLEEP_DATA = [
   "date": "2026-09-10",
   "bedtime": "8:46pm",
   "bedtime_decimal": 20.77,
-  "wake_time": null,
-  "wake_time_decimal": null,
-  "total_sleep_hours": null,
+  "wake_time": "5:15am",
+  "wake_time_decimal": 29.25,
+  "total_sleep_hours": 8.48,
   "total_awake_hours": null,
   "night_wakings": 0,
   "waking_details": [],
-  "night_type": "no_data",
-  "raw_notes": "Fell asleep: 8:46pm | Woke up: 11:32pm (11:32pm Levi got up and left his room) | No final wake-up time recorded"
+  "night_type": "early_wake",
+  "raw_notes": "Fell asleep: 8:46pm | Awake period: 11:32-11:35pm (estimated, brief awake time; 11:32pm Levi got up and left his room) | Woke up: 5:15am"
  }
 ];
