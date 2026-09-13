@@ -8756,5 +8756,18 @@ const SLEEP_DATA = [
   "waking_details": [],
   "night_type": "no_data",
   "raw_notes": "No record of Levi sleeping in his room"
+ },
+ {
+  "date": "2026-09-12",
+  "bedtime": "9:13pm",
+  "bedtime_decimal": 21.22,
+  "wake_time": null,
+  "wake_time_decimal": null,
+  "total_sleep_hours": null,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "no_data",
+  "raw_notes": "Fell asleep: 9:13pm (estimated; Levi was already asleep when he was brought to his room) | Awake period: 2:12am (2:12am Levi got up and left his room) | No final wake time recorded"
  }
 ];
