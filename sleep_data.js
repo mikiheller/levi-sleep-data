@@ -8775,5 +8775,18 @@ const SLEEP_DATA = [
   ],
   "night_type": "resettled",
   "raw_notes": "Fell asleep: 9:13pm (estimated; Levi was already asleep when he was brought to his room) | Awake period: 2:12-5:45am (2:12am Levi got up and left his room) | Woke up: 8am"
+ },
+ {
+  "date": "2026-09-13",
+  "bedtime": "8:35pm",
+  "bedtime_decimal": 20.58,
+  "wake_time": "4:34am",
+  "wake_time_decimal": 28.57,
+  "total_sleep_hours": 7.98,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "early_wake",
+  "raw_notes": "Fell asleep: 8:35pm | Brief awake time: 12:22-12:30am (12:24am Jake went inside Levi's room) | Woke up: 4:34am"
  }
 ];
