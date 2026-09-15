@@ -8788,5 +8788,18 @@
   "waking_details": [],
   "night_type": "early_wake",
   "raw_notes": "Fell asleep: 8:35pm | Brief awake time: 12:22-12:30am (12:24am Jake went inside Levi's room) | Woke up: 4:34am"
+ },
+ {
+  "date": "2026-09-14",
+  "bedtime": null,
+  "bedtime_decimal": null,
+  "wake_time": null,
+  "wake_time_decimal": null,
+  "total_sleep_hours": null,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "no_data",
+  "raw_notes": "Levi did not sleep in his room"
  }
 ]
