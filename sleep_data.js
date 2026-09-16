@@ -8791,15 +8791,15 @@ const SLEEP_DATA = [
  },
  {
   "date": "2026-09-14",
-  "bedtime": null,
-  "bedtime_decimal": null,
-  "wake_time": null,
-  "wake_time_decimal": null,
-  "total_sleep_hours": null,
+  "bedtime": "9:30pm",
+  "bedtime_decimal": 21.5,
+  "wake_time": "7:30am",
+  "wake_time_decimal": 31.5,
+  "total_sleep_hours": 10.0,
   "total_awake_hours": null,
   "night_wakings": 0,
   "waking_details": [],
-  "night_type": "no_data",
-  "raw_notes": "Levi did not sleep in his room"
+  "night_type": "full",
+  "raw_notes": "Levi slept in Jake and Miki's room | Fell asleep: 9:30pm | Woke up: 7:30am"
  }
 ];
