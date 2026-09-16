@@ -8801,5 +8801,18 @@ const SLEEP_DATA = [
   "waking_details": [],
   "night_type": "full",
   "raw_notes": "Levi slept in Jake and Miki's room | Fell asleep: 9:30pm | Woke up: 7:30am"
+ },
+ {
+  "date": "2026-09-15",
+  "bedtime": "9:08pm",
+  "bedtime_decimal": 21.13,
+  "wake_time": "3:00am",
+  "wake_time_decimal": 27.0,
+  "total_sleep_hours": 5.87,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "early_wake",
+  "raw_notes": "Fell asleep: 9:08pm | Woke up: 3am (3am Levi got up and left his room)"
  }
 ];
