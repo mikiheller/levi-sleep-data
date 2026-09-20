@@ -8825,14 +8825,14 @@
   "date": "2026-09-16",
   "bedtime": "8:29pm",
   "bedtime_decimal": 20.48,
-  "wake_time": null,
-  "wake_time_decimal": null,
-  "total_sleep_hours": null,
+  "wake_time": "6:00am",
+  "wake_time_decimal": 30.0,
+  "total_sleep_hours": 9.52,
   "total_awake_hours": null,
   "night_wakings": 0,
   "waking_details": [],
-  "night_type": "no_data",
-  "raw_notes": "Fell asleep: 8:29pm | Awake period: 2:09am (2:09am Levi got up and left his room) | No final wake time recorded"
+  "night_type": "full",
+  "raw_notes": "Fell asleep: 8:29pm | Brief awake time: 2:09-2:30am (2:09am Levi got up and left his room) | Woke up: 6am"
  },
  {
   "date": "2026-09-17",
@@ -8852,5 +8852,18 @@
   ],
   "night_type": "resettled",
   "raw_notes": "Fell asleep: 8:35pm | Awake period: 2:21am-3:24am (2:44am Levi left his room; 2:47am Levi went back to his room (with Jake)) | Woke up: 7:24am"
+ },
+ {
+  "date": "2026-09-18",
+  "bedtime": "9:08pm",
+  "bedtime_decimal": 21.13,
+  "wake_time": null,
+  "wake_time_decimal": null,
+  "total_sleep_hours": null,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "no_data",
+  "raw_notes": "Fell asleep: 9:08pm | Awake period: 12:57am (12:59am Levi got up and left his room) | No final wake time recorded"
  }
 ]
