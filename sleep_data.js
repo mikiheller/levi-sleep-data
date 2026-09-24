@@ -8935,5 +8935,24 @@ const SLEEP_DATA = [
   "waking_details": [],
   "night_type": "full",
   "raw_notes": "Fell asleep: 9:00pm | Brief awake time: 2:17-2:37am (2:24am Levi got up and left his room) | Woke up: 7am"
+ },
+ {
+  "date": "2026-09-23",
+  "bedtime": "8:40pm",
+  "bedtime_decimal": 20.67,
+  "wake_time": "7:10am",
+  "wake_time_decimal": 31.17,
+  "total_sleep_hours": 8.63,
+  "total_awake_hours": 1.87,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "1:42am",
+    "return_time": "3:34am",
+    "duration_hours": 1.87
+   }
+  ],
+  "night_type": "resettled",
+  "raw_notes": "Fell asleep: 8:40pm | Awake period: 1:42am-3:34am (2:57am Levi got up and left his room; 3:08am Levi went back to his room (with Jake)) | Woke up: 7:10am"
  }
 ];
