@@ -8973,5 +8973,18 @@
   ],
   "night_type": "resettled",
   "raw_notes": "Fell asleep: 8:55pm | Awake period: 12:33am-2:20am (1:52am Levi got up and left his room) | Woke up: 7am | Jake noted: 'Wow, that's a long awake period before leaving! He was back asleep by about 2:20am'"
+ },
+ {
+  "date": "2026-09-25",
+  "bedtime": "11:11pm",
+  "bedtime_decimal": 23.18,
+  "wake_time": "6:28am",
+  "wake_time_decimal": 30.47,
+  "total_sleep_hours": 7.28,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "full",
+  "raw_notes": "Fell asleep: 11:11pm (Levi was already asleep when he was brought to his room) | Woke up: 6:28am (6:29am Levi got up and left his room)"
  }
 ]
