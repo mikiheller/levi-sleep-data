@@ -8986,5 +8986,18 @@
   "waking_details": [],
   "night_type": "full",
   "raw_notes": "Fell asleep: 11:11pm (Levi was already asleep when he was brought to his room) | Woke up: 6:28am (6:29am Levi got up and left his room)"
+ },
+ {
+  "date": "2026-09-26",
+  "bedtime": "8:38pm",
+  "bedtime_decimal": 20.63,
+  "wake_time": null,
+  "wake_time_decimal": null,
+  "total_sleep_hours": null,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "no_data",
+  "raw_notes": "Fell asleep: 8:38pm | Awake period: 1:19am (2am Levi got up and left his room) | Woke up briefly: 10:26pm, 12:54am, 1:07am | No final wake time recorded"
  }
 ]
