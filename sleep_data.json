@@ -8991,13 +8991,19 @@
   "date": "2026-09-26",
   "bedtime": "8:38pm",
   "bedtime_decimal": 20.63,
-  "wake_time": null,
-  "wake_time_decimal": null,
-  "total_sleep_hours": null,
-  "total_awake_hours": null,
-  "night_wakings": 0,
-  "waking_details": [],
-  "night_type": "no_data",
-  "raw_notes": "Fell asleep: 8:38pm | Awake period: 1:19am (2am Levi got up and left his room) | Woke up briefly: 10:26pm, 12:54am, 1:07am | No final wake time recorded"
+  "wake_time": "8:15am",
+  "wake_time_decimal": 32.25,
+  "total_sleep_hours": 9.93,
+  "total_awake_hours": 1.68,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "1:19am",
+    "return_time": "3:00am",
+    "duration_hours": 1.68
+   }
+  ],
+  "night_type": "resettled",
+  "raw_notes": "Fell asleep: 8:38pm | Awake period: 1:19am-3am (2am Levi got up and left his room) | Woke up: 8:15am | Woke up briefly: 10:26pm, 12:54am, 1:07am"
  }
 ]
