@@ -9031,5 +9031,18 @@
   "waking_details": [],
   "night_type": "full",
   "raw_notes": "Fell asleep: 9:12pm | Woke up: 6:17am | Woke up briefly: 5:39am"
+ },
+ {
+  "date": "2026-09-29",
+  "bedtime": "8:32pm",
+  "bedtime_decimal": 20.53,
+  "wake_time": "7:14am",
+  "wake_time_decimal": 31.23,
+  "total_sleep_hours": 10.7,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "full",
+  "raw_notes": "Fell asleep: 8:32pm | Woke up: 7:14am | Woke up briefly: 1:27am"
  }
 ]
