@@ -9044,5 +9044,18 @@ const SLEEP_DATA = [
   "waking_details": [],
   "night_type": "full",
   "raw_notes": "Fell asleep: 8:32pm | Woke up: 7:14am | Woke up briefly: 1:27am"
+ },
+ {
+  "date": "2026-09-30",
+  "bedtime": "8:23pm",
+  "bedtime_decimal": 20.38,
+  "wake_time": "6:59am",
+  "wake_time_decimal": 30.98,
+  "total_sleep_hours": 10.6,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "full",
+  "raw_notes": "Fell asleep: 8:23pm | Woke up: 6:59am | Woke up briefly: 11:43pm"
  }
 ];
