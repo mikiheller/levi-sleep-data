@@ -9102,5 +9102,18 @@
   ],
   "night_type": "resettled",
   "raw_notes": "Fell asleep: 8:30pm | Brief Awake time: 3:41am-4:30am (13:54am Levi got up and left his room) | Woke up: 8:30am"
+ },
+ {
+  "date": "2026-10-04",
+  "bedtime": "9:35pm",
+  "bedtime_decimal": 21.58,
+  "wake_time": "6:34am",
+  "wake_time_decimal": 30.57,
+  "total_sleep_hours": 8.98,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "full",
+  "raw_notes": "Fell asleep: 9:35pm | Woke up: 6:34am"
  }
 ]
