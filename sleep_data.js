@@ -9115,5 +9115,18 @@ const SLEEP_DATA = [
   "waking_details": [],
   "night_type": "full",
   "raw_notes": "Fell asleep: 9:35pm | Woke up: 6:34am"
+ },
+ {
+  "date": "2026-10-05",
+  "bedtime": null,
+  "bedtime_decimal": null,
+  "wake_time": null,
+  "wake_time_decimal": null,
+  "total_sleep_hours": null,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "no_data",
+  "raw_notes": "No record of Levi sleeping in his room last night"
  }
 ];
