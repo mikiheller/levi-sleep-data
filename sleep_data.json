@@ -9118,15 +9118,15 @@
  },
  {
   "date": "2026-10-05",
-  "bedtime": null,
-  "bedtime_decimal": null,
-  "wake_time": null,
-  "wake_time_decimal": null,
-  "total_sleep_hours": null,
+  "bedtime": "9:45pm",
+  "bedtime_decimal": 21.75,
+  "wake_time": "5:30am",
+  "wake_time_decimal": 29.5,
+  "total_sleep_hours": 7.75,
   "total_awake_hours": null,
   "night_wakings": 0,
   "waking_details": [],
-  "night_type": "no_data",
-  "raw_notes": "No record of Levi sleeping in his room last night"
+  "night_type": "full",
+  "raw_notes": "Fell asleep: ~9:45pm (estimated) | Woke up: 5:30am"
  }
 ]
