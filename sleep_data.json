@@ -9128,5 +9128,18 @@
   "waking_details": [],
   "night_type": "full",
   "raw_notes": "Fell asleep: ~9:45pm (estimated) | Woke up: 5:30am | Slack thread clarification: My understanding is that shortly after he left his room he went upstairs and slept until 5:30am"
+ },
+ {
+  "date": "2026-10-06",
+  "bedtime": "8:47pm",
+  "bedtime_decimal": 20.78,
+  "wake_time": "5:42am",
+  "wake_time_decimal": 29.7,
+  "total_sleep_hours": 8.92,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "full",
+  "raw_notes": "Fell asleep: 8:47pm | Awake time: 5:42am | 5:42am Levi got up and left his room"
  }
 ]
