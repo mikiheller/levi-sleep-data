@@ -9101,7 +9101,7 @@ const SLEEP_DATA = [
    }
   ],
   "night_type": "resettled",
-  "raw_notes": "Fell asleep: 8:30pm | Brief Awake time: 3:41am-4:30am (13:54am Levi got up and left his room) | Woke up: 8:30am"
+  "raw_notes": "Fell asleep: 8:30pm | Brief Awake time: 3:41am-4:30am (13:54am Levi got up and left his room) | Woke up: 8:30am | Slack thread clarification: He came to my bedroom and was back asleep around 4:30am"
  },
  {
   "date": "2026-10-04",
@@ -9127,6 +9127,6 @@ const SLEEP_DATA = [
   "night_wakings": 0,
   "waking_details": [],
   "night_type": "full",
-  "raw_notes": "Fell asleep: ~9:45pm (estimated) | Woke up: 5:30am"
+  "raw_notes": "Fell asleep: ~9:45pm (estimated) | Woke up: 5:30am | Slack thread clarification: My understanding is that shortly after he left his room he went upstairs and slept until 5:30am"
  }
 ];
