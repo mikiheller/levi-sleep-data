@@ -9141,5 +9141,24 @@
   "waking_details": [],
   "night_type": "full",
   "raw_notes": "Fell asleep: 8:47pm | Awake time: 5:42am | 5:42am Levi got up and left his room"
+ },
+ {
+  "date": "2026-10-07",
+  "bedtime": "8:32pm",
+  "bedtime_decimal": 20.53,
+  "wake_time": "7:00am",
+  "wake_time_decimal": 31.0,
+  "total_sleep_hours": 9.97,
+  "total_awake_hours": 0.5,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "4:50am",
+    "return_time": "5:20am",
+    "duration_hours": 0.5
+   }
+  ],
+  "night_type": "resettled",
+  "raw_notes": "Fell asleep: 8:32pm | Awake time: 4:50-5:20am (4:51am Levi got up and left his room) | Woke up: 7am | Slack thread clarification: He fell back asleep at 5:20am until 7am"
  }
 ]
