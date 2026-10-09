@@ -9160,5 +9160,18 @@ const SLEEP_DATA = [
   ],
   "night_type": "resettled",
   "raw_notes": "Fell asleep: 8:32pm | Awake time: 4:50-5:20am (4:51am Levi got up and left his room) | Woke up: 7am | Slack thread clarification: He fell back asleep at 5:20am until 7am"
+ },
+ {
+  "date": "2026-10-08",
+  "bedtime": "9:09pm",
+  "bedtime_decimal": 21.15,
+  "wake_time": "2:00am",
+  "wake_time_decimal": 26.0,
+  "total_sleep_hours": 4.85,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "early_wake",
+  "raw_notes": "Fell asleep: 9:09pm | Woke up: 2am (2:01am Levi got up and left his room) | Slack thread clarification: First one of these in a long time. Levi didn't go back to sleep after 2 am. He stayed up the rest of the night."
  }
 ];
