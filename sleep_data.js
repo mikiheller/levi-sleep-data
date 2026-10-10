@@ -9185,6 +9185,6 @@ const SLEEP_DATA = [
   "night_wakings": 0,
   "waking_details": [],
   "night_type": "early_wake",
-  "raw_notes": "Fell asleep: 8:04pm | Awake time: 4:37am (4:37am Levi got up and left his room)"
+  "raw_notes": "Fell asleep: 8:04pm | Awake time: 4:37am (4:37am Levi got up and left his room) | Slack thread clarification: He fell back asleep in our room pretty quickly and got up at 6:30am"
  }
 ];
