@@ -9173,5 +9173,18 @@
   "waking_details": [],
   "night_type": "early_wake",
   "raw_notes": "Fell asleep: 9:09pm | Woke up: 2am (2:01am Levi got up and left his room) | Slack thread clarification: First one of these in a long time. Levi didn't go back to sleep after 2 am. He stayed up the rest of the night."
+ },
+ {
+  "date": "2026-10-09",
+  "bedtime": "8:04pm",
+  "bedtime_decimal": 20.07,
+  "wake_time": "4:37am",
+  "wake_time_decimal": 28.62,
+  "total_sleep_hours": 8.55,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "early_wake",
+  "raw_notes": "Fell asleep: 8:04pm | Awake time: 4:37am (4:37am Levi got up and left his room)"
  }
 ]
