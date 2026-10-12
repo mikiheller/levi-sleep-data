@@ -9199,5 +9199,24 @@ const SLEEP_DATA = [
   "waking_details": [],
   "night_type": "early_wake",
   "raw_notes": "Fell asleep: 8:03pm | Woke up: 4:52am (4:52am Levi got up and left his room) | Note: Levi was kind of asleep in Jake and Miki's room until 6:30am | Slack thread clarification: He was kind of asleep in our room until 6:30\u2026 not sure if we should count it or not"
+ },
+ {
+  "date": "2026-10-11",
+  "bedtime": "8:12pm",
+  "bedtime_decimal": 20.2,
+  "wake_time": "7:15am",
+  "wake_time_decimal": 31.25,
+  "total_sleep_hours": 11.05,
+  "total_awake_hours": 3.58,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "1:40am",
+    "return_time": "5:15am",
+    "duration_hours": 3.58
+   }
+  ],
+  "night_type": "resettled",
+  "raw_notes": "Fell asleep: 8:12pm | Awake time: 1:40am-5:15am (1:41am Levi got up and left his room) | Woke up: 7:15am | Slack thread clarification: He came into our room and was awake until 5:15, and then woke up again at 7:15."
  }
 ];
