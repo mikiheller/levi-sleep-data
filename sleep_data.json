@@ -9178,13 +9178,26 @@
   "date": "2026-10-09",
   "bedtime": "8:04pm",
   "bedtime_decimal": 20.07,
-  "wake_time": "4:37am",
-  "wake_time_decimal": 28.62,
-  "total_sleep_hours": 8.55,
+  "wake_time": "6:30am",
+  "wake_time_decimal": 30.5,
+  "total_sleep_hours": 10.43,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "full",
+  "raw_notes": "Fell asleep: 8:04pm | Brief Awake time: 4:37am-4:45am (estimated) (4:37am Levi got up and left his room; under 30 min, not counted) | Woke up: 6:30am | Slack thread clarification: He fell back asleep in our room pretty quickly and got up at 6:30am"
+ },
+ {
+  "date": "2026-10-10",
+  "bedtime": "8:03pm",
+  "bedtime_decimal": 20.05,
+  "wake_time": "4:52am",
+  "wake_time_decimal": 28.87,
+  "total_sleep_hours": 8.82,
   "total_awake_hours": null,
   "night_wakings": 0,
   "waking_details": [],
   "night_type": "early_wake",
-  "raw_notes": "Fell asleep: 8:04pm | Awake time: 4:37am (4:37am Levi got up and left his room) | Slack thread clarification: He fell back asleep in our room pretty quickly and got up at 6:30am"
+  "raw_notes": "Fell asleep: 8:03pm | Awake time: 4:52am (4:52am Levi got up and left his room)"
  }
 ]
