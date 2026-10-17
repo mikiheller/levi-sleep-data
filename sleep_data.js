@@ -2624,7 +2624,7 @@ const SLEEP_DATA = [
   "night_wakings": 0,
   "waking_details": [],
   "night_type": "no_data",
-  "raw_notes": "\u201cNo events found\u201d (Levi Airbnb cam)"
+  "raw_notes": "“No events found” (Levi Airbnb cam)"
  },
  {
   "date": "2025-07-22",
@@ -2637,7 +2637,7 @@ const SLEEP_DATA = [
   "night_wakings": 0,
   "waking_details": [],
   "night_type": "no_data",
-  "raw_notes": "\u201cNo events found\u201d (Levi Airbnb cam)"
+  "raw_notes": "“No events found” (Levi Airbnb cam)"
  },
  {
   "date": "2025-07-23",
@@ -2650,7 +2650,7 @@ const SLEEP_DATA = [
   "night_wakings": 0,
   "waking_details": [],
   "night_type": "no_data",
-  "raw_notes": "\u201cNo events found\u201d (Levi Airbnb cam; new cam name \u201cLevi\u201d)"
+  "raw_notes": "“No events found” (Levi Airbnb cam; new cam name “Levi”)"
  },
  {
   "date": "2025-07-24",
@@ -2663,7 +2663,7 @@ const SLEEP_DATA = [
   "night_wakings": 0,
   "waking_details": [],
   "night_type": "no_data",
-  "raw_notes": "\u201cNo events found\u201d (Levi Airbnb cam; new cam name \u201cLevi\u201d)"
+  "raw_notes": "“No events found” (Levi Airbnb cam; new cam name “Levi”)"
  },
  {
   "date": "2025-07-25",
@@ -3700,7 +3700,7 @@ const SLEEP_DATA = [
   "night_wakings": 0,
   "waking_details": [],
   "night_type": "no_data",
-  "raw_notes": "No sleep activity recorded in Levi\u2019s bed"
+  "raw_notes": "No sleep activity recorded in Levi’s bed"
  },
  {
   "date": "2025-10-01",
@@ -3797,7 +3797,7 @@ const SLEEP_DATA = [
   "night_wakings": 0,
   "waking_details": [],
   "night_type": "no_data",
-  "raw_notes": "No sleep activity recorded in Levi\u2019s bed"
+  "raw_notes": "No sleep activity recorded in Levi’s bed"
  },
  {
   "date": "2025-10-08",
@@ -4029,7 +4029,7 @@ const SLEEP_DATA = [
   "night_wakings": 0,
   "waking_details": [],
   "night_type": "no_data",
-  "raw_notes": "No sleep activity recorded in Levi\u2019s bed"
+  "raw_notes": "No sleep activity recorded in Levi’s bed"
  },
  {
   "date": "2025-10-24",
@@ -4042,7 +4042,7 @@ const SLEEP_DATA = [
   "night_wakings": 0,
   "waking_details": [],
   "night_type": "no_data",
-  "raw_notes": "No sleep activity recorded in Levi\u2019s bed"
+  "raw_notes": "No sleep activity recorded in Levi’s bed"
  },
  {
   "date": "2025-10-25",
@@ -4814,7 +4814,7 @@ const SLEEP_DATA = [
   "night_wakings": 0,
   "waking_details": [],
   "night_type": "no_data",
-  "raw_notes": "No sleep activity recorded in Levi\u2019s bed"
+  "raw_notes": "No sleep activity recorded in Levi’s bed"
  },
  {
   "date": "2025-12-14",
@@ -9198,7 +9198,7 @@ const SLEEP_DATA = [
   "night_wakings": 0,
   "waking_details": [],
   "night_type": "early_wake",
-  "raw_notes": "Fell asleep: 8:03pm | Woke up: 4:52am (4:52am Levi got up and left his room) | Note: Levi was kind of asleep in Jake and Miki's room until 6:30am | Slack thread clarification: He was kind of asleep in our room until 6:30\u2026 not sure if we should count it or not"
+  "raw_notes": "Fell asleep: 8:03pm | Woke up: 4:52am (4:52am Levi got up and left his room) | Note: Levi was kind of asleep in Jake and Miki's room until 6:30am | Slack thread clarification: He was kind of asleep in our room until 6:30… not sure if we should count it or not"
  },
  {
   "date": "2026-10-11",
@@ -9244,5 +9244,37 @@ const SLEEP_DATA = [
   "waking_details": [],
   "night_type": "full",
   "raw_notes": "Fell asleep: 9:03pm | Woke up: 6:50am"
+ },
+ {
+  "date": "2026-10-14",
+  "bedtime": "8:32pm",
+  "bedtime_decimal": 20.53,
+  "wake_time": "5:32am",
+  "wake_time_decimal": 29.53,
+  "total_sleep_hours": 9.0,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "full",
+  "raw_notes": "Fell asleep: 8:32pm | Awake time: 5:32am | 5:52am Levi got up and left his room"
+ },
+ {
+  "date": "2026-10-15",
+  "bedtime": "8:48pm",
+  "bedtime_decimal": 20.8,
+  "wake_time": "9:00am",
+  "wake_time_decimal": 33.0,
+  "total_sleep_hours": 10.3,
+  "total_awake_hours": 1.9,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "3:06am",
+    "return_time": "5:00am",
+    "duration_hours": 1.9
+   }
+  ],
+  "night_type": "resettled",
+  "raw_notes": "Fell asleep: 8:48pm | Awake time: 3:06am | 3:49am Levi got up and left his room | Slack thread clarification: What was he doing 3:06-3:49? I feel like this is the second time he's been up for a while before leaving | Slack thread clarification: He fell back asleep at 5 and slept until 9 | Slack thread clarification: He was mostly resting on his bed while he was awake."
  }
 ];
