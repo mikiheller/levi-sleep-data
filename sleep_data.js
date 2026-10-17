@@ -9276,5 +9276,18 @@ const SLEEP_DATA = [
   ],
   "night_type": "resettled",
   "raw_notes": "Fell asleep: 8:48pm | Awake time: 3:06am | 3:49am Levi got up and left his room | Slack thread clarification: What was he doing 3:06-3:49? I feel like this is the second time he's been up for a while before leaving | Slack thread clarification: He fell back asleep at 5 and slept until 9 | Slack thread clarification: He was mostly resting on his bed while he was awake."
+ },
+ {
+  "date": "2026-10-16",
+  "bedtime": "8:45pm",
+  "bedtime_decimal": 20.75,
+  "wake_time": null,
+  "wake_time_decimal": null,
+  "total_sleep_hours": null,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "no_data",
+  "raw_notes": "Fell asleep: 8:45pm | Awake period: 1:58am (3:15am Levi got up and opened his closet; 3:17am Levi left his room; 3:18am Levi was still outside his room and could be seen walking in the hallway) | No final wake time recorded"
  }
 ];
