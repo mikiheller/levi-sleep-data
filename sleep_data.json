@@ -9289,5 +9289,18 @@
   "waking_details": [],
   "night_type": "no_data",
   "raw_notes": "Fell asleep: 8:45pm | Awake period: 1:58am (3:15am Levi got up and opened his closet; 3:17am Levi left his room; 3:18am Levi was still outside his room and could be seen walking in the hallway) | No final wake time recorded"
+ },
+ {
+  "date": "2026-10-17",
+  "bedtime": "9:04pm",
+  "bedtime_decimal": 21.07,
+  "wake_time": "8:00am",
+  "wake_time_decimal": 32.0,
+  "total_sleep_hours": 10.93,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "full",
+  "raw_notes": "Fell asleep: 9:04pm | Brief Awake time: 12:22am-12:45am (12:28am Levi got up and left his room; under 30 min, not counted) | Woke up: 8am | Slack thread clarification: He fell asleep pretty fast, like 12:45. Awake at 8am"
  }
 ]
