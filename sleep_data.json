@@ -9321,5 +9321,18 @@
   ],
   "night_type": "resettled",
   "raw_notes": "Fell asleep: 8:44pm | Awake time: 12:09am-4am (3:08am Levi got up and left his room) | Woke up: 7:15am | Woke up briefly: 11:31pm (under 30 min, not counted) | Slack thread clarification: He was awake for three full hours before he got out of bed? | Slack thread clarification: Anyway he came up here and fell asleep probably at 4am, then woke up at 7:15am | Slack thread clarification: Yeah. He was mostly calm and just sitting on his bed."
+ },
+ {
+  "date": "2026-10-19",
+  "bedtime": "7:46pm",
+  "bedtime_decimal": 19.77,
+  "wake_time": "7:44am",
+  "wake_time_decimal": 31.73,
+  "total_sleep_hours": 11.97,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "full",
+  "raw_notes": "Fell asleep: 7:46pm | Woke up: 7:44am | Woke up briefly: 1:03am, 2:01am (under 30 min, not counted)"
  }
 ]
