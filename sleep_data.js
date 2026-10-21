@@ -9334,5 +9334,18 @@ const SLEEP_DATA = [
   "waking_details": [],
   "night_type": "full",
   "raw_notes": "Fell asleep: 7:46pm | Woke up: 7:44am | Woke up briefly: 1:03am, 2:01am (under 30 min, not counted)"
+ },
+ {
+  "date": "2026-10-20",
+  "bedtime": "9:27pm",
+  "bedtime_decimal": 21.45,
+  "wake_time": "6:13am",
+  "wake_time_decimal": 30.22,
+  "total_sleep_hours": 8.77,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "full",
+  "raw_notes": "Fell asleep: 9:27pm | Woke up: 6:13am"
  }
 ];
