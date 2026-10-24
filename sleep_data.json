@@ -9371,17 +9371,17 @@
   "bedtime_decimal": 21.62,
   "wake_time": "7:30am",
   "wake_time_decimal": 31.5,
-  "total_sleep_hours": 8.45,
-  "total_awake_hours": 1.43,
+  "total_sleep_hours": 8.41,
+  "total_awake_hours": 1.47,
   "night_wakings": 1,
   "waking_details": [
    {
     "wake_time": "2:47am",
-    "return_time": "4:13am",
-    "duration_hours": 1.43
+    "return_time": "4:15am",
+    "duration_hours": 1.47
    }
   ],
   "night_type": "resettled",
-  "raw_notes": "Fell asleep: 9:37pm | Awake time: 2:47am (3:28am Levi got up and left his room) | Woke up: 7:30am (from thread) | Return to sleep ~4:13am computed as 3:28am + 'probably 45 minutes later' (approximate) | Slack thread clarification: He came to our room and fell asleep probably 45 minutes later, then woke up at 7:30"
+  "raw_notes": "Fell asleep: 9:37pm | Awake time: 2:47am-4:15-‘ (post as edited; trailing characters garbled, read as 4:15am) | 3:28am Levi got up and left his room | Woke up: 7:30am | Slack thread clarification: He came to our room and fell asleep probably 45 minutes later, then woke up at 7:30"
  }
 ]
