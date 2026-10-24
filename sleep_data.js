@@ -187,7 +187,7 @@ const SLEEP_DATA = [
    }
   ],
   "night_type": "resettled",
-  "raw_notes": "Fell asleep at 8:32pm | Awake at 2:01am - 2:17am"
+  "raw_notes": "Fell asleep at 8:32pm | Awake at 2:01am - 2:17am | INCOMPLETE: total_sleep_hours (5.48h) is a lower bound (sleep before first waking only); source ends at the 2:17am waking with no later sleep or wake time recorded"
  },
  {
   "date": "2025-02-12",
@@ -479,7 +479,7 @@ const SLEEP_DATA = [
   "bedtime_decimal": 21.9,
   "wake_time": "1:03am",
   "wake_time_decimal": 25.05,
-  "total_sleep_hours": 3.15,
+  "total_sleep_hours": 7.87,
   "total_awake_hours": 2.22,
   "night_wakings": 1,
   "waking_details": [
@@ -490,7 +490,7 @@ const SLEEP_DATA = [
    }
   ],
   "night_type": "resettled",
-  "raw_notes": "Fell asleep at 9:54pm | Awake at 1:03am - 3:16am | Asleep at 3:17am - 8am"
+  "raw_notes": "Fell asleep at 9:54pm | Awake at 1:03am - 3:16am | Asleep at 3:17am - 8am | Total sleep corrected Oct 23 2026 to sum of source-documented sleep blocks: 3h09m (9:54pm-1:03am) + 4h43m (3:17am-8am) = 7h52m; wake_time/awake fields unchanged (wake_time is first waking)"
  },
  {
   "date": "2025-03-01",
@@ -511,7 +511,7 @@ const SLEEP_DATA = [
   "bedtime_decimal": 20.9,
   "wake_time": "12:44am",
   "wake_time_decimal": 24.73,
-  "total_sleep_hours": 3.83,
+  "total_sleep_hours": 7.6,
   "total_awake_hours": 4.03,
   "night_wakings": 1,
   "waking_details": [
@@ -522,7 +522,7 @@ const SLEEP_DATA = [
    }
   ],
   "night_type": "resettled",
-  "raw_notes": "Fell asleep at 8:54pm | Awake at 12:44am - 4:46am | Asleep at 4:47am - 8:33am"
+  "raw_notes": "Fell asleep at 8:54pm | Awake at 12:44am - 4:46am | Asleep at 4:47am - 8:33am | Total sleep corrected Oct 23 2026 to sum of source-documented sleep blocks: 3h50m (8:54pm-12:44am) + 3h46m (4:47am-8:33am) = 7h36m; wake_time/awake fields unchanged (wake_time is first waking)"
  },
  {
   "date": "2025-03-03",
@@ -634,7 +634,7 @@ const SLEEP_DATA = [
   "bedtime_decimal": 20.62,
   "wake_time": "12:30am",
   "wake_time_decimal": 24.5,
-  "total_sleep_hours": 3.88,
+  "total_sleep_hours": 7.95,
   "total_awake_hours": 5.32,
   "night_wakings": 1,
   "waking_details": [
@@ -645,7 +645,7 @@ const SLEEP_DATA = [
    }
   ],
   "night_type": "resettled",
-  "raw_notes": "Fell asleep at 8:37pm | Awake at 12:30am - 5:49am | Asleep at 5:50am - 9:54am"
+  "raw_notes": "Fell asleep at 8:37pm | Awake at 12:30am - 5:49am | Asleep at 5:50am - 9:54am | Total sleep corrected Oct 23 2026 to sum of source-documented sleep blocks: 3h53m (8:37pm-12:30am) + 4h04m (5:50am-9:54am) = 7h57m; wake_time/awake fields unchanged (wake_time is first waking)"
  },
  {
   "date": "2025-03-09",
@@ -2147,7 +2147,7 @@ const SLEEP_DATA = [
    }
   ],
   "night_type": "resettled",
-  "raw_notes": "Fell asleep at 10:05pm | Woke up at 2:24am and went back to sleep at 7:04am"
+  "raw_notes": "Fell asleep at 10:05pm | Woke up at 2:24am and went back to sleep at 7:04am | INCOMPLETE: total_sleep_hours (4.32h) is a lower bound (sleep before first waking only); source gives 'went back to sleep at 7:04am' but no final wake time"
  },
  {
   "date": "2025-06-18",
@@ -2250,7 +2250,7 @@ const SLEEP_DATA = [
    }
   ],
   "night_type": "resettled",
-  "raw_notes": "Fell asleep at 10:29pm | Woke up at 2:41am and went back to sleep at 6:08am"
+  "raw_notes": "Fell asleep at 10:29pm | Woke up at 2:41am and went back to sleep at 6:08am | INCOMPLETE: total_sleep_hours (4.2h) is a lower bound (sleep before first waking only); source gives 'went back to sleep at 6:08am' but no final wake time"
  },
  {
   "date": "2025-06-25",
