@@ -174,8 +174,8 @@
   "date": "2025-02-11",
   "bedtime": "8:32pm",
   "bedtime_decimal": 20.53,
-  "wake_time": "2:01am",
-  "wake_time_decimal": 26.02,
+  "wake_time": null,
+  "wake_time_decimal": null,
   "total_sleep_hours": 5.48,
   "total_awake_hours": 0.27,
   "night_wakings": 1,
@@ -187,7 +187,7 @@
    }
   ],
   "night_type": "resettled",
-  "raw_notes": "Fell asleep at 8:32pm | Awake at 2:01am - 2:17am | INCOMPLETE: total_sleep_hours (5.48h) is a lower bound (sleep before first waking only); source ends at the 2:17am waking with no later sleep or wake time recorded"
+  "raw_notes": "Fell asleep at 8:32pm | Awake at 2:01am - 2:17am | INCOMPLETE: total_sleep_hours (5.48h) is a lower bound (sleep before first waking only); source ends at the 2:17am waking with no later sleep or wake time recorded | FINAL WAKE UNKNOWN (corrected Oct 23 2026): wake_time was the first waking (2:01am, kept in waking_details), now null"
  },
  {
   "date": "2025-02-12",
@@ -2134,8 +2134,8 @@
   "date": "2025-06-17",
   "bedtime": "10:05pm",
   "bedtime_decimal": 22.08,
-  "wake_time": "2:24am",
-  "wake_time_decimal": 26.4,
+  "wake_time": null,
+  "wake_time_decimal": null,
   "total_sleep_hours": 4.32,
   "total_awake_hours": 4.67,
   "night_wakings": 1,
@@ -2147,7 +2147,7 @@
    }
   ],
   "night_type": "resettled",
-  "raw_notes": "Fell asleep at 10:05pm | Woke up at 2:24am and went back to sleep at 7:04am | INCOMPLETE: total_sleep_hours (4.32h) is a lower bound (sleep before first waking only); source gives 'went back to sleep at 7:04am' but no final wake time"
+  "raw_notes": "Fell asleep at 10:05pm | Woke up at 2:24am and went back to sleep at 7:04am | INCOMPLETE: total_sleep_hours (4.32h) is a lower bound (sleep before first waking only); source gives 'went back to sleep at 7:04am' but no final wake time | FINAL WAKE UNKNOWN (corrected Oct 23 2026): wake_time was the first waking (2:24am, kept in waking_details), now null"
  },
  {
   "date": "2025-06-18",
@@ -2237,8 +2237,8 @@
   "date": "2025-06-24",
   "bedtime": "10:29pm",
   "bedtime_decimal": 22.48,
-  "wake_time": "2:41am",
-  "wake_time_decimal": 26.68,
+  "wake_time": null,
+  "wake_time_decimal": null,
   "total_sleep_hours": 4.2,
   "total_awake_hours": 3.45,
   "night_wakings": 1,
@@ -2250,7 +2250,7 @@
    }
   ],
   "night_type": "resettled",
-  "raw_notes": "Fell asleep at 10:29pm | Woke up at 2:41am and went back to sleep at 6:08am | INCOMPLETE: total_sleep_hours (4.2h) is a lower bound (sleep before first waking only); source gives 'went back to sleep at 6:08am' but no final wake time"
+  "raw_notes": "Fell asleep at 10:29pm | Woke up at 2:41am and went back to sleep at 6:08am | INCOMPLETE: total_sleep_hours (4.2h) is a lower bound (sleep before first waking only); source gives 'went back to sleep at 6:08am' but no final wake time | FINAL WAKE UNKNOWN (corrected Oct 23 2026): wake_time was the first waking (2:41am, kept in waking_details), now null"
  },
  {
   "date": "2025-06-25",
@@ -5053,8 +5053,8 @@
   "date": "2025-12-31",
   "bedtime": "12:35am",
   "bedtime_decimal": 24.58,
-  "wake_time": "7:41am",
-  "wake_time_decimal": 31.68,
+  "wake_time": null,
+  "wake_time_decimal": null,
   "total_sleep_hours": 7.1,
   "total_awake_hours": null,
   "night_wakings": 1,
@@ -5066,7 +5066,7 @@
    }
   ],
   "night_type": "resettled",
-  "raw_notes": "Levi fell asleep at 12:35am | Levi woke up at 10:37am | Levi woke up at 7:41am"
+  "raw_notes": "Levi fell asleep at 12:35am | Levi woke up at 10:37am | Levi woke up at 7:41am | FINAL WAKE UNKNOWN (corrected Oct 23 2026): source lists two wake-ups out of order (10:37am and 7:41am) with no explicit final wake; wake_time left null, 7:41am kept as the first waking in waking_details; total_sleep_hours (7.1h) is bedtime-to-7:41am only"
  },
  {
   "date": "2026-01-01",

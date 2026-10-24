@@ -554,6 +554,11 @@
                 return [d.bedtime_decimal, d.wake_time_decimal];
             });
             const sleepSegmentA = filtered.map(d => {
+                if (d.bedtime_decimal != null && d.wake_time_decimal == null && d.waking_details && d.waking_details.length > 0) {
+                    // final wake unknown: draw only the documented bedtime -> first waking segment
+                    const fw = parseClockToDecimal(d.waking_details[0].wake_time, d.bedtime_decimal);
+                    return fw == null ? null : [d.bedtime_decimal, fw];
+                }
                 if (d.bedtime_decimal == null || d.wake_time_decimal == null) return null;
                 if (!d.waking_details || d.waking_details.length === 0) {
                     return [d.bedtime_decimal, d.wake_time_decimal];
@@ -870,7 +875,7 @@
                                     const d = filtered[ctx.dataIndex];
                                     if (!d || !d.bedtime) return null;
                                     const lines = [];
-                                    lines.push(`${d.bedtime} → ${d.wake_time}`);
+                                    lines.push(`${d.bedtime} → ${d.wake_time || 'final wake unknown'}`);
                                     const typeLabel = NIGHT_TYPE_LABEL[d.night_type] || '';
                                     if (typeLabel) lines.push(typeLabel);
                                     if (d.waking_details && d.waking_details.length > 0) {
