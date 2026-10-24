@@ -9206,7 +9206,7 @@
   "bedtime_decimal": 20.2,
   "wake_time": "7:15am",
   "wake_time_decimal": 31.25,
-  "total_sleep_hours": 11.05,
+  "total_sleep_hours": 7.47,
   "total_awake_hours": 3.58,
   "night_wakings": 1,
   "waking_details": [
@@ -9309,7 +9309,7 @@
   "bedtime_decimal": 20.73,
   "wake_time": "7:15am",
   "wake_time_decimal": 31.25,
-  "total_sleep_hours": 10.52,
+  "total_sleep_hours": 6.67,
   "total_awake_hours": 3.85,
   "night_wakings": 1,
   "waking_details": [
@@ -9367,7 +9367,7 @@
   "bedtime_decimal": 21.62,
   "wake_time": "7:30am",
   "wake_time_decimal": 31.5,
-  "total_sleep_hours": 9.88,
+  "total_sleep_hours": 8.45,
   "total_awake_hours": 1.43,
   "night_wakings": 1,
   "waking_details": [
