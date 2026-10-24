@@ -876,6 +876,7 @@
                                     if (!d || !d.bedtime) return null;
                                     const lines = [];
                                     lines.push(`${d.bedtime} → ${d.wake_time || 'final wake unknown'}`);
+                                    if (d.hours_partial && d.total_sleep_hours != null) lines.push(`Partial: at least ${d.total_sleep_hours.toFixed(1)}h (final wake unknown)`);
                                     const typeLabel = NIGHT_TYPE_LABEL[d.night_type] || '';
                                     if (typeLabel) lines.push(typeLabel);
                                     if (d.waking_details && d.waking_details.length > 0) {
@@ -904,6 +905,9 @@
                     : d.total_sleep_hours >= 9 ? `<span class="badge badge-good">${d.total_sleep_hours.toFixed(1)}h</span>`
                     : d.total_sleep_hours >= 7 ? `<span class="badge badge-warn">${d.total_sleep_hours.toFixed(1)}h</span>`
                     : `<span class="badge badge-bad">${d.total_sleep_hours.toFixed(1)}h</span>`;
+
+                const partialMark = d.hours_partial && d.total_sleep_hours != null
+                    ? ' <span title="Partial: bedtime to first waking only. Final wake not documented, so true total is higher." style="font-size:0.75rem;color:var(--text-muted)">&ge; partial</span>' : '';
 
                 const typeBadgeClass = {
                     full: 'badge-good',
@@ -939,7 +943,7 @@
                     <td>${dateStr}</td>
                     <td>${d.bedtime || '<span class="no-data">-</span>'}</td>
                     <td>${d.wake_time || '<span class="no-data">-</span>'}</td>
-                    <td>${sleepBadge}</td>
+                    <td>${sleepBadge}${partialMark}</td>
                     <td>${typeBadge}</td>
                     <td>${awakeBadge}</td>
                     <td style="max-width:300px; font-size:0.8rem; color: var(--text-muted)">${wakingNotes}</td>
