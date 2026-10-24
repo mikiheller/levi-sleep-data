@@ -9383,5 +9383,18 @@ const SLEEP_DATA = [
   ],
   "night_type": "resettled",
   "raw_notes": "Fell asleep: 9:37pm | Awake time: 2:47am-4:15-‘ (post as edited; trailing characters garbled, read as 4:15am) | 3:28am Levi got up and left his room | Woke up: 7:30am | Slack thread clarification: He came to our room and fell asleep probably 45 minutes later, then woke up at 7:30"
+ },
+ {
+  "date": "2026-10-23",
+  "bedtime": "8:16pm",
+  "bedtime_decimal": 20.27,
+  "wake_time": null,
+  "wake_time_decimal": null,
+  "total_sleep_hours": null,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "no_data",
+  "raw_notes": "Fell asleep: 8:16pm | Awake period: 12:54am (12:54am Levi got up and left his room) | No final wake time recorded"
  }
 ];
