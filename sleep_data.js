@@ -9388,13 +9388,13 @@ const SLEEP_DATA = [
   "date": "2026-10-23",
   "bedtime": "8:16pm",
   "bedtime_decimal": 20.27,
-  "wake_time": null,
-  "wake_time_decimal": null,
-  "total_sleep_hours": null,
+  "wake_time": "6:40am",
+  "wake_time_decimal": 30.67,
+  "total_sleep_hours": 10.4,
   "total_awake_hours": null,
   "night_wakings": 0,
   "waking_details": [],
-  "night_type": "no_data",
-  "raw_notes": "Fell asleep: 8:16pm | Awake period: 12:54am (12:54am Levi got up and left his room) | No final wake time recorded"
+  "night_type": "full",
+  "raw_notes": "Fell asleep: 8:16pm | Awake period: 12:54am (12:54am Levi got up and left his room) | Slack thread clarification (Miki): He fell asleep by 1 and slept until 6:40 | Waking 12:54am to ~1:00am is about 6 min (approximate), under 30 min so not counted"
  }
 ];
