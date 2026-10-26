@@ -9415,5 +9415,24 @@
   ],
   "night_type": "resettled",
   "raw_notes": "Fell asleep: 8:29pm | Awake period: 12:04am - 4:17am (1:02am Levi got up and left his room; 3:51am Levi and Jake went inside his room) | Woke up: 8:17am"
+ },
+ {
+  "date": "2026-10-25",
+  "bedtime": "8:17pm",
+  "bedtime_decimal": 20.28,
+  "wake_time": "7:20am",
+  "wake_time_decimal": 31.33,
+  "total_sleep_hours": 5.95,
+  "total_awake_hours": 5.1,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "11:34pm",
+    "return_time": "4:40am",
+    "duration_hours": 5.1
+   }
+  ],
+  "night_type": "resettled",
+  "raw_notes": "Fell asleep: 8:17pm | Awake period: 11:34pm - 4:40am | Woke up: 7:20am"
  }
 ]
