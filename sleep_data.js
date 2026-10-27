@@ -9434,5 +9434,18 @@ const SLEEP_DATA = [
   ],
   "night_type": "resettled",
   "raw_notes": "Fell asleep: 8:17pm | Awake period: 11:34pm - 4:40am | Woke up: 7:20am"
+ },
+ {
+  "date": "2026-10-26",
+  "bedtime": "8:32pm",
+  "bedtime_decimal": 20.53,
+  "wake_time": "6:21am",
+  "wake_time_decimal": 30.35,
+  "total_sleep_hours": 9.82,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "full",
+  "raw_notes": "Fell asleep: 8:32pm | Woke up: 6:21am | No wakings mentioned in the post (not an explicit statement of none)"
  }
 ];
