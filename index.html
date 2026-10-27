@@ -931,7 +931,7 @@
                         }
                         return `Woke at ${w.wake_time}`;
                     }).join('; ')
-                    : '';
+                    : (d.waking_note || '');
 
                 const awakeBadge = d.total_awake_hours == null || !d.total_awake_hours
                     ? '-'

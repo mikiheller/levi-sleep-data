@@ -9446,6 +9446,7 @@ const SLEEP_DATA = [
   "night_wakings": 0,
   "waking_details": [],
   "night_type": "full",
-  "raw_notes": "Fell asleep: 8:32pm | Woke up: 6:21am | No wakings mentioned in the post (not an explicit statement of none)"
+  "raw_notes": "Fell asleep: 8:32pm | Woke up: 6:21am | No wakings mentioned in the post (not an explicit statement of none)",
+  "waking_note": "No wakings mentioned; uninterrupted sleep not confirmed."
  }
 ];
