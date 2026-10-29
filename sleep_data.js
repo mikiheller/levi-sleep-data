@@ -9448,5 +9448,24 @@ const SLEEP_DATA = [
   "night_type": "full",
   "raw_notes": "Fell asleep: 8:32pm | Woke up: 6:21am | No wakings mentioned in the post (not an explicit statement of none)",
   "waking_note": "No wakings mentioned; uninterrupted sleep not confirmed."
+ },
+ {
+  "date": "2026-10-27",
+  "bedtime": "9:27pm",
+  "bedtime_decimal": 21.45,
+  "wake_time": "7:45am",
+  "wake_time_decimal": 31.75,
+  "total_sleep_hours": 7.53,
+  "total_awake_hours": 2.77,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "1:14am",
+    "return_time": "4:00am",
+    "duration_hours": 2.77
+   }
+  ],
+  "night_type": "resettled",
+  "raw_notes": "Fell asleep: 9:27pm | Awake period: 1:14am (post had a start time only; 1:26am Levi got up and left his room) | Slack thread clarification (reply by U07PP9G968M): He fell back asleep at 4 and got up at 7:45 | Return to sleep 4:00am and final wake 7:45am come from the thread reply (approximate, 'at 4')"
  }
 ];
