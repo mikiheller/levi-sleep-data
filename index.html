@@ -930,7 +930,7 @@
                             return `Awake from ${w.wake_time} to ${w.return_time}`;
                         }
                         return `Woke at ${w.wake_time}`;
-                    }).join('; ')
+                    }).join('; ') + (d.waking_note ? '. ' + d.waking_note : '')
                     : (d.waking_note || '');
 
                 const awakeBadge = d.total_awake_hours == null || !d.total_awake_hours

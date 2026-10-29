@@ -9466,6 +9466,7 @@ const SLEEP_DATA = [
    }
   ],
   "night_type": "resettled",
-  "raw_notes": "Fell asleep: 9:27pm | Awake period: 1:14am (post had a start time only; 1:26am Levi got up and left his room) | Slack thread clarification (reply by U07PP9G968M): He fell back asleep at 4 and got up at 7:45 | Return to sleep 4:00am and final wake 7:45am come from the thread reply (approximate, 'at 4')"
+  "raw_notes": "Fell asleep: 9:27pm | Awake period: 1:14am (post had a start time only; 1:26am Levi got up and left his room) | Slack thread clarification (reply by U07PP9G968M): He fell back asleep at 4 and got up at 7:45 | Return to sleep 4:00am and final wake 7:45am come from the thread reply (approximate, 'at 4')",
+  "waking_note": "Return to sleep about 4am, per thread reply (approximate)."
  }
 ];
