@@ -9468,5 +9468,18 @@ const SLEEP_DATA = [
   "night_type": "resettled",
   "raw_notes": "Fell asleep: 9:27pm | Awake period: 1:14am - 4am (post as edited by Sheryl; 1:26am Levi got up and left his room) | Woke up: 7:45am (post as edited by Sheryl) | Slack thread clarification (reply by U07PP9G968M): He fell back asleep at 4 and got up at 7:45 | Return to sleep '4am' is as written, approximate",
   "waking_note": "Return to sleep about 4am, per post and thread reply (approximate)."
+ },
+ {
+  "date": "2026-10-28",
+  "bedtime": "8:56pm",
+  "bedtime_decimal": 20.93,
+  "wake_time": "6:30am",
+  "wake_time_decimal": 30.5,
+  "total_sleep_hours": 9.57,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "full",
+  "raw_notes": "Fell asleep: 8:56pm | Brief Awake time: 3:07am - 3:30am (3:10am Levi got up and left his room) | Woke up: 6:30am (post as edited by Sheryl) | Slack thread clarification (reply by U07PP9G968M): He fell asleep relatively quickly, like 3:30am, and got up again at 6:30am | Awake 3:07am-3:30am is about 23 min, under 30 min so not counted"
  }
 ];
