@@ -9499,7 +9499,6 @@ const SLEEP_DATA = [
    }
   ],
   "night_type": "resettled",
-  "raw_notes": "Fell asleep: 9:11pm | Awake period: 5:03am (post had a start time only; 5:08am Levi got up and left his room) | Slack thread clarification (reply by U07Q4REA9AM): He was up until 6:45, then slept for another 45 minutes or so | Return to sleep 6:45am as written; final wake 7:30am is derived (6:45 + about 45 min), approximate, no exact wake time stated",
-  "waking_note": "Final wake about 7:30am is approximate (derived from thread reply: slept about 45 more minutes after 6:45)."
+  "raw_notes": "Fell asleep: 9:11pm | Awake period: 5:03am - 6:45am (post as edited by Sheryl; 5:08am Levi got up and left his room) | Woke up: 7:30am (post as edited by Sheryl) | Slack thread clarification (reply by U07Q4REA9AM): He was up until 6:45, then slept for another 45 minutes or so"
  }
 ];
