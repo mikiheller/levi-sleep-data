@@ -9481,5 +9481,25 @@ const SLEEP_DATA = [
   "waking_details": [],
   "night_type": "full",
   "raw_notes": "Fell asleep: 8:56pm | Brief Awake time: 3:07am - 3:30am (3:10am Levi got up and left his room) | Woke up: 6:30am (post as edited by Sheryl) | Slack thread clarification (reply by U07PP9G968M): He fell asleep relatively quickly, like 3:30am, and got up again at 6:30am | Awake 3:07am-3:30am is about 23 min, under 30 min so not counted"
+ },
+ {
+  "date": "2026-10-29",
+  "bedtime": "9:11pm",
+  "bedtime_decimal": 21.18,
+  "wake_time": "7:30am",
+  "wake_time_decimal": 31.5,
+  "total_sleep_hours": 8.62,
+  "total_awake_hours": 1.7,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "5:03am",
+    "return_time": "6:45am",
+    "duration_hours": 1.7
+   }
+  ],
+  "night_type": "resettled",
+  "raw_notes": "Fell asleep: 9:11pm | Awake period: 5:03am (post had a start time only; 5:08am Levi got up and left his room) | Slack thread clarification (reply by U07Q4REA9AM): He was up until 6:45, then slept for another 45 minutes or so | Return to sleep 6:45am as written; final wake 7:30am is derived (6:45 + about 45 min), approximate, no exact wake time stated",
+  "waking_note": "Final wake about 7:30am is approximate (derived from thread reply: slept about 45 more minutes after 6:45)."
  }
 ];
