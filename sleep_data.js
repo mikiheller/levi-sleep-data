@@ -9500,5 +9500,26 @@ const SLEEP_DATA = [
   ],
   "night_type": "resettled",
   "raw_notes": "Fell asleep: 9:11pm | Awake period: 5:03am - 6:45am (post as edited by Sheryl; 5:08am Levi got up and left his room) | Woke up: 7:30am (post as edited by Sheryl) | Slack thread clarification (reply by U07Q4REA9AM): He was up until 6:45, then slept for another 45 minutes or so"
+ },
+ {
+  "date": "2026-10-31",
+  "bedtime": "8:57pm",
+  "bedtime_decimal": 20.95,
+  "wake_time": "6:30am",
+  "wake_time_decimal": 30.5,
+  "total_sleep_hours": 8.05,
+  "total_awake_hours": 2.5,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "1:00am",
+    "return_time": null,
+    "duration_hours": 2.5
+   }
+  ],
+  "night_type": "resettled",
+  "dst_adjustment_hours": 1,
+  "waking_note": "Clocks fell back at 2am (DST ended), so real elapsed time is 1 hour longer than the clock difference. Awake duration is approximate (about 2.5h); return time not stated.",
+  "raw_notes": "Fell asleep: 8:57pm | Awake period: 1am (1:20am Levi got up and left his room) | Slack thread clarification (reply by Miki Heller): He was up for probably 2.5 hours before falling asleep. He woke up at 6:30am. Note that it was daylight savings so it adds an hour | Final wake 6:30am per Miki; sleep hours = clock span 9.55h + 1h DST - ~2.5h awake (approximate) = 8.05h"
  }
 ];
