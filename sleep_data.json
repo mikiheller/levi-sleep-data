@@ -9505,8 +9505,8 @@
   "date": "2026-10-31",
   "bedtime": "8:57pm",
   "bedtime_decimal": 20.95,
-  "wake_time": "6:30am",
-  "wake_time_decimal": 30.5,
+  "wake_time": "7:30am",
+  "wake_time_decimal": 31.5,
   "total_sleep_hours": 8.05,
   "total_awake_hours": 2.5,
   "night_wakings": 1,
@@ -9518,8 +9518,7 @@
    }
   ],
   "night_type": "resettled",
-  "dst_adjustment_hours": 1,
-  "waking_note": "Clocks fell back at 2am (DST ended), so real elapsed time is 1 hour longer than the clock difference. Awake duration is approximate (about 2.5h); return time not stated.",
-  "raw_notes": "Fell asleep: 8:57pm | Awake period: 1am (1:20am Levi got up and left his room) | Slack thread clarification (reply by Miki Heller): He was up for probably 2.5 hours before falling asleep. He woke up at 6:30am. Note that it was daylight savings so it adds an hour | Final wake 6:30am per Miki; sleep hours = clock span 9.55h + 1h DST - ~2.5h awake (approximate) = 8.05h"
+  "waking_note": "Clocks fell back at 2am (DST ended). Recorded per Miki as 7:30am wake (technically 6:30am by the clock, but 7:30 by the time he fell asleep), so times are on the pre-change clock. Awake 1am-2:30am per post, about 2.5h.",
+  "raw_notes": "Fell asleep: 8:57pm | Awake period: 1am - 2:30am (1:20am Levi got up and left his room) | Woke up: 7:30 (technically 6:30 because of daylight savings, but 7:30 by the time when he fell asleep) (post as edited by Sheryl) | Slack thread clarification (reply by Miki Heller): He was up for probably 2.5 hours before falling asleep. He woke up at 6:30am. Note that it was daylight savings so it adds an hour | Slack thread clarification (reply by Miki Heller): let's say \"7:30 (technically 6:30 because of daylight savings, but 7:30 by the time when he fell asleep)\" | Sleep hours = 7:30am (31.5) - 8:57pm (20.95) - 2.5h awake = 8.05h"
  }
 ]
