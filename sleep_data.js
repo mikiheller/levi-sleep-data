@@ -9520,5 +9520,24 @@ const SLEEP_DATA = [
   "night_type": "resettled",
   "waking_note": "Clocks fell back at 2am (DST ended). Recorded per Miki as 7:30am wake (technically 6:30am by the clock, but 7:30 by the time he fell asleep), so times are on the pre-change clock. Awake 1am-2:30am per post, about 2.5h.",
   "raw_notes": "Fell asleep: 8:57pm | Awake period: 1am - 2:30am (1:20am Levi got up and left his room) | Woke up: 7:30 (technically 6:30 because of daylight savings, but 7:30 by the time when he fell asleep) (post as edited by Sheryl) | Slack thread clarification (reply by Miki Heller): He was up for probably 2.5 hours before falling asleep. He woke up at 6:30am. Note that it was daylight savings so it adds an hour | Slack thread clarification (reply by Miki Heller): let's say \"7:30 (technically 6:30 because of daylight savings, but 7:30 by the time when he fell asleep)\" | Sleep hours = 7:30am (31.5) - 8:57pm (20.95) - 2.5h awake = 8.05h"
+ },
+ {
+  "date": "2026-11-01",
+  "bedtime": "7:27pm",
+  "bedtime_decimal": 19.45,
+  "wake_time": "5:30am",
+  "wake_time_decimal": 29.5,
+  "total_sleep_hours": 7.87,
+  "total_awake_hours": 2.18,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "10:49pm",
+    "return_time": "1:00am",
+    "duration_hours": 2.18
+   }
+  ],
+  "night_type": "resettled",
+  "raw_notes": "Fell asleep: 7:27pm | Awake period: 10:49pm - 1am (11:33pm Levi got up and left his room) | Woke up: 5:30am (post as edited by Sheryl) | Slack thread clarification (reply by Miki Heller): Yeah the timestamps are up to date. Levi fell asleep again probably at 1am and woke up at 5:30am"
  }
 ];
