@@ -9539,5 +9539,19 @@
   ],
   "night_type": "resettled",
   "raw_notes": "Fell asleep: 7:27pm | Awake period: 10:49pm - 1am (11:33pm Levi got up and left his room) | Woke up: 5:30am (post as edited by Sheryl) | Slack thread clarification (reply by Miki Heller): Yeah the timestamps are up to date. Levi fell asleep again probably at 1am and woke up at 5:30am"
+ },
+ {
+  "date": "2026-11-02",
+  "bedtime": "8:56pm",
+  "bedtime_decimal": 20.93,
+  "wake_time": "6:54am",
+  "wake_time_decimal": 30.9,
+  "total_sleep_hours": 9.97,
+  "total_awake_hours": null,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "full",
+  "waking_note": "Woke briefly at 3:44am; duration not stated, so not counted.",
+  "raw_notes": "Fell asleep: 8:56pm | Woke up: 6:54am | Woke up briefly: 3:44am (duration not stated, not counted)"
  }
 ]
