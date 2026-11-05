@@ -9553,5 +9553,25 @@
   "night_type": "full",
   "waking_note": "Woke briefly at 3:44am; duration not stated, so not counted.",
   "raw_notes": "Fell asleep: 8:56pm | Woke up: 6:54am | Woke up briefly: 3:44am (duration not stated, not counted)"
+ },
+ {
+  "date": "2026-11-03",
+  "bedtime": "9:08pm",
+  "bedtime_decimal": 21.13,
+  "wake_time": "5:30am",
+  "wake_time_decimal": 29.5,
+  "total_sleep_hours": 7.27,
+  "total_awake_hours": 1.1,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "11:39pm",
+    "return_time": "12:45am",
+    "duration_hours": 1.1
+   }
+  ],
+  "night_type": "resettled",
+  "waking_note": "Return to sleep (12:45am) is approximate, per Miki's 'probably by 12:45'.",
+  "raw_notes": "Fell asleep: 9:08pm | Awake period: 11:39pm (12:02am Levi got up and left his room) | Slack thread clarification (reply by Miki Heller): He fell asleep probably by 12:45 and woke up at 5:30. | Return 12:45am is approximate ('probably by 12:45'); wake 5:30am per Miki's reply"
  }
 ]
