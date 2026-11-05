@@ -9517,7 +9517,7 @@
     "duration_hours": null
    }
   ],
-  "night_type": "resettled",
+  "night_type": "no_data",
   "waking_note": "Incomplete night: final wake and return to sleep not documented, so sleep hours are not calculated and the night is left out of averages. Levi got up and left his room at 5:08am.",
   "raw_notes": "Fell asleep: 8:12pm | Awake period: 4:51am (5:08am Levi got up and left his room) | FINAL WAKE UNKNOWN: post has no wake time and no thread reply; sleep hours not calculated (at least about 8.65h before 4:51am, lower bound only)",
   "hours_partial": true
