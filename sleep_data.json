@@ -9593,7 +9593,7 @@
   ],
   "night_type": "resettled",
   "waking_note": "Return to sleep (12:45am) is approximate, per Miki's 'probably by 12:45'.",
-  "raw_notes": "Fell asleep: 9:08pm | Awake period: 11:39pm (12:02am Levi got up and left his room) | Slack thread clarification (reply by Miki Heller): He fell asleep probably by 12:45 and woke up at 5:30. | Return 12:45am is approximate ('probably by 12:45'); wake 5:30am per Miki's reply"
+  "raw_notes": "Fell asleep: 9:08pm | Awake period: 11:39pm (12:02am Levi got up and left his room) | Slack thread clarification (reply by Miki Heller): He fell asleep probably by 12:45 and woke up at 5:30. | Return 12:45am is approximate ('probably by 12:45'); wake 5:30am per Miki's reply | Slack thread (Sheryl, Nov 6): confirmed the Wed AM wake time on file for this night is the one Miki gave (5:30am)"
  },
  {
   "date": "2026-11-04",
@@ -9612,8 +9612,8 @@
    }
   ],
   "night_type": "no_data",
-  "waking_note": "Incomplete night: final wake not documented, so sleep hours are not calculated and the night is left out of averages. Levi got up and left his room at 1:34am. Return to sleep (about 3am) is approximate, per Jake's 'I think he finally fell asleep around 3'.",
-  "raw_notes": "Fell asleep: 8:59pm | Awake period: 1:33am (1:34am Levi got up and left his room) | Slack thread clarification (reply by Jake Heller): I think he finally fell asleep around 3 | Return about 3:00am is approximate (Jake's 'around 3'; the 1.45h awake duration is derived from it) | FINAL WAKE UNKNOWN: no wake time in the post or thread; sleep hours not calculated",
+  "waking_note": "Incomplete night: final wake (Thursday morning) not documented, so sleep hours are not calculated and the night is left out of averages. Return to sleep at 3am per Sheryl's edited post (Jake: 'around 3'). Levi got up and left his room at 1:34am.",
+  "raw_notes": "Fell asleep: 8:59pm | Awake period: 1:33am - 3am (post edited to add the 3am end; 1:34am Levi got up and left his room) | Slack thread: Jake Heller: I think he finally fell asleep around 3 | Miki Heller said 'And then he woke up at 7:30' then retracted it as the wrong day ('Oh wait no sorry I have the wrong day'), so 7:30am is NOT used | Sheryl asked Miki for the Thursday-morning wake time (not yet answered) | FINAL WAKE UNKNOWN: sleep hours not calculated",
   "hours_partial": true
  }
 ]
