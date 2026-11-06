@@ -9607,13 +9607,13 @@
   "waking_details": [
    {
     "wake_time": "1:33am",
-    "return_time": null,
-    "duration_hours": null
+    "return_time": "3:00am",
+    "duration_hours": 1.45
    }
   ],
   "night_type": "no_data",
-  "waking_note": "Incomplete night: final wake and return to sleep not documented, so sleep hours are not calculated and the night is left out of averages. Levi got up and left his room at 1:34am.",
-  "raw_notes": "Fell asleep: 8:59pm | Awake period: 1:33am (1:34am Levi got up and left his room) | FINAL WAKE UNKNOWN: post has no wake time and no thread reply yet; sleep hours not calculated (at least about 4.55h before 1:33am, lower bound only)",
+  "waking_note": "Incomplete night: final wake not documented, so sleep hours are not calculated and the night is left out of averages. Levi got up and left his room at 1:34am. Return to sleep (about 3am) is approximate, per Jake's 'I think he finally fell asleep around 3'.",
+  "raw_notes": "Fell asleep: 8:59pm | Awake period: 1:33am (1:34am Levi got up and left his room) | Slack thread clarification (reply by Jake Heller): I think he finally fell asleep around 3 | Return about 3:00am is approximate (Jake's 'around 3'; the 1.45h awake duration is derived from it) | FINAL WAKE UNKNOWN: no wake time in the post or thread; sleep hours not calculated",
   "hours_partial": true
  }
 ]
