@@ -9634,5 +9634,26 @@ const SLEEP_DATA = [
   "night_type": "resettled",
   "waking_note": "Levi got up and left his room at 1:26am; Levi and Jake entered the room at 3:25am. Awake period 1:26am to 6:01am per Sheryl's post.",
   "raw_notes": "Fell asleep: 8:38pm | Awake period: 1:26am - 6:01am (1:26am Levi got up and left his room; 3:25am Levi and Jake entered the room) | Woke up: 9:40am"
+ },
+ {
+  "date": "2026-11-06",
+  "bedtime": "7:51pm",
+  "bedtime_decimal": 19.85,
+  "wake_time": null,
+  "wake_time_decimal": null,
+  "total_sleep_hours": null,
+  "total_awake_hours": null,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "2:16am",
+    "return_time": null,
+    "duration_hours": null
+   }
+  ],
+  "night_type": "no_data",
+  "waking_note": "Incomplete night: the post gives no end to the 2:16am awake period and no final wake, so sleep hours are not calculated and the night is left out of averages. Levi got up and opened his closet at 2:39am and left his room at 2:40am.",
+  "raw_notes": "Fell asleep: 7:51pm | Awake period: 2:16am - (no end time in post) (2:39am Levi got up and opened his closet; 2:40am Levi left his room) | FINAL WAKE UNKNOWN: no wake time and no return to sleep in the post or thread; sleep hours not calculated (at least about 6.4h before 2:16am, lower bound only)",
+  "hours_partial": true
  }
 ];
