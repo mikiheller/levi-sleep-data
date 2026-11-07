@@ -9599,10 +9599,10 @@ const SLEEP_DATA = [
   "date": "2026-11-04",
   "bedtime": "8:59pm",
   "bedtime_decimal": 20.98,
-  "wake_time": null,
-  "wake_time_decimal": null,
-  "total_sleep_hours": null,
-  "total_awake_hours": null,
+  "wake_time": "7:30am",
+  "wake_time_decimal": 31.5,
+  "total_sleep_hours": 9.07,
+  "total_awake_hours": 1.45,
   "night_wakings": 1,
   "waking_details": [
    {
@@ -9611,10 +9611,9 @@ const SLEEP_DATA = [
     "duration_hours": 1.45
    }
   ],
-  "night_type": "no_data",
-  "waking_note": "Incomplete night: final wake (Thursday morning) not documented, so sleep hours are not calculated and the night is left out of averages. Return to sleep at 3am per Sheryl's edited post (Jake: 'around 3'). Levi got up and left his room at 1:34am.",
-  "raw_notes": "Fell asleep: 8:59pm | Awake period: 1:33am - 3am (post edited to add the 3am end; 1:34am Levi got up and left his room) | Slack thread: Jake Heller: I think he finally fell asleep around 3 | Miki Heller said 'And then he woke up at 7:30' then retracted it as the wrong day ('Oh wait no sorry I have the wrong day'), so 7:30am is NOT used | Sheryl asked Miki for the Thursday-morning wake time (not yet answered) | FINAL WAKE UNKNOWN: sleep hours not calculated",
-  "hours_partial": true
+  "night_type": "resettled",
+  "waking_note": "Return to sleep (3am) is approximate, per Sheryl's edited post and Jake's 'around 3'. Levi got up and left his room at 1:34am.",
+  "raw_notes": "Fell asleep: 8:59pm | Awake period: 1:33am - 3am (1:34am Levi got up and left his room) | Slack thread clarification (reply by Jake Heller): I think he finally fell asleep around 3 | Slack thread clarification (reply by Miki Heller, Nov 6): he woke up at 7:30am on Thursday morning (Nov 5). An earlier 7:30 comment from Miki was retracted as the wrong day; this later reply is the confirmation | Return 3am is approximate"
  },
  {
   "date": "2026-11-05",
