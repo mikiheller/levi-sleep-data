@@ -9652,8 +9652,8 @@
    }
   ],
   "night_type": "no_data",
-  "waking_note": "Incomplete night: the post gives no end to the 2:16am awake period and no final wake, so sleep hours are not calculated and the night is left out of averages. Levi got up and opened his closet at 2:39am and left his room at 2:40am.",
-  "raw_notes": "Fell asleep: 7:51pm | Awake period: 2:16am - (no end time in post) (2:39am Levi got up and opened his closet; 2:40am Levi left his room) | FINAL WAKE UNKNOWN: no wake time and no return to sleep in the post or thread; sleep hours not calculated (at least about 6.4h before 2:16am, lower bound only)",
+  "waking_note": "Incomplete night: the post gives no end to the 2:16am awake period and no final wake, so sleep hours are not calculated and the night is left out of averages. Levi got up and opened his closet at 2:39am and left his room at 2:40am. Miki noted in the thread that he did not go back to sleep after that; final wake time still not given.",
+  "raw_notes": "Fell asleep: 7:51pm | Awake period: 2:16am - (no end time in post) (2:39am Levi got up and opened his closet; 2:40am Levi left his room) | FINAL WAKE UNKNOWN: no wake time and no return to sleep in the post or thread; sleep hours not calculated (at least about 6.4h before 2:16am, lower bound only) | Slack thread clarification (Miki Heller): \"Noting for the record that he didn't go back to sleep after that :(\" (still no wake time given)",
   "hours_partial": true
  }
 ]
