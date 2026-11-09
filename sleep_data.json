@@ -9668,5 +9668,26 @@
   "night_type": "resettled",
   "waking_note": "Levi got up and left his room at 3:56am. Awake period 3:56am to 4:30am per Sheryl's post; Miki's thread note: he came upstairs and was asleep by 4:30.",
   "raw_notes": "Fell asleep: 9:14pm | Awake period: 3:56am - 4:30am (3:56am Levi got up and left his room) | Woke up: 7:15am | Slack thread clarification (Miki Heller): \"He came upstairs and was asleep by 4:30. Woke up at 7:15\""
+ },
+ {
+  "date": "2026-11-08",
+  "bedtime": "8:01pm",
+  "bedtime_decimal": 20.02,
+  "wake_time": null,
+  "wake_time_decimal": null,
+  "total_sleep_hours": null,
+  "total_awake_hours": null,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "4:24am",
+    "return_time": null,
+    "duration_hours": null
+   }
+  ],
+  "night_type": "no_data",
+  "waking_note": "Incomplete night: the post gives no end to the 4:24am awake period and no final wake, so sleep hours are not calculated and the night is left out of averages. Levi got up and left his room at 4:27am. Post also notes 'Woke up briefly: 8:25pm' (no duration given, kept in notes only).",
+  "raw_notes": "Fell asleep: 8:01pm | Awake period: 4:24am (no end time in post) (4:27am Levi got up and left his room) | Woke up briefly: 8:25pm | FINAL WAKE UNKNOWN: no wake time and no return to sleep in the post; sleep hours not calculated",
+  "hours_partial": true
  }
 ]
