@@ -9682,5 +9682,26 @@ const SLEEP_DATA = [
   "night_type": "early_wake",
   "waking_note": "Sheryl edited the post to 'Woke up: 4:24am' (final wake). Jake's thread reply: he didn't go back to sleep, so 4:24 is the awake time. Levi got up and left his room at 4:27am. 'Woke up briefly: 8:25pm' has no duration, kept in notes only.",
   "raw_notes": "Fell asleep: 8:01pm | Woke up: 4:24am (edited from 'Awake period: 4:24am', no end time) (4:27am Levi got up and left his room) | Woke up briefly: 8:25pm (no duration; not counted) | Slack thread clarification (reply by Jake Heller): \"He didn't go back to sleep so 4:24 is the awake time today\""
+ },
+ {
+  "date": "2026-11-09",
+  "bedtime": "8:16pm",
+  "bedtime_decimal": 20.27,
+  "wake_time": null,
+  "wake_time_decimal": null,
+  "total_sleep_hours": null,
+  "total_awake_hours": null,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "2:08am",
+    "return_time": null,
+    "duration_hours": null
+   }
+  ],
+  "night_type": "no_data",
+  "waking_note": "Incomplete night: the post gives no end to the 2:08am awake period and no final wake, so sleep hours are not calculated and the night is left out of averages. Levi got up and left his room at 2:21am.",
+  "raw_notes": "Fell asleep: 8:16pm | Awake period: 2:08am (no end time in post) (2:21am Levi got up and left his room) | FINAL WAKE UNKNOWN: no wake time and no return to sleep in the post; sleep hours not calculated (at least about 5.9h before 2:08am, lower bound only)",
+  "hours_partial": true
  }
 ];
