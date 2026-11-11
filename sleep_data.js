@@ -9702,5 +9702,26 @@ const SLEEP_DATA = [
   "night_type": "resettled",
   "waking_note": "Sheryl edited the post: awake period 2:08am - 4am, woke up 6am. Matches Miki's thread note (he slept from 4 to 6). Levi got up and left his room at 2:21am.",
   "raw_notes": "Fell asleep: 8:16pm | Awake period: 2:08am - 4am (2:21am Levi got up and left his room) | Woke up: 6am | Slack thread clarification (Miki Heller): \"He slept from 4 to 6\""
+ },
+ {
+  "date": "2026-11-10",
+  "bedtime": "8:09pm",
+  "bedtime_decimal": 20.15,
+  "wake_time": null,
+  "wake_time_decimal": null,
+  "total_sleep_hours": null,
+  "total_awake_hours": null,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "1:54am",
+    "return_time": null,
+    "duration_hours": null
+   }
+  ],
+  "night_type": "no_data",
+  "waking_note": "Incomplete night: the post gives no end to the 1:54am awake period and no final wake, so sleep hours are not calculated and the night is left out of averages. Levi got up and left his room at 2:05am. Post also notes 'Woke up briefly: 8:31pm' (no duration, kept in notes only).",
+  "raw_notes": "Fell asleep: 8:09pm | Awake period: 1:54am (no end time in post) (2:05am Levi got up and left his room) | Woke up briefly: 8:31pm (no duration; not counted) | FINAL WAKE UNKNOWN: no wake time and no return to sleep in the post; sleep hours not calculated (at least about 5.7h before 1:54am, lower bound only)",
+  "hours_partial": true
  }
 ];
