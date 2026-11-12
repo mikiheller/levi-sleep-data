@@ -9707,21 +9707,34 @@
   "date": "2026-11-10",
   "bedtime": "8:09pm",
   "bedtime_decimal": 20.15,
-  "wake_time": null,
-  "wake_time_decimal": null,
-  "total_sleep_hours": null,
-  "total_awake_hours": null,
+  "wake_time": "7:30am",
+  "wake_time_decimal": 31.5,
+  "total_sleep_hours": 9.75,
+  "total_awake_hours": 1.6,
   "night_wakings": 1,
   "waking_details": [
    {
     "wake_time": "1:54am",
-    "return_time": null,
-    "duration_hours": null
+    "return_time": "3:30am",
+    "duration_hours": 1.6
    }
   ],
-  "night_type": "no_data",
-  "waking_note": "Incomplete night: the post gives no end to the 1:54am awake period and no final wake, so sleep hours are not calculated and the night is left out of averages. Levi got up and left his room at 2:05am. Post also notes 'Woke up briefly: 8:31pm' (no duration, kept in notes only).",
-  "raw_notes": "Fell asleep: 8:09pm | Awake period: 1:54am (no end time in post) (2:05am Levi got up and left his room) | Woke up briefly: 8:31pm (no duration; not counted) | FINAL WAKE UNKNOWN: no wake time and no return to sleep in the post; sleep hours not calculated (at least about 5.7h before 1:54am, lower bound only)",
-  "hours_partial": true
+  "night_type": "resettled",
+  "waking_note": "Sheryl edited the post: awake period 1:54am - 3:30am, woke up 7:30am. Matches Jake's thread note (fell asleep at 3:30am, got up at 7:30am). Levi got up and left his room at 2:05am. 'Woke up briefly: 8:31pm' has no duration and is kept in notes only.",
+  "raw_notes": "Fell asleep: 8:09pm | Awake period: 1:54am - 3:30am (2:05am Levi got up and left his room) | Woke up: 7:30am | Woke up briefly: 8:31pm (no duration; not counted) | Slack thread clarification (Jake Heller): \"He fell asleep at 3:30am and got up at 7:30am\""
+ },
+ {
+  "date": "2026-11-11",
+  "bedtime": "8:17pm",
+  "bedtime_decimal": 20.28,
+  "wake_time": "7:01am",
+  "wake_time_decimal": 31.02,
+  "total_sleep_hours": 10.74,
+  "total_awake_hours": 0,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "full",
+  "waking_note": "Post lists 'Woke up briefly: 1:56am' with no duration (under 30 minutes not assumed, kept in notes only). Uninterrupted sleep not confirmed.",
+  "raw_notes": "Fell asleep: 8:17pm | Woke up: 7:01am | Woke up briefly: 1:56am (no duration; not counted)"
  }
 ]
