@@ -9741,21 +9741,20 @@
   "date": "2026-11-12",
   "bedtime": "8:37pm",
   "bedtime_decimal": 20.62,
-  "wake_time": null,
-  "wake_time_decimal": null,
-  "total_sleep_hours": null,
-  "total_awake_hours": null,
+  "wake_time": "7:30am",
+  "wake_time_decimal": 31.5,
+  "total_sleep_hours": 10.23,
+  "total_awake_hours": 0.65,
   "night_wakings": 1,
   "waking_details": [
    {
     "wake_time": "2:51am",
-    "return_time": null,
-    "duration_hours": null
+    "return_time": "3:30am",
+    "duration_hours": 0.65
    }
   ],
-  "night_type": "no_data",
-  "waking_note": "Incomplete night: the post gives no end to the 2:51am awake time and no final wake, so sleep hours are not calculated and the night is left out of averages. Levi got up and left his room at 2:57am.",
-  "raw_notes": "Fell asleep: 8:37pm | Awake time: 2:51am (no end time in post) (2:57am Levi got up and left his room) | FINAL WAKE UNKNOWN: no wake time and no return to sleep in the post; sleep hours not calculated (at least about 6.2h before 2:51am, lower bound only)",
-  "hours_partial": true
+  "night_type": "resettled",
+  "waking_note": "Sheryl edited the post: awake time 2:51am - 3:30am, woke up 7:30am. Matches Miki's thread note (came up to our room, asleep again by 3:30, woke up at 7:30). Levi got up and left his room at 2:57am.",
+  "raw_notes": "Fell asleep: 8:37pm | Awake time: 2:51am - 3:30am (2:57am Levi got up and left his room) | Woke up: 7:30am | Slack thread clarification (Miki Heller): \"He came up to our room, was asleep again by 3:30, woke up at 7:30\""
  }
 ]
