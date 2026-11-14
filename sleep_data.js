@@ -9756,5 +9756,25 @@ const SLEEP_DATA = [
   "night_type": "resettled",
   "waking_note": "Sheryl edited the post: awake time 2:51am - 3:30am, woke up 7:30am. Matches Miki's thread note (came up to our room, asleep again by 3:30, woke up at 7:30). Levi got up and left his room at 2:57am.",
   "raw_notes": "Fell asleep: 8:37pm | Awake time: 2:51am - 3:30am (2:57am Levi got up and left his room) | Woke up: 7:30am | Slack thread clarification (Miki Heller): \"He came up to our room, was asleep again by 3:30, woke up at 7:30\""
+ },
+ {
+  "date": "2026-11-13",
+  "bedtime": "8:57pm",
+  "bedtime_decimal": 20.95,
+  "wake_time": "8:19am",
+  "wake_time_decimal": 32.32,
+  "total_sleep_hours": 7.42,
+  "total_awake_hours": 3.95,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "12:12am",
+    "return_time": "4:09am",
+    "duration_hours": 3.95
+   }
+  ],
+  "night_type": "resettled",
+  "waking_note": "Levi got up and left his room at 12:22am; at 3:28am Levi and Miki (and Jake later) went inside the room.",
+  "raw_notes": "Fell asleep: 8:57pm | Awake time: 12:12am - 4:09am (12:22am Levi got up and left his room; 3:28am Levi and Miki, (and Jake later) went inside the room) | Woke up: 8:19am"
  }
 ];
