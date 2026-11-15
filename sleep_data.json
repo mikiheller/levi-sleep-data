@@ -9776,5 +9776,26 @@
   "night_type": "resettled",
   "waking_note": "Levi got up and left his room at 12:22am; at 3:28am Levi and Miki (and Jake later) went inside the room.",
   "raw_notes": "Fell asleep: 8:57pm | Awake time: 12:12am - 4:09am (12:22am Levi got up and left his room; 3:28am Levi and Miki, (and Jake later) went inside the room) | Woke up: 8:19am"
+ },
+ {
+  "date": "2026-11-14",
+  "bedtime": "8:18pm",
+  "bedtime_decimal": 20.3,
+  "wake_time": null,
+  "wake_time_decimal": null,
+  "total_sleep_hours": null,
+  "total_awake_hours": null,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "4:25am",
+    "return_time": null,
+    "duration_hours": null
+   }
+  ],
+  "night_type": "no_data",
+  "waking_note": "Incomplete night: final wake and return to sleep not documented, so sleep hours are not calculated and the night is left out of averages. Levi got up and left his room at 5:51am. Woke up briefly at 12:04am (no duration given, notes only).",
+  "raw_notes": "Fell asleep: 8:18pm | Awake period: 4:25am - (open) (5:51am Levi got up and left his room) | Woke up briefly: 12:04am | FINAL WAKE UNKNOWN: post has no wake time and no thread reply; sleep hours not calculated (at least about 8.1h before 4:25am, lower bound only)",
+  "hours_partial": true
  }
 ]
