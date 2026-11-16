@@ -9797,5 +9797,25 @@ const SLEEP_DATA = [
   "waking_note": "Incomplete night: final wake and return to sleep not documented, so sleep hours are not calculated and the night is left out of averages. Levi got up and left his room at 5:51am. Woke up briefly at 12:04am (no duration given, notes only).",
   "raw_notes": "Fell asleep: 8:18pm | Awake period: 4:25am - (open) (5:51am Levi got up and left his room) | Woke up briefly: 12:04am | FINAL WAKE UNKNOWN: post has no wake time and no thread reply; sleep hours not calculated (at least about 8.1h before 4:25am, lower bound only)",
   "hours_partial": true
+ },
+ {
+  "date": "2026-11-15",
+  "bedtime": "7:52pm",
+  "bedtime_decimal": 19.87,
+  "wake_time": "8:38am",
+  "wake_time_decimal": 32.63,
+  "total_sleep_hours": 8.84,
+  "total_awake_hours": 3.92,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "1:09am",
+    "return_time": "5:04am",
+    "duration_hours": 3.92
+   }
+  ],
+  "night_type": "resettled",
+  "waking_note": "Jake went inside Levi's room at 3:29am.",
+  "raw_notes": "Fell asleep: 7:52pm | Awake time: 1:09am - 5:04am (3:29am Jake went inside Levi's room) | Woke up: 8:38am"
  }
 ];
