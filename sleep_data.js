@@ -9824,8 +9824,8 @@ const SLEEP_DATA = [
   "bedtime_decimal": 21.15,
   "wake_time": "7:30am",
   "wake_time_decimal": 31.5,
-  "total_sleep_hours": null,
-  "total_awake_hours": null,
+  "total_sleep_hours": 7.25,
+  "total_awake_hours": 3.1,
   "night_wakings": 1,
   "waking_details": [
    {
@@ -9834,11 +9834,9 @@ const SLEEP_DATA = [
     "duration_hours": 3.1
    }
   ],
-  "night_type": "no_data",
-  "waking_note": "DATE UNCONFIRMED: Sheryl's Nov 17 post was labeled 'November 15' (a duplicate of the Nov 15 post). Posted Nov 17 4:32pm, which fits the night of Nov 16 into Nov 17 by her usual pattern, but no source states it, so the night is left out of averages until confirmed. Reported times: bed 9:09pm, awake 12:54am-4am, Levi got up and left his room 2:48am, woke 7:30am. Jake's follow-up: 'I think he was asleep around 4 and up at 7:30' (approximate).",
-  "raw_notes": "POST LABEL: 'November 15' (second post with that label; first was posted Nov 16 2:28pm) | Fell asleep: 9:09pm | Awake time: 12:54am - 4am (2:48am Levi got up and left his room) | Woke up: 7:30am | Posted Nov 17 4:32pm | Slack channel follow-up by Jake Heller: I think he was asleep around 4 and up at 7:30 | Totals not calculated while the date is unconfirmed (would be about 7.25h)",
-  "hours_partial": true,
-  "date_unconfirmed": true
+  "night_type": "resettled",
+  "waking_note": "Levi got up and left his room at 2:48am. Jake's follow-up: 'I think he was asleep around 4 and up at 7:30' (approximate).",
+  "raw_notes": "Fell asleep: 9:09pm | Awake time: 12:54am - 4am (2:48am Levi got up and left his room) | Woke up: 7:30am | Post posted Nov 17 4:32pm, label edited by Sheryl from 'November 15' to 'November 16' (confirmed in Slack and by Miki's screenshot reply) | Slack follow-up by Jake Heller: I think he was asleep around 4 and up at 7:30"
  },
  {
   "date": "2026-11-17",
