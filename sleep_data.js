@@ -9817,5 +9817,25 @@ const SLEEP_DATA = [
   "night_type": "resettled",
   "waking_note": "Jake went inside Levi's room at 3:29am.",
   "raw_notes": "Fell asleep: 7:52pm | Awake time: 1:09am - 5:04am (3:29am Jake went inside Levi's room) | Woke up: 8:38am"
+ },
+ {
+  "date": "2026-11-16",
+  "bedtime": "9:09pm",
+  "bedtime_decimal": 21.15,
+  "wake_time": "7:30am",
+  "wake_time_decimal": 31.5,
+  "total_sleep_hours": 7.25,
+  "total_awake_hours": 3.1,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "12:54am",
+    "return_time": "4:00am",
+    "duration_hours": 3.1
+   }
+  ],
+  "night_type": "resettled",
+  "waking_note": "Levi got up and left his room at 2:48am. Post was labeled 'November 15' (a second Nov 15 post); filed as Nov 16 because Nov 15 already has its own post and this was posted Nov 17 for the night before. Jake's follow-up: 'I think he was asleep around 4 and up at 7:30' (approximate, matches the post).",
+  "raw_notes": "Fell asleep: 9:09pm | Awake time: 12:54am - 4am (2:48am Levi got up and left his room) | Woke up: 7:30am | Post label said 'November 15' (duplicate of the earlier Nov 15 post, posted 4:32pm Nov 17) | Slack channel follow-up by Jake Heller: I think he was asleep around 4 and up at 7:30"
  }
 ];
