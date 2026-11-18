@@ -9839,5 +9839,19 @@ const SLEEP_DATA = [
   "raw_notes": "POST LABEL: 'November 15' (second post with that label; first was posted Nov 16 2:28pm) | Fell asleep: 9:09pm | Awake time: 12:54am - 4am (2:48am Levi got up and left his room) | Woke up: 7:30am | Posted Nov 17 4:32pm | Slack channel follow-up by Jake Heller: I think he was asleep around 4 and up at 7:30 | Totals not calculated while the date is unconfirmed (would be about 7.25h)",
   "hours_partial": true,
   "date_unconfirmed": true
+ },
+ {
+  "date": "2026-11-17",
+  "bedtime": "8:40pm",
+  "bedtime_decimal": 20.67,
+  "wake_time": "6:32am",
+  "wake_time_decimal": 30.53,
+  "total_sleep_hours": 9.86,
+  "total_awake_hours": 0,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "full",
+  "waking_note": "No wakings mentioned; uninterrupted sleep not confirmed.",
+  "raw_notes": "Fell asleep: 8:40pm | Woke up: 6:32am (post labeled November 17, posted Nov 18 2:36pm)"
  }
 ];
