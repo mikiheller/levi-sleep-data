@@ -9851,5 +9851,26 @@ const SLEEP_DATA = [
   "night_type": "full",
   "waking_note": "No wakings mentioned; uninterrupted sleep not confirmed.",
   "raw_notes": "Fell asleep: 8:40pm | Woke up: 6:32am (post labeled November 17, posted Nov 18 2:36pm)"
+ },
+ {
+  "date": "2026-11-18",
+  "bedtime": "8:17pm",
+  "bedtime_decimal": 20.28,
+  "wake_time": null,
+  "wake_time_decimal": null,
+  "total_sleep_hours": null,
+  "total_awake_hours": null,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "5:31am",
+    "return_time": null,
+    "duration_hours": null
+   }
+  ],
+  "night_type": "no_data",
+  "waking_note": "Incomplete night: final wake and return to sleep not documented, so sleep hours are not calculated and the night is left out of averages. Levi got up and left his room at 5:33am. Woke up briefly at 1:42am (no duration given, notes only).",
+  "raw_notes": "Fell asleep: 8:17pm | Awake period: 5:31am - (open) (5:33am Levi got up and left his room) | Woke up briefly: 1:42am | FINAL WAKE UNKNOWN: post has no wake time and no thread reply; sleep hours not calculated (post ts 1795127747.167929, Nov 19)",
+  "hours_partial": true
  }
 ];
