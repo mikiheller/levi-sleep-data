@@ -9872,5 +9872,25 @@
   "waking_note": "Incomplete night: final wake and return to sleep not documented, so sleep hours are not calculated and the night is left out of averages. Levi got up and left his room at 5:33am. Woke up briefly at 1:42am (no duration given, notes only).",
   "raw_notes": "Fell asleep: 8:17pm | Awake period: 5:31am - (open) (5:33am Levi got up and left his room) | Woke up briefly: 1:42am | FINAL WAKE UNKNOWN: post has no wake time and no thread reply; sleep hours not calculated (post ts 1795127747.167929, Nov 19)",
   "hours_partial": true
+ },
+ {
+  "date": "2026-11-19",
+  "bedtime": "9:24pm",
+  "bedtime_decimal": 21.4,
+  "wake_time": "7:33am",
+  "wake_time_decimal": 31.55,
+  "total_sleep_hours": 8.55,
+  "total_awake_hours": 1.6,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "4:52am",
+    "return_time": "6:28am",
+    "duration_hours": 1.6
+   }
+  ],
+  "night_type": "resettled",
+  "waking_note": "Woke up briefly at 3:42am (no duration given, notes only).",
+  "raw_notes": "Fell asleep: 9:24pm | Awake period: 4:52am - 6:28am | Woke up: 7:33am | Woke up briefly: 3:42am (post ts 1795198951.755719, Nov 20)"
  }
 ]
