@@ -9892,5 +9892,25 @@ const SLEEP_DATA = [
   "night_type": "resettled",
   "waking_note": "Woke up briefly at 3:42am (no duration given, notes only).",
   "raw_notes": "Fell asleep: 9:24pm | Awake period: 4:52am - 6:28am | Woke up: 7:33am | Woke up briefly: 3:42am (post ts 1795198951.755719, Nov 20)"
+ },
+ {
+  "date": "2026-11-20",
+  "bedtime": "8:31pm",
+  "bedtime_decimal": 20.52,
+  "wake_time": "7:16am",
+  "wake_time_decimal": 31.27,
+  "total_sleep_hours": 8.73,
+  "total_awake_hours": 2.02,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "1:58am",
+    "return_time": "3:59am",
+    "duration_hours": 2.02
+   }
+  ],
+  "night_type": "resettled",
+  "waking_note": "3:09am Levi got up and left his room. 3:10am Levi and Jake went inside the room.",
+  "raw_notes": "Fell asleep: 8:31pm | Awake period: 1:58am - 3:59am (3:09am Levi got up and left his room; 3:10am Levi and Jake went inside the room) | Woke up: 7:16am (post ts 1795303422.147109, Nov 21)"
  }
 ];
