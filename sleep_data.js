@@ -9911,7 +9911,7 @@ const SLEEP_DATA = [
   ],
   "night_type": "resettled",
   "waking_note": "3:09am Levi got up and left his room. 3:10am Levi and Jake went inside the room.",
-  "raw_notes": "Fell asleep: 8:31pm | Awake period: 1:58am - 3:59am (3:09am Levi got up and left his room; 3:10am Levi and Jake went inside the room) | Woke up: 7:16am (post ts 1795303422.147109, Nov 21)"
+  "raw_notes": "Fell asleep: 8:31pm | Awake period: 1:58am - 3:59am (3:09am Levi got up and left his room; 3:10am Levi and Jake went inside the room) | Woke up: 7:16am (post ts 1795303422.147109, Nov 21) | Slack thread clarification (Miki Heller): \"Noting that Jake gave extra sleep meds to help Levi go back to sleep\""
  },
  {
   "date": "2026-11-21",
@@ -9925,6 +9925,6 @@ const SLEEP_DATA = [
   "waking_details": [],
   "night_type": "full",
   "waking_note": "No wakings mentioned; uninterrupted sleep not confirmed.",
-  "raw_notes": "Fell asleep: 8:07pm | Woke up: 6:26am (post labeled November 21, ts 1795395537.660119, Nov 22)"
+  "raw_notes": "Fell asleep: 8:07pm | Woke up: 6:26am (post labeled November 21, ts 1795395537.660119, Nov 22) | Slack thread clarification (Miki Heller): \"Gonna start logging medication notes here. Noting that we did not give belsomra on this night, and he slept through the night regardless\""
  }
 ];
