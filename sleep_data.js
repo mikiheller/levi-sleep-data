@@ -9926,5 +9926,26 @@ const SLEEP_DATA = [
   "night_type": "full",
   "waking_note": "No wakings mentioned; uninterrupted sleep not confirmed.",
   "raw_notes": "Fell asleep: 8:07pm | Woke up: 6:26am (post labeled November 21, ts 1795395537.660119, Nov 22) | Slack thread clarification (Miki Heller): \"Gonna start logging medication notes here. Noting that we did not give belsomra on this night, and he slept through the night regardless\""
+ },
+ {
+  "date": "2026-11-22",
+  "bedtime": "8:12pm",
+  "bedtime_decimal": 20.2,
+  "wake_time": null,
+  "wake_time_decimal": null,
+  "total_sleep_hours": null,
+  "total_awake_hours": null,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "4:28am",
+    "return_time": null,
+    "duration_hours": null
+   }
+  ],
+  "night_type": "no_data",
+  "waking_note": "Incomplete night: final wake and return to sleep not documented, so sleep hours are not calculated and the night is left out of averages. Levi started using his iPad at 5:04am, got up from his bed at 5:23am, and he and Jake left the room at 5:24am.",
+  "raw_notes": "Fell asleep: 8:12pm | Awake period: 4:28am - (open) (5:04am Levi started using his iPad; 5:23am Levi got up from his bed; 5:24am Jake went inside the room, then he and Levi left the room) | FINAL WAKE UNKNOWN: post has no wake time and no thread reply; sleep hours not calculated (post ts 1795454785.925629, Nov 23)",
+  "hours_partial": true
  }
 ];
