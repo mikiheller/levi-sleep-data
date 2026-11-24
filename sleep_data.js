@@ -9947,5 +9947,19 @@ const SLEEP_DATA = [
   "waking_note": "Incomplete night: final wake and return to sleep not documented, so sleep hours are not calculated and the night is left out of averages. Levi started using his iPad at 5:04am, got up from his bed at 5:23am, and he and Jake left the room at 5:24am.",
   "raw_notes": "Fell asleep: 8:12pm | Awake period: 4:28am - (open) (5:04am Levi started using his iPad; 5:23am Levi got up from his bed; 5:24am Jake went inside the room, then he and Levi left the room) | FINAL WAKE UNKNOWN: post has no wake time and no thread reply; sleep hours not calculated (post ts 1795454785.925629, Nov 23)",
   "hours_partial": true
+ },
+ {
+  "date": "2026-11-23",
+  "bedtime": "8:37pm",
+  "bedtime_decimal": 20.62,
+  "wake_time": "5:46am",
+  "wake_time_decimal": 29.77,
+  "total_sleep_hours": 9.15,
+  "total_awake_hours": 0,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "full",
+  "waking_note": "No wakings mentioned; uninterrupted sleep not confirmed.",
+  "raw_notes": "Fell asleep: 8:37pm | Woke up: 5:46am (6:26am Levi got up and left his room) (post ts 1795549890.892779, Nov 24)"
  }
 ];
