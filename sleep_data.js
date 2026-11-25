@@ -9961,5 +9961,19 @@ const SLEEP_DATA = [
   "night_type": "full",
   "waking_note": "No wakings mentioned; uninterrupted sleep not confirmed.",
   "raw_notes": "Fell asleep: 8:37pm | Woke up: 5:46am (6:26am Levi got up and left his room) (post ts 1795549890.892779, Nov 24)"
+ },
+ {
+  "date": "2026-11-24",
+  "bedtime": "8:27pm",
+  "bedtime_decimal": 20.45,
+  "wake_time": "5:29am",
+  "wake_time_decimal": 29.48,
+  "total_sleep_hours": 9.03,
+  "total_awake_hours": 0,
+  "night_wakings": 0,
+  "waking_details": [],
+  "night_type": "early_wake",
+  "waking_note": "Woke up briefly 11:37pm-11:47pm (10 min, under 30 min, notes only); woke up briefly at 2:12am and 3:13am (no duration given, notes only). Levi seemed upset and uncomfortable on waking at 5:29am. Jake in thread: vomited in the middle of the night.",
+  "raw_notes": "Fell asleep: 8:27pm | Woke up briefly: 11:37pm - 11:47pm (11:37pm Levi sat on his bed and seemed uncomfortable; he was putting his hand in his mouth at one point; 11:38pm Miki went inside Levi's room; 11:39pm Jake also went inside Levi's room) | Woke up: 5:29am (5:29am Levi seemed upset and uncomfortable; 5:50am Levi got up and walked over to his round plushie / pillow which was on the floor; 6am Levi was by the door, and Jake went inside the room) | Woke up briefly: 2:12am, 3:13am | Slack thread clarification (Jake Heller): \"I think he's either a little sick or reacting to his medicine. He vomited in the middle of the night :(\" and \"He seems well now\" (post ts 1795626311.932229, Nov 25)"
  }
 ];
