@@ -9989,5 +9989,25 @@
   "night_type": "full",
   "waking_note": "Woke up briefly 11:49pm-12am (11 min, under 30 min, notes only) and 12:16am-12:35am (19 min, under 30 min, notes only; Levi woke up while Jake was changing his diaper). Levi sat up and seemed uncomfortable again at 11:49pm.",
   "raw_notes": "Fell asleep: 9:18pm | Woke up briefly: 11:49pm-12am (11:49pm Levi sat up and seemed uncomfortable again; 11:57pm Miki went inside Levi's room) | Woke up briefly: 12:16am-12:35am (Note: Levi woke up while Jake was changing his diaper) | Woke up: 6:39am"
+ },
+ {
+  "date": "2026-11-26",
+  "bedtime": "8:13pm",
+  "bedtime_decimal": 20.22,
+  "wake_time": "8:13am",
+  "wake_time_decimal": 32.22,
+  "total_sleep_hours": 8.52,
+  "total_awake_hours": 3.48,
+  "night_wakings": 1,
+  "waking_details": [
+   {
+    "wake_time": "1:30am",
+    "return_time": "4:59am",
+    "duration_hours": 3.48
+   }
+  ],
+  "night_type": "resettled",
+  "waking_note": "Levi woke up while Jake was changing his diaper.",
+  "raw_notes": "Fell asleep: 8:13pm | Awake period: 1:30am - 4:59am (Note: Levi woke up while Jake was changing his diaper) | Woke up: 8:13am (post ts 1795826683.400959, Nov 27)"
  }
 ]
